@@ -1,0 +1,119 @@
+body {position:relative}
+body:before {
+  content: '';
+  height:100vh;
+  width:100%;
+  position: fixed;
+  top: 0;
+  z-index:-1;
+}
+
+ul.no-bullet {
+  text-align: left;
+}
+
+.list-item {
+  color: #000;
+}
+
+p, a, li {
+  font-size: 1.3rem;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.PDF {
+  height: 2200px;
+}
+
+.contents {
+  display: block;
+  z-index: 1;
+  text-align: center;
+}
+
+.side-bar {
+  z-index: 1;
+}
+
+.top-contents {
+  width: 360px;
+  background: rgb(230, 230, 230);
+  z-index: 1;
+}
+
+.gray {
+  display: flex;
+  flex-direction: column;
+}
+
+.gray {
+  background: rgb(230, 230, 230);
+  width: 65%;
+  margin: 0 auto;
+}
+
+.contents-container {
+  position: relative;
+  align-items: start;
+}
+
+.left-align, audio, .heading-container {
+  font-size: 16pt;
+  margin-left: 20px;
+}
+
+.meaning_font {
+  font-size: 14pt;
+}
+
+.big-h2 {
+  font-size: 22pt;
+  text-align: center;
+}
+
+
+
+
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.printPDFbutton {
+  margin-left: 0px;
+  background: #ffa66bff;
+  border: none;
+  padding: 5px;
+  border-radius: 7px;
+  min-width: 100px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.printPDFbutton:hover {
+  background: #ffd86bff;
+}
+
+.footer {
+  background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 650px) {
+  .PDF {
+    width: 100%;
+  }
+
+  .gray {
+    width: 90%;
+  }
+}

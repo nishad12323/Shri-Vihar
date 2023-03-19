@@ -1,0 +1,56 @@
+.gray {
+  display: flex;
+  background: rgb(230, 230, 230);
+  width: 65%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  background-color: #000;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+p.vignette {
+  position: relative;
+}
+p.vignette img {
+  display: block;
+}
+p.vignette:after {
+  background: -webkit-linear-gradient(left, 
+  rgba(0,0,0,0.95) 0%,
+  rgba(0,0,0,0) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  content: "";
+}
+
+.title {
+  color: #fff;
+  font-size: 70pt;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.cover-image {
+  width: calc(100vw / 2);
+  height: auto;
+}
+
+
+/* mobile */
+@media only screen and (max-width: 650px;) {
+  .cover-heading {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 3pt;
+  }
+}
