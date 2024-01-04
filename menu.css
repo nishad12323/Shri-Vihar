@@ -1,4 +1,3 @@
-
 * {
   padding: 0;
   margin: 0;
@@ -25,6 +24,10 @@ header {
   z-index: 3;
 }
 
+.bold-selected-item {
+  margin-left: 10px;
+}
+
 #brand {
   display: flex;
   align-items: center;
@@ -39,15 +42,15 @@ ul {
   justify-content: space-around;
 }
 
-ul a {
+ul>a {
   color: white;
 }
 
-a, li {
+a, li.menu-only {
   font-size: 1.3rem;
 }
 
-ul li {
+ul>li.menu-only {
   padding: 5px;
   margin-left: 10px;
 }
@@ -88,14 +91,9 @@ ul li {
   margin-top: 5px;
   transition: 0.5s;
 }
-.open .mobile-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
 
 .mobile-menu {
+  transition: 1s;
   display: none;
   position: absolute;
   top: 50px;
@@ -104,6 +102,13 @@ ul li {
   width: 270px;
   line-height: 30px;
   background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width: 650px) {
@@ -115,4 +120,5 @@ ul li {
     display: block;
   }
 }
+
 

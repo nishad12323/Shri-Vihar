@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#9b0303" />
+  <meta name="author" content="Pavithra Aravind, Nishad Bangole">
+  <meta name="keywords"
+    content="slokam, sloka, class, Pavithra, shri vihar, god, sloka class, slokam class, shri vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person sclokam class, in person, in person sloka class, in-person slokam class">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policies & Procedures</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="menu.css">
+  <script src="menu.js" defer></script>
+
+</head>
+
+<body>
+  <header>
+    <div id="brand"><a style="color: white" href="/"><img src=""></a><a style="color: black;" href="/">Shri Vihar Slokam
+        Class</a></div>
+    <nav>
+      <ul>
+        <li class="menu-only"><a style="color: black;" href="/">Home</a></li>
+        <li class="menu-only"><a style="color: black;" href="library.html">Sloka Library</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#about">About</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#classes">Classes</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#contact">Contact us</a></li>
+        <li class="menu-only"><button class="register" onclick="register()"><b>Register</b></button></li>
+      </ul>
+    </nav>
+
+    <div id="menu-icon" onclick="toggleMobileMenu(this)">
+      <div style="background: black;" class="bar1"></div>
+      <div style="background: black;" class="bar2"></div>
+      <div style="background: black;" class="bar3"></div>
+
+      <ul class="mobile-menu">
+        <li class="menu-only"><a style="color: black;" href="/">Home</a></li>
+        <li class="menu-only"><a style="color: black;" href="library.html">Sloka Library</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#about">About</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#classes">Classes</a></li>
+        <li class="menu-only"><a style="color: black;" href="/#contact">Contact us</a></li>
+        <li class="menu-only"><button class="register" onclick="register()"><b>Register</b></button></li>
+      </ul>
+    </div>
+  </header>
+  <br>
+  <br>
+  <br>
+
+  <center>
+    <h1 class="policies-heading">Policies</h1>
+  </center>
+  <br>
+  <br>
+
+  <div class="gray">
+    <p class="paragraph">
+      <span>
+        <ul class="policies"
+          style="list-style-position: outside; display: block; list-style-type: disc; margin-left: 20px;">
+          <li>ShriVihar Slokam classes start in September and end by the last week of April.</li>
+          <li>ShriVihar Summer Slokam Classes start in June and end by the last week of July.</li>
+          <li>Classes will be on break during long weekend holidays.</li>
+          <li>The classes are conducted free of charge. (Student's interest and active participation is expected as
+            gratitude,
+            please no gift cards or any other gifts).</li>
+          <li>Please have your kids join the class on time.</li>
+          <li>The kids need to maintain a separate Slokam folder, and the pdf will be shared in the respective WhatsApp
+            group.</li>
+          <li>Slokam recordings will be posted in the respective WhatsApp group.The kids need to send their sloka
+            recording before the
+            next class.</li>
+          <li>Please inform me in cases of absences or delays to join the class.</li>
+        </ul>
+      </span>
+    </p>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="agree-and-disagree">
+    <button class="register" onclick="agree()"><b>Agree</b></button>
+    <button class="disagree" onclick="disagree()"><b>Disagree</b></button>
+  </div>
+
+  <dialog id="dialog">
+    <p class="paragraph">
+      Please contact the Shri Vihar team at <a class="link-contact" href="mailto:Shrivihar2@gmail.com">Shrivihar2@gmail.com</a> for any queries.
+    </p>
+    <center>
+      <button class="register" onclick="document.getElementById('dialog').close();">OK</button>
+    </center>
+  </dialog>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- <div id="social">
+    <br>
+    <br>
+    <br>
+    <div class="gray-footer">
+      <center>
+        <h2 class="heading">Social</h2>
+        <a href="https://www.youtube.com/@ShriVihar"><img class="social" title="Youtube" alt="youtube"
+            src="youtube-logo.png"></a>
+      </center>
+    </div>
+  </div> -->
+
+
+  <div class="footer-container">
+    <div class="footer">
+      <center>
+        <br>
+        Shrivihar2@gmail.com
+        <br>
+        <br>
+        © Copyright 2023 Shri Vihar Slokam Class - All Rights Reserved
+        <br>
+        <br>
+        <br>
+
+        Created by Nishad Bangole
+
+        <br>
+        <br>
+      </center>
+    </div>
+  </div>
+
+  <script>
+    function register() {
+      location.assign("policies.html");
+    }
+
+    function agree() {
+      location.assign("https://docs.google.com/forms/d/e/1FAIpQLSdK-jFwE6md6W3C0W0umLRzLR554iNcNcefj_VgBzy9_et9kA/viewform");
+    }
+
+    function disagree() {
+      document.getElementById("dialog").showModal();
+    }
+  </script>
+
+</body>
+
+</html>
