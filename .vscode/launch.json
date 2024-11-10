@@ -56,7 +56,6 @@
             "name": "Local Server",
             "configurations": [
                 "open server",
-                "Open Edge DevTools"
             ],
             "presentation": {
                 "hidden": false,
