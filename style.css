@@ -52,6 +52,7 @@ dialog {
   margin: 0 auto;
   font-size: 1.5rem;
   padding: 20px 20px 20px;
+  border-radius: 15px;
 }
 
 .gray-footer {
@@ -67,6 +68,8 @@ dialog {
   background-color: #ffc800;
   width: 100vw;
   justify-content: space-between;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 p.vignette {
@@ -77,6 +80,7 @@ p.vignette {
 p.vignette img {
   display: block;
   overflow: hidden;
+  border-bottom-right-radius: 15px;
 }
 
 p.vignette:after {
@@ -207,6 +211,36 @@ li>.register {
 .disagree:hover {
   background-color: #ff6600ff;
   color: white;
+}
+
+.img2-3 {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.IMG_1, .IMG_2, .IMG_3 {
+  max-width: 100%;
+  margin: 0;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.IMG_2, .IMG_3 {
+  max-width: calc(50% - 5px / 2);
+}
+
+.IMG_1 {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.IMG_2 {
+  border-bottom-left-radius: 15px;
+}
+
+.IMG_3 {
+  border-bottom-right-radius: 15px;
 }
 
 /*tablet*/
