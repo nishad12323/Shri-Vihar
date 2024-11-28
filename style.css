@@ -52,6 +52,7 @@ dialog {
   margin: 0 auto;
   font-size: 1.5rem;
   padding: 20px 20px 20px;
+  border-radius: 15px;
 }
 
 .gray-footer {
@@ -67,6 +68,8 @@ dialog {
   background-color: #ffc800;
   width: 100vw;
   justify-content: space-between;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 p.vignette {
@@ -77,12 +80,11 @@ p.vignette {
 p.vignette img {
   display: block;
   overflow: hidden;
+  border-bottom-right-radius: 15px;
 }
 
 p.vignette:after {
-  background: -webkit-linear-gradient(left, 
-  #ffc800 0%,
-  rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(left, #ffc800 0%, rgba(0, 0, 0, 0) 100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +93,6 @@ p.vignette:after {
   /*smoothness*/
   width: 30%;
 
-  
   height: 100%;
   z-index: 2;
   content: "";
@@ -141,7 +142,7 @@ p.vignette:after {
 }
 
 .footer {
-  background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+  background-image: linear-gradient(to right, #ffc800, #ff6600ff);
   padding: 10px;
   align-items: baseline;
 }
@@ -162,7 +163,7 @@ p.vignette:after {
   justify-content: center;
 }
 
-.policies>li {
+.policies > li {
   margin-top: 10px;
 }
 
@@ -196,7 +197,7 @@ p.vignette:after {
   cursor: pointer;
 }
 
-li>.register {
+li > .register {
   margin-top: 0;
 }
 
@@ -207,6 +208,67 @@ li>.register {
 .disagree:hover {
   background-color: #ff6600ff;
   color: white;
+}
+
+.img2-3 {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.IMG_1,
+.IMG_2,
+.IMG_3 {
+  max-width: 100%;
+  margin: 0;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.IMG_2,
+.IMG_3 {
+  max-width: calc(50% - 5px / 2);
+}
+
+.IMG_1 {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.IMG_2 {
+  border-bottom-left-radius: 15px;
+}
+
+.IMG_3 {
+  border-bottom-right-radius: 15px;
+}
+
+.gallery-img {
+  width: calc(calc(100% / 3) - 5px);
+  margin-bottom: 3px;
+  border-radius: 5px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+img[src="gallery/1.jpg"] {
+  border-top-left-radius: 30px;
+}
+img[src="gallery/3.jpg"] {
+  border-top-right-radius: 30px;
+}
+img[src="gallery/19.jpg"] {
+  border-bottom-left-radius: 30px;
+}
+img[src="gallery/20.jpg"] {
+  border-bottom-right-radius: 30px;
 }
 
 /*tablet*/
@@ -222,7 +284,8 @@ li>.register {
 
 /*phone*/
 @media only screen and (max-width: 650px) {
-  .cover-heading, .gray {
+  .cover-heading,
+  .gray {
     width: 90%;
   }
 
@@ -238,8 +301,19 @@ li>.register {
     font-size: 12pt;
     padding: 7px;
   }
-}
 
+  .gallery-img {
+    width: calc(calc(100% / 2) - 5px);
+  }
+
+  img[src="gallery/2.jpg"] {
+    border-top-right-radius: 30px;
+  }
+
+  img[src="gallery/3.jpg"] {
+    border-radius: 5px;
+  }
+}
 
 /*phone flipped*/
 @media only screen and (max-height: 575px) {
@@ -251,5 +325,3 @@ li>.register {
     font-size: 25pt;
   }
 }
-
-
