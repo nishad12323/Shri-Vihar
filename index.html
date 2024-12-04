@@ -1,149 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-X1GK8961LH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-X1GK8961LH");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9b0303" />
+    <meta name="author" content="Pavithra Aravind, Nishad Bangole" />
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta name="color-scheme" content="only light" />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <title>Shri Vihar Slokam Class</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <script src="menu.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#9b0303" />
-  <meta name="author" content="Pavithra Aravind, Nishad Bangole">
-  <meta name="keywords"
-    content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class">
-  <meta name="color-scheme" content="only light">
-  <meta name="description" content="Shri Vihar Sloka Class teaches slokas for kids of all ages.">
-  <title>Shri Vihar Slokam Class</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="menu.css">
-  <script src="menu.js" defer></script>
+  <body>
+    <header>
+      <div id="brand">
+        <a style="color: white" href="/"><img src="" /></a
+        ><a style="color: black" href="/">Shri Vihar Slokam Class</a>
+      </div>
+      <nav>
+        <ul>
+          <b class="bold-selected-item">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+          </b>
+          <li class="menu-only">
+            <a style="color: black" href="/library.html">Sloka Library</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#about">About</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#classes">Classes</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#contact">Contact us</a>
+          </li>
+          <li class="menu-only">
+            <button class="register" onclick="register()">
+              <b>Register</b>
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-</head>
+      <div id="menu-icon" onclick="toggleMobileMenu(this)">
+        <div style="background: black" class="bar1"></div>
+        <div style="background: black" class="bar2"></div>
+        <div style="background: black" class="bar3"></div>
 
+        <ul class="mobile-menu">
+          <b class="bold-selected-item">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+          </b>
+          <li class="menu-only">
+            <a style="color: black" href="library.html">Sloka Library</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#about">About</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#classes">Classes</a>
+          </li>
+          <li class="menu-only">
+            <a style="color: black" href="/#contact">Contact us</a>
+          </li>
+          <li class="menu-only">
+            <button class="register" onclick="register()">
+              <b>Register</b>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div id="brand"><a style="color: white" href="/"><img src=""></a><a style="color: black;" href="/">Shri Vihar Slokam
-        Class</a></div>
-    <nav>
-      <ul>
-        <b class="bold-selected-item">
-          <li class="menu-only"><a style="color: black;" href="/">Home</a></li>
-        </b>
-        <li class="menu-only"><a style="color: black;" href="/library.html">Sloka Library</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#about">About</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#classes">Classes</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#contact">Contact us</a></li>
-        <li class="menu-only"><button class="register" onclick="register()"><b>Register</b></button></li>
-      </ul>
-    </nav>
-
-    <div id="menu-icon" onclick="toggleMobileMenu(this)">
-      <div style="background: black;" class="bar1"></div>
-      <div style="background: black;" class="bar2"></div>
-      <div style="background: black;" class="bar3"></div>
-
-      <ul class="mobile-menu">
-        <b class="bold-selected-item">
-          <li class="menu-only"><a style="color: black;" href="/">Home</a></li>
-        </b>
-        <li class="menu-only"><a style="color: black;" href="library.html">Sloka Library</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#about">About</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#classes">Classes</a></li>
-        <li class="menu-only"><a style="color: black;" href="/#contact">Contact us</a></li>
-        <li class="menu-only"><button class="register" onclick="register()"><b>Register</b></button></li>
-      </ul>
-    </div>
-  </header>
-
-  <div class="header">
-    <span class="center-vertical">
-      <span class="half-header">
-        <span class="title-button">
-          <h1 class="title"><span class="Shri-Vihar">Shri Vihar</span><br>Slokam Class</h1>
-          <span class="register-x"><button class="register" onclick="register()"><b>Register</b></button></span>
+    <div class="header">
+      <span class="center-vertical">
+        <span class="half-header">
+          <span class="title-button">
+            <h1 class="title">
+              <span class="Shri-Vihar">Shri Vihar</span><br />Slokam Class
+            </h1>
+            <span class="register-x"
+              ><button class="register" onclick="register()">
+                <b>Register</b>
+              </button></span
+            >
+          </span>
         </span>
       </span>
-    </span>
-    <p class="vignette"><img class="cover-image" src="cover.jpg"></p>
-  </div>
-
-  <div id="about">
-    <br>
-    <br>
-    <br>
-    <div class="gray">
-      <center>
-        <img src="Pavithra.jpg" alt="Pavithra" class="face" title="Pavithra">
-        <h2 class="heading">About me</h2>
-      </center><br>
-      <p class="paragraph">
-        Hello! I'm Pavithra Aravind, the founder of Shri Vihar, a spiritual initiative dedicated to imparting devotional
-        Slokas, Bhajans, and essential life practices through captivating stories from revered epics such as the
-        Ramayana and Mahabharata. What began in 2019 as a modest endeavor with a few local children has blossomed into a
-        cherished community tradition, fueled by the enthusiastic participation of both kids and their families.
-        <br><br>
-        My passion lies in nurturing young minds and helping them discover and develop their talents. The children from
-        Shri Vihar have had the opportunity to showcase their skills by reciting various Slokas, including Ashtakams and
-        Pancharatnams, at events like Ganesh Chaturthi celebrations at Sri Ganesha Temple in Dallas, TX, as well as
-        other special occasions.
-        <br><br>
-        I seek the blessings of Lord Venkateshwara to grant me the wisdom and strength needed to continue this
-        meaningful journey.
-      </p>
+      <p class="vignette"><img class="cover-image" src="cover.jpg" /></p>
     </div>
-  </div>
 
-  <div id="classes">
-    <br>
-    <br>
-    <br>
-    <div class="gray">
-      <center>
-        <h2 class="heading">Classes</h2>
-      </center>
-      <p class="paragraph">
-        <br>
-        Sloka classes are offered online as well as in-person. The class syllabus is given below:<br><br>
-        <b>September to October</b> — Each week, 4 lines of slokas will be taught from simple ashtakams. <b>Examples</b>: Krishna ashtakam and Linga ashtakam<br><br>
-        <b>November to January</b> — Each week, 4-6 lines of sloka will be taught. <b>Examples</b>: Stotras like Ashtalakshmi Stotram and Dhukka nivarana Ashtakam<br><br>
-        <b>February to May</b> — Each week, 6-8 lines of Sloka will be taught. <b>Examples</b>: Adithya Hrudayam and Sri Mahalakshmi Stotram
-        <br>
-      </p>
-    </div>
-  </div>
-
-  <div id="pictures">
-    <br>
-    <br>
-    <br>
-    <div class="gray">
-      <img src="home/Photos/IMG_1.jpg" alt="" class="IMG_1">
-      <div class="img2-3">
-        <img src="home/Photos/IMG_2.jpg" alt="" class="IMG_2">
-        <img src="home/Photos/IMG_3.jpg" alt="" class="IMG_3">
+    <div id="about">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <center>
+          <img
+            src="Pavithra.jpg"
+            alt="Pavithra"
+            class="face"
+            title="Pavithra"
+          />
+          <h2 class="heading">About me</h2>
+        </center>
+        <br />
+        <p class="paragraph">
+          Hello! I'm Pavithra Aravind, the founder of Shri Vihar, a spiritual
+          initiative dedicated to imparting devotional Slokas, Bhajans, and
+          essential life practices through captivating stories from revered
+          epics such as the Ramayana and Mahabharata. What began in 2019 as a
+          modest endeavor with a few local children has blossomed into a
+          cherished community tradition, fueled by the enthusiastic
+          participation of both kids and their families.
+          <br /><br />
+          My passion lies in nurturing young minds and helping them discover and
+          develop their talents. The children from Shri Vihar have had the
+          opportunity to showcase their skills by reciting various Slokas,
+          including Ashtakams and Pancharatnams, at events like Ganesh Chaturthi
+          celebrations at Sri Ganesha Temple in Dallas, TX, as well as other
+          special occasions.
+          <br /><br />
+          I seek the blessings of Lord Venkateshwara to grant me the wisdom and
+          strength needed to continue this meaningful journey.
+        </p>
       </div>
-      <center><br>
-        <a href="gallery.html" class="link-contact">View All...</a>
-      </center>
     </div>
-  </div>
 
-  <div id="contact">
-    <br>
-    <br>
-    <br>
-    <div class="gray">
-      <center>
-        <h2 class="heading">Contact us</h2><br>
-      </center>
-      <p class="paragraph">
-        <b>Email: </b><a class="link-contact" href="mailto:Shrivihar2@gmail.com">Shrivihar2@gmail.com</a>
-      </p>
+    <div id="classes">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <center>
+          <h2 class="heading">Classes</h2>
+        </center>
+        <p class="paragraph">
+          <br />
+          Sloka classes are offered online as well as in-person. The class
+          syllabus is given below:<br /><br />
+          <b>September to October</b> — Each week, 4 lines of slokas will be
+          taught from simple ashtakams. <b>Examples</b>: Krishna ashtakam and
+          Linga ashtakam<br /><br />
+          <b>November to January</b> — Each week, 4-6 lines of sloka will be
+          taught. <b>Examples</b>: Stotras like Ashtalakshmi Stotram and Dhukka
+          nivarana Ashtakam<br /><br />
+          <b>February to May</b> — Each week, 6-8 lines of Sloka will be taught.
+          <b>Examples</b>: Adithya Hrudayam and Sri Mahalakshmi Stotram
+          <br />
+        </p>
+      </div>
     </div>
-  </div>
-  <br>
-  <br>
 
-  <!-- <div id="social">
+    <div id="pictures">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <img src="gallery/2.jpg" alt="" class="IMG_1" />
+        <div class="img2-3">
+          <img src="gallery/14.jpg" alt="" class="IMG_2" />
+          <img src="gallery/3.jpg" alt="" class="IMG_3" />
+        </div>
+        <center>
+          <br />
+          <a href="gallery.html" class="link-contact">View All...</a>
+        </center>
+      </div>
+    </div>
+
+    <div id="contact">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <center>
+          <h2 class="heading">Contact us</h2>
+          <br />
+        </center>
+        <p class="paragraph">
+          <b>Email: </b
+          ><a class="link-contact" href="mailto:Shrivihar2@gmail.com"
+            >Shrivihar2@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <!-- <div id="social">
     <br>
     <br>
     <br>
@@ -156,29 +225,27 @@
     </div>
   </div> -->
 
-  <div class="footer">
-    <center>
-      <br>
-      Shrivihar2@gmail.com
-      <br>
-      <br>
-      © Copyright 2023-2024 Shri Vihar Slokam Class - All Rights Reserved
-      <br>
-      <br>
-      <br>
+    <div class="footer">
+      <center>
+        <br />
+        Shrivihar2@gmail.com
+        <br />
+        <br />
+        © Copyright 2023-2024 Shri Vihar Slokam Class - All Rights Reserved
+        <br />
+        <br />
+        <br />
 
-      Created by Nishad Bangole
+        Created by Nishad Bangole
 
-      <br>
-      <br>
-    </center>
-  </div>
-</body>
-<script>
-  function register() {
-    location.assign("policies.html");
-  }
-</script>
-
-
+        <br />
+        <br />
+      </center>
+    </div>
+  </body>
+  <script>
+    function register() {
+      location.assign("policies.html");
+    }
+  </script>
 </html>
