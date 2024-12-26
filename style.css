@@ -16,6 +16,20 @@ dialog {
   margin-top: 10px;
 }
 
+.section-heading {
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.section-subheading {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .link-contact {
   text-decoration: none;
   color: #9b0303;
@@ -163,11 +177,11 @@ p.vignette:after {
   justify-content: center;
 }
 
-.policies > li {
+.policies>li {
   margin-top: 10px;
 }
 
-.policies + li {
+.policies+li {
   margin-top: 0;
 }
 
@@ -197,7 +211,7 @@ p.vignette:after {
   cursor: pointer;
 }
 
-li > .register {
+li>.register {
   margin-top: 0;
 }
 
@@ -221,7 +235,6 @@ li > .register {
 .IMG_3 {
   max-width: 100%;
   margin: 0;
-  border: 3px solid black;
   border-radius: 5px;
 }
 
@@ -255,19 +268,15 @@ li > .register {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-img[src="gallery/1.jpg"] {
+.gallery-container>img:first-child {
   border-top-left-radius: 30px;
 }
-img[src="gallery/3.jpg"] {
-  border-top-right-radius: 30px;
-}
-img[src="gallery/19.jpg"] {
-  border-bottom-left-radius: 30px;
-}
-img[src="gallery/20.jpg"] {
+
+.gallery-container>img:last-child {
   border-bottom-right-radius: 30px;
 }
 
@@ -284,6 +293,7 @@ img[src="gallery/20.jpg"] {
 
 /*phone*/
 @media only screen and (max-width: 650px) {
+
   .cover-heading,
   .gray {
     width: 90%;
@@ -304,14 +314,6 @@ img[src="gallery/20.jpg"] {
 
   .gallery-img {
     width: calc(calc(100% / 2) - 5px);
-  }
-
-  img[src="gallery/2.jpg"] {
-    border-top-right-radius: 30px;
-  }
-
-  img[src="gallery/3.jpg"] {
-    border-radius: 5px;
   }
 }
 
