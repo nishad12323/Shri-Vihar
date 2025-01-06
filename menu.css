@@ -18,7 +18,7 @@ header a {
 
 header {
   padding: 0 20px;
-  background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+  background-image: linear-gradient(to right, #ffc800, #ff6600ff);
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,8 @@ ul>a {
   color: white;
 }
 
-a, li.menu-only {
+a,
+li.menu-only {
   font-size: 1.3rem;
 }
 
@@ -91,7 +92,9 @@ ul>li.menu-only {
   transition: 0.5s;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   margin-top: 5px;
   transition: 0.5s;
 }
@@ -105,7 +108,7 @@ ul>li.menu-only {
   height: calc(100vh - 50px);
   width: 270px;
   line-height: 30px;
-  background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+  background-image: linear-gradient(to right, #ffc800, #ff6600ff);
 }
 
 .open .mobile-menu {
@@ -113,6 +116,10 @@ ul>li.menu-only {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+img {
+  pointer-events: hover;
 }
 
 @media only screen and (max-width: 650px) {
@@ -124,5 +131,3 @@ ul>li.menu-only {
     display: block;
   }
 }
-
-
