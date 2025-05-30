@@ -1,9 +1,23 @@
+const videoDialog = document.getElementById("video-dialog");
+const videoIframe = document.getElementById("video-iframe");
+
 function print(file) {
   window.open(file, "_self");
 }
 
 function register() {
   location.assign("policies.html");
+}
+
+function videoPlayer(btn) {
+  const youtubeLink = btn.getAttribute("data-video");
+  videoIframe.src = youtubeLink;
+  videoDialog.showModal();
+}
+
+function closeVideo() {
+  videoIframe.src = "";
+  videoDialog.close();
 }
 
 function share() {
