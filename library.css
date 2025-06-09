@@ -241,17 +241,6 @@ dialog {
   font-size: 1.5rem;
 }
 
-.close-button {
-  position: relative;
-  /* changed from absolute */
-  background: transparent;
-  z-index: 1000;
-  display: none;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  /* ensures it stays above other elements */
-}
 
 .title-container {
   display: flex;
