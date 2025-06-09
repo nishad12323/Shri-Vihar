@@ -106,6 +106,22 @@
     </header>
 
     <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
       <div class="video-container">
         <iframe
           id="video-iframe"
@@ -117,9 +133,10 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-        ></iframe>
+        >
+          Loading...
+        </iframe>
       </div>
-      <button class="close-button" onclick="closeVideo()">Close</button>
     </dialog>
 
     <div class="every-content-container">
@@ -264,6 +281,11 @@
                       class="list-item"
                       href="library.html#sri-venkateswara-stotram"
                       >Sri Venkateswara Stotram</a
+                    >
+                  </p>
+                  <p>
+                    <a class="list-item" href="library.html#hanuman-chalisa"
+                      >Hanuman Chalisa</a
                     >
                   </p>
                 </ul>
@@ -5883,6 +5905,56 @@
                   >Download Audio</a
                 >
               </div>
+
+              <br /><br />
+            </div>
+            <br />
+          </div>
+
+          <div id="hanuman-chalisa">
+            <br />
+            <br />
+            <br />
+            <div class="gray">
+              <br />
+
+              <div class="heading-container">
+                <h2 class="big-h2">Hanuman Chalisa</h2>
+                <button
+                  class="printPDFbutton"
+                  onclick="print('Sri Venkateswara Stotram.pdf')"
+                >
+                  Print PDF<br /><span class="material-symbols-outlined"
+                    >print</span
+                  >
+                </button>
+              </div>
+
+              <br />
+
+              <p class="left-align">
+                Kamalaakucha choochuka kumkumatO <br />
+                niyataa ruNitaa tulaneelatanO <br />
+                kamalaayata lOchana lOkapatE <br />
+                vijayeebhava venkata shailapatE || (1)
+              </p>
+
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source
+                    src="sri-venkateswara-stotram/sri-venkateswara-stotram1.m4a"
+                  />
+                </audio>
+
+                <a
+                  class="download-audio"
+                  href="sri-venkateswara-stotram/sri-venkateswara-stotram1.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br /><br />
 
               <br /><br />
             </div>

@@ -13,11 +13,13 @@ function videoPlayer(btn) {
   const youtubeLink = btn.getAttribute("data-video");
   videoIframe.src = youtubeLink;
   videoDialog.showModal();
+  document.querySelector(".close-button").style.display = "block";
 }
 
 function closeVideo() {
   videoIframe.src = "";
   videoDialog.close();
+  document.querySelector(".close-button").style.display = "none";
 }
 
 function share() {
