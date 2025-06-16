@@ -46,62 +46,101 @@
     <div class="backdrop"></div>
 
     <header>
-      <div id="brand">
-        <a style="color: white" href="/"><img src="" /></a
-        ><a style="color: black" href="/">Shri Vihar Slokam Class</a>
-      </div>
-      <nav>
-        <ul>
-          <li class="menu-only"><a style="color: black" href="/">Home</a></li>
-          <b class="bold-selected-item">
-            <li class="menu-only">
-              <a style="color: black" href="library.html">Sloka Library</a>
-            </li>
-          </b>
-          <li class="menu-only">
-            <a style="color: black" href="/#about">About</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#classes">Classes</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#contact">Contact us</a>
-          </li>
-          <li class="menu-only">
-            <button class="register" onclick="register()">
-              <b>Register</b>
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+            searchSlokas(this.value);
+          }"
+        /></label>
 
-      <div id="menu-icon" onclick="toggleMobileMenu(this)">
-        <div style="background: black" class="bar1"></div>
-        <div style="background: black" class="bar2"></div>
-        <div style="background: black" class="bar3"></div>
-
-        <ul class="mobile-menu">
-          <li class="menu-only"><a style="color: black" href="/">Home</a></li>
-          <b>
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="library.html">Sloka Library</a>
+              </li>
+            </b>
             <li class="menu-only">
-              <a style="color: black" href="library.html">Sloka Library</a>
+              <a style="color: black" href="/#about">About</a>
             </li>
-          </b>
-          <li class="menu-only">
-            <a style="color: black" href="/#about">About</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#classes">Classes</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#contact">Contact us</a>
-          </li>
-          <li class="menu-only">
-            <button class="register" onclick="register()">
-              <b>Register</b>
-            </button>
-          </li>
-        </ul>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="library.html">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -142,13 +181,13 @@
     <div class="every-content-container">
       <br />
 
-      <p class="center-align meaning_font">"HARI OM"</p>
+      <p class="center-align meaning_font hari-om">"HARI OM"</p>
       <br />
 
       <div class="container">
         <div class="contents-container">
           <center>
-            <div class="gray">
+            <div class="gray list-of-slokams">
               <div class="side-bar">
                 <br />
                 <h1>List of Slokams</h1>
