@@ -181,7 +181,7 @@ function searchSlokas(searchbarValue) {
   }
 
   contentContainer.innerHTML =
-    `<center title="Go back" id='search-results-banner' onclick='goBack()'><svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px" height="24px" viewBox="0 -960 960 960" width="24px" fill="#4a20d5"><path d="m313-440 196 196q12 12 11.5 28T508-188q-12 11-28 11.5T452-188L188-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l264-264q11-11 27.5-11t28.5 11q12 12 12 28.5T508-715L313-520h447q17 0 28.5 11.5T800-480q0 17-11.5 28.5T760-440H313Z"/></svg>Search Results</center>` +
+    `<center title="Go back" id='search-results-banner' style="font-weight: bold; display: flex; gap: 10px" onclick='goBack()'><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z" fill="#6e2126"/></svg>Search Results</center>` +
     text;
   console.log(text);
   const searchResultsBanner = document.getElementById(
@@ -192,4 +192,9 @@ function searchSlokas(searchbarValue) {
   searchResultsBanner.width = "100%";
   searchResultsBanner.padding = "10px";
   searchResultsBanner.marginBottom = "5px";
+}
+
+function goBack() {
+  contentContainer.innerHTML = contentContainerHtml;
+  document.getElementById("search-bar").value = ``;
 }
