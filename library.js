@@ -192,9 +192,12 @@ function searchSlokas(searchbarValue) {
   searchResultsBanner.width = "100%";
   searchResultsBanner.padding = "10px";
   searchResultsBanner.marginBottom = "5px";
+
+  window.scrollTo(0, 0);
 }
 
 function goBack() {
   contentContainer.innerHTML = contentContainerHtml;
   document.getElementById("search-bar").value = ``;
+  window.scrollTo(0, 0);
 }
