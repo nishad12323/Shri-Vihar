@@ -192,9 +192,21 @@ function searchSlokas(searchbarValue) {
   searchResultsBanner.width = "100%";
   searchResultsBanner.padding = "10px";
   searchResultsBanner.marginBottom = "5px";
+
+  window.scrollTo(0, 0);
 }
+
+document.getElementById("search-bar").addEventListener("keydown", (e) => {
+  eventSource = e.key ? "typed" : "clicked";
+});
+document.getElementById("search-bar").addEventListener("input", (e) => {
+  if (eventSource === "clicked") {
+    searchSlokas(e.target.value);
+  }
+});
 
 function goBack() {
   contentContainer.innerHTML = contentContainerHtml;
   document.getElementById("search-bar").value = ``;
+  window.scrollTo(0, 0);
 }
