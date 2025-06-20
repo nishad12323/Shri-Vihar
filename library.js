@@ -196,6 +196,15 @@ function searchSlokas(searchbarValue) {
   window.scrollTo(0, 0);
 }
 
+document.getElementById("search-bar").addEventListener("keydown", (e) => {
+  eventSource = e.key ? "typed" : "clicked";
+});
+document.getElementById("search-bar").addEventListener("input", (e) => {
+  if (eventSource === "clicked") {
+    searchSlokas(e.target.value);
+  }
+});
+
 function goBack() {
   contentContainer.innerHTML = contentContainerHtml;
   document.getElementById("search-bar").value = ``;
