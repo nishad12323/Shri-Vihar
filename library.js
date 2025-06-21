@@ -209,4 +209,5 @@ function goBack() {
   contentContainer.innerHTML = contentContainerHtml;
   document.getElementById("search-bar").value = ``;
   window.scrollTo(0, 0);
+  history.back();
 }
