@@ -309,6 +309,10 @@ dialog {
   margin-bottom: 1lh;
 }
 
+.list-of-slokams ul p {
+  margin: 10px;
+}
+
 [list]::-webkit-calendar-picker-indicator,
 [list]::-webkit-list-button {
   opacity: 0 !important;
