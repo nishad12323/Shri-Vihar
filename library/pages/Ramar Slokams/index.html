@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                  searchSlokas(this.value);
+                }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br />
+    <div id="sri-ramar-slokams">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Sri Ramar Slokams</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Sri Ramar Slokams.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Eka Sloki Ramayana Lyrics</b><br />
+        <b class="left-align"
+          >Poorvam Rama Thapovanadhi Gamanam<br />
+          Hatva Mrigam Kanchanam<br />
+          Vaidehi Haranam, Jataayu Maranam<br />
+          Sugreeva Sambhashanam<br />
+          Bali Nigrahanam, Samudra Tharanam<br />
+          Lankapuri Daahanam,<br />
+          Paschath Ravana Kumbhakarna Hananam<br />
+          Ethat Ithi Ramayanam. </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="sri-ramar-slokams/sri-ramar-slokam1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-ramar-slokams/sri-ramar-slokam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >“Sri Rama Rama Rameti <br />
+          Rame Raame Manorame<br />
+          Sahasranama Tattulyam <br />
+          Rama Nama Varanane.” </b
+        ><br />
+        <p class="left-align">
+          Meaning: This shloka is recited at the end of the Vishnu Sahasranama,
+          and is said to have been told to Parvati devi by Shiva Bhagavan.
+          <br />
+          <br />
+          Sri Raaam = Lord Rama's name <br />
+          Raameti = Raam + iti ==> Raam alone<br />
+          Rame = which attracts<br />
+          Raame = into Raam<br />
+          manorame = lovely, adjective used for Raam<br />
+          Shasranaam = thousand names of Lord Vishnu<br />
+          tatulyam = equivalent to<br />
+          Raam naam varaanane = The best Raam Naam.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="sri-ramar-slokams/sri-ramar-slokam2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-ramar-slokams/sri-ramar-slokam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+      </div>
+      <br />
+    </div>
+
+    <div id="nama-ramayanam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Nama Ramayanam</h2>
+
+          <button class="printPDFbutton" onclick="print('Nama Ramayanam.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Bala Kandam</b><br />
+
+        <p class="left-align">
+          1. Shudda Brahma Parathpara Ram<br />
+          2. Kalathmaka parameshwara Ram<br />
+          3. Seshathalpa sukha nidhritha Ram<br />
+          4. Barhamthyamara prarthitha Ram<br />
+          5. Chanda kirana kula mandana Ram<br />
+          6. Srimath Dasratha nandana Ram<br />
+          7. Kausalya sukha vardhana Ram<br />
+          8. Viswamithra priya dhana Ram<br />
+          9. Gora Thatakaa gathaka Ram<br />
+          10. Marichadini pathaka Ram<br />
+          11. Kaushika maka samrakshaka Ram<br />
+          12. Srimad Ahalyo ddharaka Ram<br />
+          13. Gowthama muni sampoojitha Ram<br />
+          14. Sura muni vara gana samsthutha Ram<br />
+          15. Navika davidha mrudhu paada Ram<br />
+          16. Mithila pura jana mohaka Ram<br />
+          17. Videha manasaranjaka Ram<br />
+          18. Triambaka karmuka banjaka Ram<br />
+          19. Seetharpitha vara malikaRjam<br />
+          20. Krutha vaivahika kauthuka Ram<br />
+          21. Bhargava darpa vinaasaka Ram<br />
+          22. Srimad Ayodhya palaka Ram<br /><br />
+
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram(2)
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="nama-ramayanam/nama-ramayanam1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Ayodhya Kandam</b><br />
+
+        <p class="left-align">
+          23. Aganitha guna dana bhooshitha Ram,<br />
+          24. Avani Tanyai kamitha Ram<br />
+          25. Raaka chandra samaanana Ram<br />
+          26. Pithru vakhya sthitha kanana Ram<br />
+          27. Priya guha vnivedhitha pada Ram<br />
+          28. Thaksha litha nija mrudhu pada Ram<br />
+          29. Bharadwajamukhanandaka Ram<br />
+          30. Chithra kootadri nikethana Ram<br />
+          31. Dasaratha santhatha chinditha Ram<br />
+          32. Kaikeyi thanayarthitha Ram<br />
+          33. Virachitha nija pithru karmaka Ram<br />
+          34. Baratharpitha nija paadhuka Ram<br /><br />
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram(2)<br />
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Aranya Kandam</b><br />
+
+        <p class="left-align">
+          35. Dandaka vanajana pavana Ram<br />
+          36. Dushta viraadha vinaasaka Ram<br />
+          37. Sara bhanga sutheesharchitha Ram<br />
+          38. Agasthanugruha vardhitha Ram<br />
+          39. Grudradhipa samsevitha Ram<br />
+          40. Pancha vati thata susthitha Ram<br />
+          41. Soorpankharthi vidhaayaka Ram<br />
+          42. Khara dhooshana mukha saadhaka Ram<br />
+          43. Seetha priya harinaanuga Ram<br />
+          44. Mareecharthi krudhaashuka Ram<br />
+          45. Vinashta seethanweshaka Ram<br />
+          46. Grudhradhipa Gathi dayaka Ram<br />
+          47. Sabari datha phalaasana Ram<br />
+          48. Kabandha bahu chedana Ram<br /><br />
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram(2)
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Kishkinda Kandam</b><br />
+
+        <p class="left-align">
+          49. Hanumat sevitha nija pada Ram<br />
+          50. Natha sugrevabeshtadha Ram<br />
+          51. Garvitha Bali Samharaka Ram<br />
+          52. Vaanara dhootha preshaka Ram<br />
+          53. Hitha kara Lakshmana samyutha Ram<br /><br />
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram(2)
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Sundara Kandam</b><br />
+
+        <p class="left-align">
+          54. Kapi vara santhatha samsthutha Ram<br />
+          55. Thargathi vigna dwamsaka Ram<br />
+          56. Sitha prana dharaka Ram<br />
+          57. Dushta dasanana dhooshitha Ram<br />
+          58. Sishta Hanumath bhooshitha Ram<br />
+          59. Sitaveditakakavana Ram<br />
+          60. Krutha choodamani darshana Ram<br />
+          61. Kapi vara vachanaa swasitha Ram<br /><br />
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram(2)
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam5.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Yuddha Kandam</b><br />
+
+        <p class="left-align">
+          62. Ravana nidhana prasthitha Ram<br />
+          63. Vaanara sainya samavritha Ram<br />
+          64. Shoshitasariti sarthitha Ram<br />
+          65. Vibeeshana abhaya dayaka Ram<br />
+          66. Parvatasetunibandhaka Ram<br />
+          67. Kumbhakarnashirachchhedaka Ram<br />
+          68. Rakshasa sanga vimardhaka Ram<br />
+          69. Aahi mhahi Ravana charana Ram<br />
+          70. Samhrudha dasa mukha Ravana Ram<br />
+          71. Vidhi bhava mukha sura samsthutha Ram<br />
+          72. Khasthitha dasaratha veekshitha Ram<br />
+          73. Sitha darshana modhitha Ram<br />
+          74. Abhishiktha Vibishananatha Ram<br />
+          75. Pushpaka yaanarohana Ram<br />
+          76. Baradwajaabhi nishevana Ram<br />
+          77. Baktha prana priyakara Ram<br />
+          78. Saketha puri bhooshana Ram<br />
+          79. Sakala sweeya samanatha Ram<br />
+          80. Rathanakalki rasthitha Ram<br />
+          81. Pattabishekaalankrutha Ram<br />
+          82. Paarthiva kula sammanitha Ram<br />
+          83. Vibeeshanarpitha rangaka Ram<br />
+          84. Kishakulanugrahakara Ram<br />
+          85. Sakalajivasamrakshaka Ram<br />
+          86. Samastalokadharaka Ram<br /><br />
+          Ram Ram Jaya Raja Ram<br />
+          Ram Ram Jaya Sitha Ram
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam6.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Uttara Kandam</b><br />
+
+        <p class="left-align">
+          87. Aagata-Muni-Ganna-Samstuta Ram<br />
+          88. Vishruta-Dasha-Kannttho-[U]dbhava Ram<br />
+          89. sitaalinggana-Nirvrta Ram<br />
+          90. Niiti-Surakssita-Janapada Ram<br />
+          91. Vipina-Tyaajita-Janaka-Ja Ram<br />
+          92. Kaarita-Lavannaasura-Vadha Ram<br />
+          93. Svargata-Shambuka-Samstuta Ram<br />
+          94. Sva-Tanaya-Kusha-Lava-Nandita Ram<br />
+          95. Ashvamedha-Kratu-Diikssita Ram<br />
+          96. Kaalaa-Vedita-Sura-Pada Ram<br />
+          97. Aayodhyaka-Jana-Mukti-Da Ram<br />
+          98. Vidhi-Mukha-Vibudha-[A]anandaka Ram<br />
+          99. Tejomaya-Nija-Ruupaka Ram<br />
+          100. Samsrti-Bandha-Vimocaka Ram<br />
+          101. Dharma-Sthaapana-Tatpara Ram<br />
+          102. Bhakti-Paraayanna-Mukti-Da Ram<br />
+          103. Sarva-Cara-Acara-Paalaka Ram<br />
+          104. Sarva-Bhava-[A]amaya-Vaaraka Ram<br />
+          105. Vaikunnttha-[A]alaya-Samsthita Ram<br />
+          106. Nitya-[A]ananda-Padasthita Ram<br /><br />
+          Ram Ram Jaya Jaya Raajaa Ram<br />
+          Ram Ram Jaya Jaya Siitaa Ram
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nama-ramayanam/nama-ramayanam7.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="nama-ramayanam/nama-ramayanam7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <div id="ramachandra-mangalam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Ramachandra Mangalam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Ramachandra Mangalam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ramachandraya Janaka Rajaja manoharaya,<br />
+          Maamaka abheeshta dhaya mahitha Mangalam.<br />
+          Kosalesaya Manda hasa dasa poshanaaya,<br />
+          Vasavadhi vinatha sadwaraya Mangalam. 1</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="ramachandra-mangalam/ramachandra-mangalam1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ramachandra-mangalam/ramachandra-mangalam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Charu megha roopaya , chandanadhi charchithaya,<br />
+          BHana kataka Shobhithaya bhoori Mangalam<br />
+          Lalitha rathna kundalaya , Thulasi vana malikaya ,<br />
+          Jala jagataka dehaya Charu Mangalam. 2</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="ramachandra-mangalam/ramachandra-mangalam2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ramachandra-mangalam/ramachandra-mangalam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Devaki suputhraya , deva devo dathamaya,<br />
+          Pavana guru varaya, sarva Mangalam,<br />
+          Pundarikakshaya poorna chandra vadanaya,<br />
+          Andaja vahanaya , Athulya Mangalam. 3</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="ramachandra-mangalam/ramachandra-mangalam3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ramachandra-mangalam/ramachandra-mangalam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vimala roopaya , vividha vedantha Vedhyaya,<br />
+          Sumukha chitha kamithaa subhaga Mangalam,<br />
+          Ramadasa mrudula hrudaya vasaya,<br />
+          Swami Bhadra giri varaya divya Mangalam. 4</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="ramachandra-mangalam/ramachandra-mangalam4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ramachandra-mangalam/ramachandra-mangalam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <br />
+  </body>
+</html>

@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                  searchSlokas(this.value);
+                }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br />
+    <br />
+    <h2 class="big-h2">Stotrams</h2>
+    <div id="shiva-panchakshara-stotram">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Shiva Panchakshara Stotram</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Shiva Panchakshara Stotram.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <p class="left-align meaning_font">
+          Shiva is the destroyer among the trinity and is worshiped as their
+          main deity by millions of Hindus.The holy word chant to worship him is
+          made of five letters and is popularly called Panchakshara- “Na Ma Shi
+          Va ya”. In this popular stotra each of these letters is considered as
+          him and he is praised for his great qualities.
+        </p>
+
+        <br />
+
+        <b class="left-align"
+          >1. Nagendra Haraya trilochanaya<br />
+          bhasmanga ragaya maheswaraya<br />
+          nityaya suddhaya digambaraya<br />
+          tasmai na karaya namah shivaya</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who has the king of snakes as his garland and who has
+          three eyes, He whose body is smeared with sacred ashes and who is the
+          great Lord, He who is eternal, who is ever pure with the four
+          directions as his clothes, Salutations to that Shiva, who is
+          represented by the syllable “na”
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram1.m4a"
+            />
+          </audio>
+
+          <a
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram1.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >2.Mandakini salila chandana charchitaya<br />
+          nandishwara pramathanath maheswaraya<br />
+          mandara pushpa bahupushpa supujitaya<br />
+          tasmai ma karaya namah shivaya </b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who is worshiped with water from the Mandakini river and
+          smeared with sandal paste, He who is the lord of Nandi and of the
+          ghosts and goblins, the great Lord, He who is worshiped with Mandara
+          and many other flowers, Salutations to that Shiva, who is represented
+          by the syllable “ma”
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram2.m4a"
+            />
+          </audio>
+
+          <a
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram2.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >3.Shivaya gauri vandana baja brnda<br />
+          suryaya dakshadhvara nashakaya<br />
+          sri nilakanthaya Vrshadhvajaya<br />
+          tasmai shi karaya namah shivaya</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who is auspicious and who is like the newly risen sun
+          causing the lotus-face of Gauri to blossom, He who is the destroyer of
+          the sacrifice of Daksha, He who has a blue throat and has a bull as
+          his emblem, Salutations to that Shiva, who is represented by the
+          syllable “shi"
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram3.m4a"
+            />
+          </audio>
+
+          <a
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram3.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >4.Vasishttha-Kumbh Od Bhava-Gautam arya<br />
+          Munindra-Devaarchita-Shekharaaya,<br />
+          Chandraarka-Vaishvaanara-Lochanaaya<br />
+          Tasmai "Va"karaya Namah Shivaya. </b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who is worshiped by the best and most respected sages –
+          Vasishtha, Agastya and Gautama, and also by the gods, and who is the
+          crown of the universe, He who has the moon, sun and fire as his three
+          eyes, Salutations to that Shiva, who is represented by the syllable
+          “va”
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram4.m4a"
+            />
+          </audio>
+
+          <a
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram4.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >5.yaksha swaroopaya jatadharaya<br />
+          pinaka hastaya sanatanaya<br />
+          divyaya devaya digambaraya<br />
+          tasmai ya karaya namah shivaya</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who is the embodiment of yagna (sacrifice) and who has
+          matted locks, He who has the trident in his hand and who is eternal,
+          He who is divine, who is the shining one and who has the four
+          directions as his clothes, Salutations to that Shiva, who is
+          represented by the syllable “ya”
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram5.m4a"
+            />
+          </audio>
+
+          <a
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram5.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">Phala Stuti-Benefits of Stotram</h2>
+
+        <br />
+
+        <b class="left-align"
+          >Panchaksharam idam punyam yah pathechshiva<br />
+          sannidhau shivalokamavapnoti sivena saha modate. </b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: He who recites this Panchakshara near Shiva, Will attain the
+          abode of Shiva and enjoy bliss
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="shiva-panchakshara-stotram/shiva-panchakshara-stotram6.m4a"
+            />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="shiva-panchakshara-stotram/shiva-panchakshara-stotram6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="ashtalakshmi-stotram">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Ashtalakshmi stotram</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Ashtalaskshmi Stotram.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Adi Lakshmi </b><br />
+        <b class="left-align"
+          >Sumanasa Vandita Sundari Madhavi Chandra sahodari hemamaye<br />
+          Munigana vanditha moksha-pradayini Manjula bhashini vedanuthe<br />
+          Pankaja-vasini Deva supujitha Sadguna varshini santhiyuthe<br />
+          Jaya Jaya hey Madhusudhana kamini Adi Lakshmi sada palayamam (1) </b
+        ><br />
+        <p class="left-align">
+          O the Goddess Aadi Lakshmi, the one who is worshiped by the good, the
+          enchanting one, the consort of Madhava and the sister of Chandra, the
+          one filled with the gold O Goddess, who is praised by the Muni’s and
+          their followers, the bestower of Moksha(salvation), whose speeches
+          generates happiness, the Goddess praised by the Vedas The one residing
+          in the Lotus, worshiped by the Devas, the giver of good qualities, the
+          one with a pleasant heartVictory, Victory to you, the dear (consort)
+          of Madhusudhana, Goddess Adi Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Dhanya Lakshmi </b><br />
+        <b class="left-align"
+          >Ayi kali kalmasha nasini kamini Vaidika rupini Vedamaye<br />
+          Ksheera sam udhbhava Mangala roopini Mantra-nivasini Mantranuthe<br />
+          Mangala dayini Ambuja vasini Devagana Asritha padayuthe<br />
+          Jaya Jaya hey Madhusudhana kamini Dhanya Lakshmi sada palaya mam (2) </b
+        ><br />
+        <p class="left-align">
+          O Goddess Dhanya Lakshmi, the mother who destroys the doshas of
+          Kali-yuga, the dear of God Madhusudana, present with the divine form
+          that was personified in the Vedas Born from the milky ocean with an
+          auspicious form, who resides within the Mantras and the one whose
+          heart is present in Mantras The bestower of auspiciousness, who
+          resides in the Lotus, whose feet acts as a refuge to the Devaganas
+          Victory, Victory to you, the dear (consort) of Madhusudhana, Goddess
+          Dhanya Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Dhairya Lakshmi </b><br />
+        <b class="left-align"
+          >Jaya vara varnini Vaishnavi Bharghavi Mantra swarupini Mantramaye<br />
+          Suragana pujitha seeghra phalaprada Gnana vikasini Sastranuthe<br />
+          Bhava bhaya harini papa-vimochani Sadhu jana asritha padayuthe<br />
+          Jaya Jaya hey Madhusudhana kamini Dhairya Lakshmi sada palaya mam
+          (3)</b
+        ><br />
+        <p class="left-align">
+          The one who is present in a great form, the one belonging to Vishnu,
+          the daughter of Sage Bhrigu (so called Bhargavi), O the form of
+          Mantras and being the mantras herself. the one praised by the Sura
+          ganas, who quickly bestows the good wishes and enlightens the internal
+          knowledge, who is praised by the Shastras The remover of the fears and
+          the one who liberates from the sins, whose feet acts as refuse for the
+          pious Victory, Victory to you, the dear (consort) of Madhusudhana,
+          Goddess Dhairya Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Gaja Lakshmi </b><br />
+        <b class="left-align"
+          >Jaya jaya durgati nasini Kamini Sarva phalaprada sastramaye<br />
+          Radha Gaja Turga padadi samaavrutha Parijana manditha lokanuthe<br />
+          Hari Hara Brahma supujitha sevitha Taapa nivarini padayute<br />
+          Jaya Jaya hey Madhusudhana kamini Gaja Lakshmi rupena palaya mam (4) </b
+        ><br />
+        <p class="left-align">
+          Victory, victory to you, O Goddess, the destroyer of bad fate, Kamini
+          – the dear of Madhusudhana, the bestower of all the wishes Who has
+          chariots, elephantry, cavalry, and infantry accompany her, the one who
+          is worshiped by the people all over the world The one who is worshiped
+          and served by the Hari, Hara, and Brahma. The one who has the feet
+          that can remove the anxiety of unfulfilled desires. Victory, Victory
+          to you, the dear (consort) of Madhusudhana, Goddess Gaja Lakshmi,
+          please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Santana Lakshmi </b><br />
+        <b class="left-align"
+          >Ayikhaga vahini Mohini Chakrini Raga-vivardhini Gnanamaye<br />
+          Guna gana vaaradhi loka-hitaishini Swara Saptha bhushita gananuthe<br />
+          Sakala Suraasura Deva Muneeshwara Manava vanditha padayuthe<br />
+          Jaya Jaya hey Madhusudhana kamini Santana Lakshmi twam palaya mam (5) </b
+        ><br />
+        <p class="left-align">
+          O the one who rides on a flying bird, the enchanting one, who holds
+          the chakra in her hands, the one who increases the affection, the
+          embodiment form of the knowledge The ocean of good attributes, who
+          desires the wellbeing of the worlds, praised by the songs that are
+          incredibly composed with the sapta swaras or the seven notes The own
+          whose feet are bowed by the Suras, Asurasas, Devas, Muneeshwaras, and
+          Manavas. Victory, Victory to you, the dear (consort) of Madhusudhana,
+          Goddess Santana Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram5.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Vijaya Lakshmi </b><br />
+        <b class="left-align"
+          >Jaya Kamalasini sadgati daayini Gnana-vikasini ganamaye<br />
+          Anudina marchita Kumkuma dhusara Bhushita vaasitha vadyanuthe<br />
+          Kanakadhara stuti vaibhava vanditha Sankara-desika manyapade<br />
+          Jaya Jaya hey Madhusudhana kamini Vijaya Lakshmi sada palaya mam (6) </b
+        ><br />
+        <p class="left-align">
+          Victorious, O Goddess seated on the Lotus, the one who gives the good
+          fate, who enlightens the internal knowledge, the embodied form of
+          Music O the one who is adorned with Kumkuna, that’s used by her
+          devotees to worship, the one entertained by playing musical
+          instruments Whose feet are praised by the Adi Shankara, by the
+          Kankadhara stuti, which is filled up with the glorious words Victory,
+          Victory to you, the dear (consort) of Madhusudhana, Goddess Vijaya
+          Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram6.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Vidya Lakshmi </b><br />
+        <b class="left-align"
+          >Pranatha Sureshwari Bharathi Bharghavi Soka-vinashini ratnamaye<br />
+          Manimaya bhushitha karna vibhushana Santi samavrutha Hasyamukhe<br />
+          Navanidhi dayini kalimala haarini Kamita phalaprada hasthayuthe<br />
+          Jaya Jaya hae Madhusudhana kamini Vidya Lakshmi sada palaya mam (7) </b
+        ><br />
+        <p class="left-align">
+          O Goddess Bhargavi (daughter of Bhrigu) The one who is served by the
+          Sachi and Saraswathi, the destroyer of sorrows, an embodied form of
+          precious gems The one who has the earrings, filled with precious gems,
+          who has a peaceful smiling face The one who bestows all nine
+          treasures, the remover of sins of Kali-yuga and whose hands grant the
+          boons. Victory, Victory to you, the dear (consort) of Madhusudhana,
+          Goddess Vijaya Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram7.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Dhana Lakshmi </b><br />
+        <b class="left-align"
+          >Dhimi-dhimi dhim dhimi dhim dhimi-dhim dhimi Dumdhubhi nada
+          supurnamaye<br />
+          Ghuma-ghuma ghumghuma ghumghuma ghumghuma Shankha-ninaada
+          suvaadyanuthe<br />
+          Veda puraneethihasa supujitha Vaidikamarga pradarsayuthe<br />
+          Jaya Jaya hey Madhusudhana kamini Dhana Lakshmi rupena palaya mam (8) </b
+        ><br />
+        <p class="left-align">
+          O the Goddess who is filled up or surrounded by the sounds like Dhimi
+          Dhimi Dhim Dhimi coming from the Dumdhubhi drums The one who is
+          praised and worshiped by the sounds like Ghuma ghuma ghumghuma by
+          blowing the conches and from various instruments The one praised by
+          the Vedas, Puranas, and Ithihasas, who shows the path of righteousness
+          by her acts Victory, Victory to you, the dear (consort) of
+          Madhusudhana, Goddess Dhanya Lakshmi, please rule me with your mercy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram8.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram8.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Benefits of Ashtalakshmi stotram </b><br />
+        <b class="left-align"
+          >aṣṭalakṣmī namastubhyaṃ varadē kāmarūpiṇi ।<br />
+          viṣṇuvakṣaḥ sthalā rūḍhē bhakta mōkṣa pradāyini ॥<br />
+          śaṅkha chakragadāhastē viśvarūpiṇitē jayaḥ ।<br />
+          jaganmātrē cha mōhinyai maṅgaḻaṃ śubha maṅgaḻam ॥ </b
+        ><br />
+        <p class="left-align">
+          The Ashtalakshmi stotram is a hymn to praise and worship the eight
+          forms of Goddess Lakshmi and to seek mercy. This is also one of the
+          popular stotras of the Devi just like the Kanakadhara Stotram and
+          Mahalakshmi Ashtakam. Many believe that by reciting the Ashtalakshmi
+          stotram, one gets immense benefits by attaining good attributes,
+          courage, education, fortune, wealth, children, and Victory. Reciting
+          this stotram is also believed to bring auspiciousness in all forms
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ashtalakshmi-stotram/ashtalakshmi-stotram9.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="ashtalakshmi-stotram/ashtalakshmi-stotram9.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="navagraha-stotram">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Sri Navagraha Stotram</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Sri Navagraha Stotram.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Surya(Sun): </b><br />
+        <b class="left-align"
+          >Japaa kusuma Sankaasam – Kaasyapeyam Mahaath’ yuthim<br />
+          Thamo’urim sarva Paapa ganam – Pranathosmi Dhiwaakaram </b
+        ><br />
+        <p class="left-align">
+          One who looks like the Hibiscus flower, Son of Kashyapa, full of
+          radiance, Foe of darkness and the one who dispells all sins, I
+          prostrate that Surya.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Chandra(Moon):</b><br />
+        <b class="left-align"
+          >Dhadhi sanka Thushaaraabham – Ksheero Dhaarnava Sambhavam<br />
+          Namaami sasinam Somam – Sambhor makuta Bhooshanam </b
+        ><br />
+        <p class="left-align">
+          The one who has the hue of curd and icebergs, one who emerges from the
+          milky ocean, Chandra who adorns Shiva, I prostrate. that Chandra.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Mangala(Mars):</b><br />
+        <b class="left-align"
+          >Dharanee garbha Sambhootham – Vidhyuth kaanthi Samaprabham<br />
+          Kumaaram Sakthi Hasthancha – Mangalam Pranamaam Yaham</b
+        ><br />
+        <p class="left-align">
+          The one who is the son of Bhooma Devi, One who has the lustre of
+          lightning, One who has Shakti in his hand, and the auspicious one, I
+          prostrate that Angaraka
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Budha(Mercury):</b><br />
+        <b class="left-align"
+          >Piryangu kali Kaasyaamam – Roope’naa Prathimam Budham<br />
+          Sowmyam sowmya Gunopetham – Tham Bhudham Pranamaam Yaham </b
+        ><br />
+        <p class="left-align">
+          The one who is dark like the bud of Priyangu flower, One who is
+          unequalled in beauty and is intelligent, And the son of Chandra, One
+          who is peaceful, I prostrate that Budha.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Guru (Jupiter):</b><br />
+        <b class="left-align"
+          >Dhe’vaanaancha Risheenaancha – Gurum Kaanchan sannibham<br />
+          Bhudhdhi bhootham Thrilokesam – Thannamaami Bhruhaspathim </b
+        ><br />
+        <p class="left-align">
+          The one who is the Guru of the Devas and Rishis, the one who is
+          radiant and intelligent, The Lord of all the three worlds, I prostrate
+          that Brihaspathi.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram5.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Shukra(Venus):</b><br />
+        <b class="left-align"
+          >Hima kundha M’runaalaabam – Dhaithyaanam Paramam Gurum<br />
+          Sarva saasthra Pravruththaaram – Bhaargavam Pranamaam Yaham </b
+        ><br />
+        <p class="left-align">
+          The one who has the lustre of the dew, Lotus stem and Thumba flower,
+          High priest of Asuras and the one who preaches the Shatras, I
+          prostrate that ( Bhargava )Sukracharya.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram6.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Shani(Saturn) : </b><br />
+        <b class="left-align"
+          >Neelaanchana Samaabaasam – Raviputhram Yamaagrajam<br />
+          Chaayaa Maarthaanda Sambhootham – Thannamaami Sanaicharam<br /> </b
+        ><br />
+        <p class="left-align">
+          The one who is blue, one who is like charcoal, one who is the son of
+          Surya and the brother of Yama, one who is born to Chaya and Surya, I
+          prostrate that Saneeswara.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram7.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">raahu: </b><br />
+        <b class="left-align"
+          >Ardha kaayam mahaaveeyram – Chandhraadhithya vimardhanam<br />
+          Simhikaagarba Sambhootham – Tham Raahum Pranamaam Yaham<br /> </b
+        ><br />
+        <p class="left-align">
+          The one who has half a body and is full of valour, One who opposes
+          Chandra and Surya without fear, One who was born from Simhika’s womb,
+          I prostrate that Rahu.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram8.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram8.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">kethu:</b><br />
+        <b class="left-align"
+          >Palaasa pushpa sankaasam – Thaarakagraha masthakam<br />
+          Rowdhram rowdhraathmakam go’ram – Tham Kethum Pranamaam Yaham. </b
+        ><br />
+        <p class="left-align">
+          The one who looks like Palasa flower, One who is the king of the stars
+          and One who has a fierce form and is scary and angry, I prostrate that
+          Ketu.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram9.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram9.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Phalasruti :</b><br />
+        <b class="left-align"
+          >Iti Vyaasa-mukhod-giitam yah: path’et-susamaahitah:<br />
+          Divaa vaa yadi vaa raatrau vighna-shantir-bhavish’yati </b
+        ><br />
+        <p class="left-align">
+          This stotra is composed by Shri Vyaasa Rhishi. A person who chants
+          this stotra during the day or at night will become free from all
+          troubles.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram10.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram10.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align"
+          >Nara-naarii-nrupaan’aayn cha bhaved-duh:svapna-naashanam<br />
+          Aishvaryamatulam tesh’aam aarogyam push’t’i-vardanam </b
+        ><br />
+        <p class="left-align">
+          By chanting this stotra the effect of bad dreams of men, women, kings
+          and so on will be destroyed. Everyone will have good health, wealth
+          and energy.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram11.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram11.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align"
+          >Graha-nakshatrajaa piid’aah: taskaraagni-samudbhavaah:<br />
+          Taah: sarvaah: prashamam yaanti Vyaaso bruute na sanshayah: </b
+        ><br />
+        <p class="left-align">
+          A person who chants this stotra becomes free from the troubles created
+          by planets, constellations, thieves, fire etc. Vyasa Rhishi says that
+          there is no doubt about the result of chanting this stotra
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram12.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram12.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align">Navagraha Dhyana Shlokam:</b><br />
+        <b class="left-align"
+          >Aadityaya cha somaaya mangalaaya budhaaya cha !<br />
+          Guru Shukra shanibhyashcha raahave ketave namah !! </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="navagraha-stotram/navagraha-stotram13.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="navagraha-stotram/navagraha-stotram13.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <div id="mahisasura-mardini-stotram">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Śri Mahiśāsura Mardini Stōtraṃ</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Śri Mahiśāsura Mardini Stōtraṃ .pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >aayi giri-nandini nandita-mēdini <br />
+          viśva-vinōdini nanda-nutē <br /><br />
+          Giri-vara vindhya-śirōdhini<br />
+          vāsini viṣṇu-vilāsini jiṣṇu-nutē ।<br /><br />
+          bhagavati hē śiti-kaṇṭha <br />
+          kuṭumbini bhūri-kuṭumbini bhūrikṛtē <br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramyaka-pardini śailasutē ॥ 1 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram1.m4a"
+            />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >sura-vara-varṣiṇi durd-hara-dharṣiṇi<br />
+          dur-mukha-marṣiṇi harṣa-ratē<br /><br />
+          tri-bhuvana-pōṣiṇi śaṅkara-tōṣiṇi <br />
+          kalmaṣa-mōṣiṇi ghōṣa-ratē । <br /><br />
+          danu-jani-rōṣiṇi diti-suta-rōṣiṇi<br />
+          dur-mada-śōṣiṇi sindhu-sutē <br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramya kapardini śailasutē ॥ 2 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram2.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >ayi jaga-damba madamba kadamba <br />
+          vana-priya-vāsini hāsaratē śikhari <br /><br />
+          śirō-maṇi-tuṅga-himālaya-śṛṅga <br />
+          nijā-laya-madhya-gatē ।<br /><br />
+          madhu-madhurē madhu-kaiṭabha<br />
+          gañjini kaiṭabha-bhañjini rāsaratē <br /><br />
+          jaya jaya hē mahiṣāsura-mardini<br />
+          ramya-kapardini śailasutē ॥ 3 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram3.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >ayi śatak-haṇḍa vi-khaṇ-ḍita-ruṇḍa <br />
+          vi-tuṇḍita-śuṇḍa gajā-dhi-patē <br /><br />
+          ripu-gaja-gaṇḍa vidā-raṇa-chaṇḍa <br />
+          parākramaśuṇḍa mṛgādhipatē । <br /><br />
+          Nija-bhuja-daṇḍa nipā-tita-chaṇḍa <br />
+          vipā-tita-muṇḍa-bhaṭā-dhi-patē <br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramyaka-pardini śailasutē ॥ 4 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram4.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >ayi raṇa-durmada śatru-va <br />
+          dhōdita durdhara nirjara śakti-bhṛtē <br /><br />
+          Chatura vichāra dhurīṇa mahā śiva<br />
+          Dūta kṛta pra-mathā-dhi-patē । <br /><br />
+          Durita durī-ha durā-śaya dur-mati <br />
+          Dānava-dūta kṛtānta-matē <br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramya-kapardini śailasutē ॥ 5 ॥ </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram5.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >ayi śaraṇā-gata vairiva-dhūvara<br />
+          Vīra-varā-bhaya dāya-karē<br /><br />
+          tribhuvana mastaka Śūla-virōdhi<br />
+          śirōdhi-kṛtā-mala śūlakarē ।<br /><br />
+          Dumi-dumi tāmara dundubhi nāda<br />
+          mahō mukharī-kṛta tigmakarē<br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramyakapardini śailasutē ॥ 6 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram6.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ayi nija-huṅkṛti mātra nirā-kṛta<br />
+          dhūmra-vilōchana dhūmra-śatē<br /><br />
+          Samara viśō-ṣita śōṇita-bīja<br />
+          samud-bhava śōṇita bījalatē ।<br /><br />
+          śiva śiva śumbha ni-śumbha<br />
+          mahā-hava tarpita bhūta piśācharatē<br /><br />
+          jaya jaya hē mahiṣāsuramardini <br />
+          ramya kapardini śailasutē ॥ 7 ॥<br /> </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram7.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Dhanu-ranu saṅga raṇak-ṣaṇa saṅga<br />
+          Paris-phura daṅga naṭata kaṭakē<br /><br />
+          kana-ka piśaṅga pṛṣat-kani ṣaṅga<br />
+          Rasad bhaṭa śṛṅga hatāvaṭukē ।<br /><br />
+          Kṛta chatu-raṅga balakṣiti-raṅga<br />
+          Ghaṭad-bahu raṅga raṭad-baṭukē<br /><br />
+          jaya jaya hē mahiṣāsuramardini<br />
+          ramyakapardini śailasutē ॥ 8 ॥</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="mahisasura-mardini-stotram/mahisasura-mardini-stotram8.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="mahisasura-mardini-stotram/mahisasura-mardini-stotram8.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <!-- <b class="left-align">suralalanā tatathēyi tathēyi kṛtābhinayōdara nṛtyaratē <br />
+        kṛta kukuthaḥ kukuthō gaḍadādikatāla kutūhala gānaratē ।<br />
+        dhudhukuṭa dhukkuṭa dhindhimita dhvani dhīra mṛdaṅga
+        ninādaratē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 9 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra9.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra9.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">jaya jaya japya jayē jaya śabdaparastuti tatpara viśvanutē<br />
+        jhaṇa jhaṇa jhiñjhimi jhiṅkṛtanūpura siñjitamōhita bhūtapatē
+        ।<br />
+        naṭitanaṭārdha naṭīnaṭanāyaka nāṭitanāṭya sugānaratē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 10 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra10.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra10.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+      <b class="left-align">ayi sumanaḥ sumanaḥ sumanaḥ sumanaḥ sumanōhara kāntiyutē<br />
+        śrita rajanī rajanī rajanī rajanī rajanīkara vaktravṛtē ।<br />
+        sunayana vibhramara bhramara bhramara bhramara
+        bhramarādhipatē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 11 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra11.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra11.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+      <b class="left-align">sahita mahāhava mallama tallika mallita rallaka mallaratē<br />
+        virachita vallika pallika mallika bhillika bhillika varga vṛtē
+        ।<br />
+        sitakṛta phullasamullasitāruṇa tallaja pallava sallalitē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 12 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra12.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra12.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">aviralagaṇḍagalanmadamēdura mattamataṅgaja rājapatē<br />
+        tribhuvanabhūṣaṇabhūtakalānidhi rūpapayōnidhi rājasutē<br />
+        ayi sudatījana lālasamānasa mōhanamanmatha rājasutē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 13 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra13.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra13.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">kamaladalāmala kōmalakānti kalākalitāmala bhālalatē<br />
+        sakalavilāsakalānilaya kramakēlichalatkalahaṃsakulē ।<br />
+        alikula saṅkula kuvalaya maṇḍala maulimiladbhakulālikulē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 14 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra14.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra14.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">karamuralīravavījitakūjita lajjitakōkila mañjumatē<br />
+        milita pulinda manōhara guñjita rañjitaśaila nikuñjagatē ।<br />
+        nijaguṇabhūta mahāśabarīgaṇa sadguṇasambhṛta kēlitalē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 15 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra15.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra15.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">kaṭitaṭapīta dukūlavichitra mayūkhatiraskṛta chandraruchē
+        <br />
+        praṇatasurāsura maulimaṇisphuradaṃśulasannakha chandraruchē ।
+        <br />
+        jitakanakāchala maulipadōrjita nirbharakuñjara kumbhakuchē
+        <br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 16 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra16.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra16.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">vijita sahasrakaraika sahasrakaraika sahasrakaraikanutē <br />
+        kṛta suratāraka saṅgaratāraka saṅgaratāraka sūnusutē । <br />
+        surathasamādhi samānasamādhi samādhisamādhi sujātaratē <br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 17 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra17.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra17.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">padakamalaṃ karuṇānilayē varivasyati yō'nudinaṃ sa śivē<br />
+        ayi kamalē kamalānilayē kamalānilayaḥ sa kathaṃ na bhavēt ।<br />
+        tava padamēva parampadamityanuśīlayatō mama kiṃ na śivē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 18 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra18.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra18.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">kanakalasatkala sindhuja lairanusiñ chinutē guṇaraṅ gabhuvaṃ
+        <br />
+        bhajati sa kiṃ na śachīkuchakumbha taṭīparirambha sukhānubhavam
+        ।<br />
+        tava charaṇaṃ śaraṇaṃ karavāṇi natāmaravāṇi nivāsi śivaṃ<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 19 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra19.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra19.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">tava vimalēndukulaṃ vadanēndumalaṃ sakalaṃ nanu kūlayatē<br />
+        kimu puruhūta purīndumukhī sumukhībhirasau vimukhīkriyatē ।<br />
+        mama tu mataṃ śivanāmadhanē bhavatī kṛpayā kimuta kriyatē <br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 20 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra20.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra20.m4a"
+          download>Download Audio</a>
+      </div>
+
+      <br />
+
+      <b class="left-align">ayi mayi dīnadayālutayā kṛpayaiva tvayā bhavitavyamumē<br />
+        ayi jagatō jananī kṛpayāsi yathāsi tathā'nubhitāsiratē ।<br />
+        yaduchitamatra bhavatyurari kurutādurutāpamapākuru tē<br />
+        jaya jaya hē mahiṣāsuramardini ramyakapardini śailasutē ॥ 21 ॥ </b><br />
+
+      <div class="audio-and-download">
+        <br /><audio controls>
+          <source src="mahisasura-mardini-stotram/mahisasura-mardini-stotra21.m4a" />
+        </audio>
+        <a class="download-audio" href="mahisasura-mardini-stotram/mahisasura-mardini-stotra21.m4a"
+          download>Download Audio</a>
+      </div> -->
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <div id="sri-venkateswara-stotram">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Sri Venkateswara Stotram</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Sri Venkateswara Stotram.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <p class="left-align">
+          Kamalaakucha choochuka kumkumatO <br />
+          niyataa ruNitaa tulaneelatanO <br />
+          kamalaayata lOchana lOkapatE <br />
+          vijayeebhava venkata shailapatE || (1)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram1.m4a"
+            />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Sachaturmukha, shanmukha, panchamukha <br />
+          pramukhaakila daivata mouLimaNE <br />
+          sharaNaagata vatsala saaranidhE <br />
+          paripaalayamaam vrisha shailapatE || (2)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram2.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          AtivElatayaa tava durvishai <br />
+          anuvEla kritair aparaadha shatai <br />
+          bharitam tvaritam vrisha shailapatE <br />
+          parayaa krupayaa paripaahi harE || (3)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram3.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          AdhivEnkata shaila mudaaramatE <br />
+          janataabhi mataadhika daanarataat <br />
+          para dEvatayaa gaditaannigamai <br />
+          kamalaa dayitaann aparam kalayE || (4)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram4.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          KalavENuravaa vasha gOpa vadhoo <br />
+          shatakOti vrutaatsmarakOti samaat<br />
+          prativallavi kaabhi mataatsukhadaat<br />
+          vasudEva sutaa nnaparam kalayE || (5)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram5.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Abhiraama guNaakara daasharathE <br />
+          jagadEka dhanurdhara dheera matE <br />
+          Raghunaayaka raama ramEsha vibhO <br />
+          varadObhava dEva dayaajaladhE || (6)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram6.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Avanee tanayaa kamaneeyakaram <br />
+          rajaneekara chaaru mukhaamburuham <br />
+          rajaneechara raaja tamomihiram <br />
+          mahaneeya maham raghuraama mayE || (7)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram7.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Sumukham suhrudam sulabham sukhadam <br />
+          svanujam cha sukhaaya mamOgha sharam <br />
+          apahaaya raghoodvaha manyamaham <br />
+          na kathancha na kanchana jaatu bhajE || (8)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram8.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram8.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Vinaa venkatEsam nanaadhO nanaadhah <br />
+          sadaa venkatEsam smaraami smaraami <br />
+          harE venkatEsa praseeda praseeda <br />
+          priyam venkaEesa prayachcha prayachcha || (9) (two times)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram9.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram9.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Aham dooratastE padaambhOja yugma <br />
+          pranaamEchcha yaagatya sEvaam karOmi <br />
+          sakrutsEvayaa nitya sEvaa phalam tvam <br />
+          prayachcha prayachcha prabhO venkatEsa || (10)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram10.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram10.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+
+        <p class="left-align">
+          Ajnaaninaa mayaa dOshaa nasEshaan vihitaan harE <br />
+          kshamasva tvam kshamasva tvam shEsha saila shikhaamaEe || (11) (two
+          times)
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="sri-venkateswara-stotram/sri-venkateswara-stotram11.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="sri-venkateswara-stotram/sri-venkateswara-stotram11.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br /><br />
+      </div>
+      <br />
+    </div>
+
+    <div id="hanuman-chalisa">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Hanuman Chalisa</h2>
+          <button class="printPDFbutton" onclick="print('Hanuman Chalisa.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b><u>Doha</u></b>
+
+        <b class="left-align">
+          śrī guru charaṇa sarōja raja nijamana mukura sudhāri ।<br />
+          varaṇau raghuvara vimalayaśa jō dāyaka phalachāri ॥
+        </b>
+
+        <br />
+        <p class="meaning_font">
+          Having polished the mirror of my heart with the dust of my Guru's
+          lotus feet, I recite the divine fame of the greatest king of Raghukul
+          dynasty, which bestows us with the fruit of all the four efforts.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-doha1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-doha1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">
+          budhi hīna tanu jānike sumirau pavana-kumāra ।<br />
+          bala budhi vidyā dēhu mōhī harahu kalesa vikāra ॥
+        </b>
+        <br />
+        <p class="meaning_font">
+          Knowing that this mind of mine has less intelligence, I remember the
+          'Son of Wind' who, granting me strength, wisdom and all kinds of
+          knowledge, removes all my suffering and shortcomings.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-doha2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-doha2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <hr />
+        <br />
+
+        <b class="left-align">
+          jaya hanumāna jñāna guṇa sāgara ।<br />
+          jaya kapīśa tihu lōka ujāgara ॥ 1 ॥
+        </b>
+
+        <br />
+
+        <p class="meaning_font">
+          Victory to Lord Hanuman, the ocean of wisdom and virtue. Victory to
+          the Lord who is supreme among the monkeys, illuminator of the three
+          worlds.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align">
+          rāmadūta atulita baladhāmā ।<br />
+          añjani putra pavanasuta nāmā ॥ 2 ॥
+        </b>
+
+        <br />
+
+        <p class="meaning_font">
+          You are Lord Rama's emissary, the abode of matchless power, Mother
+          Anjani's son and also popular as the ‘Son of the Wind’.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align">
+          mahāvīra vikrama bajaraṅgī ।<br />
+          kumati nivāra sumati kē saṅgī ॥ 3 ॥
+        </b>
+        <br />
+
+        <p class="meaning_font">
+          Great hero, You are as mighty as a thunderbolt. You remove evil
+          intellect and are the companion of those having good ones.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align">
+          kañchana varaṇa virāja suvēśā ।<br />
+          kānana kuṇḍala kuñchita kēśā ॥ 4 ॥
+        </b>
+
+        <br />
+
+        <p class="meaning_font">
+          Your skin is golden in color and You are adorned with beautiful
+          clothes. You have adorning earrings in Your ears and Your hair is
+          curly and thick.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">
+          hāthavajra au dhvajā virājai ।<br />
+          kānthē mūñja janēvū sājai ॥ 5॥
+        </b>
+
+        <br />
+
+        <p class="meaning_font">
+          In Your hands, shine a mace and a flag of righteousness. A sacred
+          thread adorns Your right shoulder.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-5.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >śaṅkara suvana kēsarī nandana ।<br />tēja pratāpa mahājaga vandana ॥
+          6 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You are the embodiment of Lord Shiva and vanar-raj Kesari’s son. There
+          is no limit or end to Your glory, Your magnificence. The whole
+          Universe worships You.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-6.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >vidyāvāna guṇī ati chātura ।<br />rāma kāja karivē kō ātura ॥ 7 ॥ </b
+        ><br />
+
+        <p class="meaning_font">
+          You are the wisest of the wise, virtuous and (morally) clever. You are
+          always eager to do Lord Rama's works.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-7.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >prabhu charitra sunivē kō rasiyā ।<br />rāmalakhana sītā mana basiyā
+          ॥ 8॥</b
+        ><br />
+        <p class="meaning_font">
+          You feel extremely delighted in listening to Lord Rama's doings and
+          conduct. Lord Rama, Mother Sita, and Lord Lakshmana dwell forever in
+          Your heart.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-8.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-8.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >sūkṣma rūpadhari siyahi dikhāvā ।<br />vikaṭa rūpadhari laṅka jalāvā
+          ॥ 9 ॥</b
+        ><br />
+
+        <p class="meaning_font">
+          Taking the subtle form, You appeared in front of Mother Sita. And,
+          taking the formidable form, You burnt the Lanka (Ravana's kingdom).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-9.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-9.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >bhīma rūpadhari asura saṃhārē ।<br />rāmachandra kē kāja saṃvārē ॥ 10
+          ॥ </b
+        ><br />
+
+        <p class="meaning_font">
+          Taking the massive form (like that of Bheema), You slaughtered the
+          demons. This is how, You completed Lord Rama's tasks, successfully.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-10.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-10.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >lāya sañjīvana lakhana jiyāyē । <br />śrī raghuvīra haraṣi uralāyē ॥
+          11 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Bringing the magic-herb (sanjivani), You revived Lord Laxmana,
+          bringing joy to Sri Rama.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-11.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-11.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          raghupati kīnhī bahuta baḍāyī । <br />tuma mama priya bharata sama
+          bhāyī ॥ 12 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Raghupati, Lord Rama praised You greatly and overflowing in gratitude,
+          said that You are a dear brother to Him just as Bharat is.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-12.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-12.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          sahasra vadana tumharō yaśagāvai ।<br />
+          asa kahi śrīpati kaṇṭha lagāvai ॥ 13 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Saying this, Lord Rama drew You to Himself and embraced you. Sages
+          like Sanaka, Gods like Brahma and sages like Narada and even the
+          thousand-mouthed serpent sing Your fame!
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-13.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-13.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          sanakādika brahmādi munīśā ।<br />
+          nārada śārada sahita ahīśā ॥ 14 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Sanak, Sanandan and the other Rishis and great saints; Brahma - the
+          god, Narada, Saraswati - the Mother Divine and the King of serpents
+          sing Your glory.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-14.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-14.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          yama kubēra digapāla jahāṃ tē ।<br />
+          kavi kōvida kahi sakē kahāṃ tē ॥ 15 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Yama, Kubera and the guardians of the four quarters; poets and
+          scholars - none can express Your glory.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-15.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-15.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          tuma upakāra sugrīvahi kīnhā ।<br />
+          rāma milāya rājapada dīnhā ॥ 16 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You helped Sugriva by introducing Him to Lord Rama and regaining his
+          crown. Therefore, You gave Him the Kingship (the dignity of being
+          called a king).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-16.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-16.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align"
+          >tumharō mantra vibhīṣaṇa mānā । <br />laṅkēśvara bhayē saba jaga jānā
+          ॥ 17 ॥ </b
+        ><br />
+        <p class="meaning_font">
+          Likewise, complying with Your preachings, even Vibhishana became the
+          King of Lanka.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-17.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-17.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >yuga sahasra yōjana para bhānū ।<br />
+          līlyō tāhi madhura phala jānū ॥ 18 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You swallowed the sun, located thousands of miles away, mistaking it
+          to be a sweet, red fruit!
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-18.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-18.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >prabhu mudrikā mēli mukha māhī ।<br />
+          jaladhi lāṅghi gayē acharaja nāhī ॥ 19 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Keeping the ring in Your mouth, which was given to You by Lord Rama,
+          you crossed over the Ocean, to no astonishment, whatsoever.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-19.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-19.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">
+          durgama kāja jagata kē jētē । <br />sugama anugraha tumharē tētē ॥ 20
+          ॥</b
+        ><br />
+        <p class="meaning_font">
+          All difficult tasks of this world become easy, with Your grace.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-20.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-20.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <b class="left-align"
+          >rāma duārē tuma rakhavārē ।rāma duārē tuma rakhavārē ।<br />
+          hōta na ājñā binu paisārē ॥ 21 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You are the guardian at Lord Rama's door. Nobody can move forward
+          without Your permission which means that Lord Rama's darshans (to get
+          the sight of) are possible only with Your blessings.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-21.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-21.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >saba sukha lahai tumhārī śaraṇā ।<br />
+          tuma rakṣaka kāhū kō ḍara nā ॥ 22 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Those who take refuge in You, find all the comforts and happiness.
+          When we have a protector like You, we do not need to get scared of
+          anybody or anything.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-22.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-22.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+        <b class="left-align"
+          >āpana tēja samhārō āpai ।<br />
+          tīnōṃ lōka hāṅka tē kāmpai ॥ 23 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You alone can withstand Your magnificence. All the three worlds start
+          trembling at one roar of Yours.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-23.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-23.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >bhūta piśācha nikaṭa nahi āvai ।<br />
+          mahavīra jaba nāma sunāvai ॥ 24 ॥</b
+        ><br />
+        <p class="meaning_font">
+          O Mahaveer! No ghosts or evil spirits come near the ones who remember
+          Your name. Therefore, just remembering Your name does everything!
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-24.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-24.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >nāsai rōga harai saba pīrā ।<br />
+          japata nirantara hanumata vīrā ॥ 25 ॥</b
+        ><br />
+        <p class="meaning_font">
+          O Hanuman! All diseases and all kinds of pain get eradicated when one
+          recites or chants Your name. Therefore, chanting Your name regularly
+          is considered to be very significant.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-25.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-25.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >saṅkaṭa sē hanumāna Chuḍāvai ।<br />
+          mana krama vachana dhyāna jō lāvai ॥ 26 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Whoever meditates upon or worships You with thought, word, and deed,
+          gets freedom from all kinds of crisis and affliction.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-26.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-26.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >saba para rāma tapasvī rājā ।<br />
+          tinakē kāja sakala tuma sājā ॥ 27 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Lord Rama is the greatest Ascetic amongst all the Kings. But, it's
+          only You who carried out all the tasks of Lord Sri Rama.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-27.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-27.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >aura manōradha jō kōyi lāvai ।<br />
+          tāsu amita jīvana phala pāvai ॥ 28 ॥</b
+        ><br />
+        <p class="meaning_font">
+          One who comes to You with any longing or a sincere desire obtains the
+          abundance of the manifested fruit, which remains undying throughout
+          life.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-28.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-28.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >chārō yuga pratāpa tumhārā ।<br />
+          hai prasiddha jagata ujiyārā ॥ 29 ॥</b
+        ><br />
+        <p class="meaning_font">
+          Your splendor fills all the Four Ages. And, Your glory is renowned
+          throughout the world.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-29.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-29.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >sādhu santa kē tuma rakhavārē ।<br />
+          asura nikandana rāma dulārē ॥ 30 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You are the guardian of saints and sages; the destroyer of demons and
+          adored by Lord Rama.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-30.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-30.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >aṣṭhasiddhi nava nidhi kē dātā ।<br />
+          asa vara dīnha jānakī mātā ॥ 31 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You have been blessed by Mother Janaki to give boon further, to the
+          deserving ones, wherein You can grant the siddhis (eight different
+          powers) and the nidhis (nine different kinds of wealth).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-31.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-31.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >rāma rasāyana tumhārē pāsā ।<br />
+          sadā rahō raghupati kē dāsā ॥ 32 ॥</b
+        ><br />
+        <p class="meaning_font">
+          You have the essence of Ram bhakti, may you always remain the humble
+          and devoted servant of Raghupati.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-32.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-32.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >tumharē bhajana rāmakō pāvai ।<br />
+          janma janma kē dukha bisarāvai ॥ 33 ॥</b
+        ><br />
+        <p class="meaning_font">
+          When one sings Your praise, Your name, He gets to meet Lord Rama and
+          finds relief from the sorrows of many lifetimes.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-33.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-33.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >anta kāla raghupati purajāyī ।<br />
+          jahāṃ janma haribhakta kahāyī ॥ 34 ॥</b
+        ><br />
+        <p class="meaning_font">
+          By your grace, one will go to the immortal abode of Lord Rama after
+          death and remain devoted to Him.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-34.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-34.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >aura dēvatā chitta na dharayī ।<br />
+          hanumata sēyi sarva sukha karayī ॥ 35 ॥</b
+        ><br />
+        <p class="meaning_font">
+          It is not needed to serve any other Deity or God. Service to Lord
+          Hanuman gives all the comforts.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-35.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-35.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >saṅkaṭa ka(ha)ṭai miṭai saba pīrā ।<br />
+          jō sumirai hanumata bala vīrā ॥ 36 ॥</b
+        ><br />
+        <p class="meaning_font">
+          All troubles cease for the one who remembers the powerful lord, Lord
+          Hanuman and all his pains also come to an end.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-36.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-36.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >jai jai jai hanumāna gōsāyī ।<br />
+          kṛpā karahu gurudēva kī nāyī ॥ 37 ॥</b
+        ><br />
+        <p class="meaning_font">
+          O Lord Hanuman! Praises and glory to you O mighty Lord, please bestow
+          your grace as our Supreme Guru.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-37.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-37.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >jō śata vāra pāṭha kara kōyī ।<br />
+          Chūṭahi bandi mahā sukha hōyī ॥ 38 ॥</b
+        ><br />
+        <p class="meaning_font">
+          One who recites this Chalisa a hundred times is released from all
+          bondages and will attain great bliss.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-38.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-38.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >jō yaha paḍai hanumāna chālīsā ।<br />
+          hōya siddhi sākhī gaurīśā ॥ 39 ॥</b
+        ><br />
+        <p class="meaning_font">
+          One who reads and recites this Hanuman Chalisa, all his works get
+          accomplished. Lord Shiva, Himself, is the witness to it.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-39.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-39.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align"
+          >tulasīdāsa sadā hari chērā ।<br />
+          kījai nātha hṛdaya maha ḍērā ॥ 40 ॥</b
+        ><br />
+        <p class="meaning_font">
+          O Lord Hanuman, May I always remain a servant, a devotee to Lord Sri
+          Ram, says Tulsidas. And, May You always reside in my heart.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-40.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-40.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <hr />
+        <br />
+        <b
+          ><u><i>Doha</i></u></b
+        >
+        <br />
+        <b class="left-align">
+          pavana tanaya saṅkaṭa haraṇa - maṅgaḻa mūrati rūp । rāma lakhana sītā
+          sahita - hṛdaya basahu surabhūp ॥</b
+        ><br />
+        <p class="meaning_font">
+          O the Son of Wind, You are the destroyer of all sorrows. You are the
+          embodiment of fortune and prosperity.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >siyāvara rāmachandrakī jaya I pavanasuta hanumānakī jaya । bōlō bhāyī
+          saba santanakī jaya ।</b
+        ><br />
+        <p class="meaning_font">
+          I With Lord Rama, Laxmana and Mother Sita, dwell in my heart, always.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="hanuman-chalisa/hanuman-chalisa-doha2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="hanuman-chalisa/hanuman-chalisa-doha2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <br />
+
+        <br /><br />
+
+        <br /><br />
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

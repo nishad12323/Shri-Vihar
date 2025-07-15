@@ -194,6 +194,7 @@ li {
   font-size: 1.5rem;
   padding: 0px 20px 0px;
   border-radius: 15px;
+  height: auto;
 }
 
 .access-code-gray {
@@ -290,6 +291,24 @@ dialog {
   max-width: 50vw;
 }
 
+.list-of-slokams #search-bar {
+  max-width: 100%;
+  width: 100%;
+  box-shadow: #000a 0 0 10px 1px;
+}
+
+.list-of-slokams #search-label {
+  top: calc(50px + 1lh);
+  position: sticky;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+}
+
+.list-of-slokams ul {
+  margin-bottom: 1lh;
+}
+
 [list]::-webkit-calendar-picker-indicator,
 [list]::-webkit-list-button {
   opacity: 0 !important;
@@ -303,26 +322,39 @@ dialog {
   gap: 10px;
 }
 
-#search-results-banner {
+#search-results-banner,
+.back-banner {
   color: #6e2126;
-  background-color: #ffe6a4;
-  transition: .2s;
+  background-color: #ffc800;
+  transition: .1s;
   text-align: center;
-  width: 65%;
+  width: max-content;
   padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 0 0 1000000000000px 1000000000000px;
+  border-radius: 1000px;
+  cursor: pointer;
+  position: sticky;
+  top: 70px;
+  z-index: 3;
+  margin: 0 auto;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  position: sticky;
-  top: 50px;
-  z-index: 1000000000000000000000000000000000;
+  gap: 10px;
 }
 
-#search-results-banner:hover {
+#search-results-banner svg,
+.back-banner svg {
+  zoom: .5;
+}
+
+#search-results-banner:hover,
+.back-banner:hover {
   background-color: #DDBB8B;
+}
+
+.back-banner:active {
+  scale: .9;
 }
 
 #search-label {

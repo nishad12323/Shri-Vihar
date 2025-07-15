@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                      searchSlokas(this.value);
+                    }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br />
+
+    <br />
+    <h2 class="big-h2">Devi Slokams</h2>
+    <div id="abirami-ammai-pathigam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Abirami Ammai Pathigam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Abirami Ammai Pathigam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >kalayatha kalviyum<br />
+          kuraiyAtha vayathumor<br />
+          kapadu vArAtha natpum</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam1.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >kandrAtha valamayum<br />
+          kundrAtha ellamaiyum <br />
+          kazhuppinilAtha udalum </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam2.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >saliyAtha manamum<br />
+          anbu agalAtha manaiviyum<br />
+          thavarAtha santhanamum</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam3.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >thAzhAtha keerthiyum <br />
+          marAtha vArthaiyum<br />
+          thadaigal vaAratha kodaiyum</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam4.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >tholaiyAtha nithiyamum<br />
+          konAtha kolum <br />
+          oru thunbam illAtha vazhvum</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam5.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >thuiyyanin pAdhaththil <br />
+          anbum udhavi periya <br />
+          thondarodu kootu kandAi</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam6.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >alaiyAzhi arithuyalumA <br />
+          (ya)nathu thangaiye <br />
+          Adhi kadavooril vazhve</b
+        >
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam7.m4a" />
+          </audio>
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >amutheesar orubhAgham <br />
+          agalAtha sukhapAni <br />
+          arulvAi nee abhirAmiye abhirAmiye!</b
+        >
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="abirami-ammai-pathigam/abirami-ammai-pathigam8.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="abirami-ammai-pathigam/abirami-ammai-pathigam8.m4a"
+            download
+            >Download Audio</a
+          >
+
+          <br />
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="yaa-devi-sarva-bhuteshu">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Yaa Devi Sarva Bhuteshu</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('YAA DEVI SARVA BHUTESHU.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Vishnu maayeti Shab ditaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Called Vishnumaya, Salutations to
+          Her, Salutations to Her, Salutations to Her, Salutations again and
+          again.
+        </p>
+
+        <br />
+
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Cheta neth yAbhi dhiiyate |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Reflected as Consciousness,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Buddhi-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Intelligence,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Nidraa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Sleep,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Kssudhaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Hunger,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Chaayaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Shadow (of
+          Higher Self), Salutations to Her, Salutations to Her, Salutations to
+          Her, Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Shakti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Power,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Trshnnaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Thirst,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Kshaanti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Forbearance,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Jaati-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Genus
+          (Original Cause of Everything), Salutations to Her, Salutations to
+          Her, Salutations to Her, Salutations again and again.
+        </p>
+
+        <br /><b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Lajjaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Modesty,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Shaanti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Peace,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Shraddhaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          TTo that Devi Who in All Beings is Abiding in the Form of Faith,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devii Sarva-Bhutessu Kaanti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Loveliness
+          and Beauty, Salutations to Her, Salutations to Her, Salutations to
+          Her, Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Lakshmii-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Good Fortune,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Vrtti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Activity,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Smrti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Memory,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Dayaa-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Kindness,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Tushtti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Contentment,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Maatru-Rupena Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah ||</b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Mother,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Yaa Devi Sarva-Bhutessu Bhraanti-Ruupenna Samsthitaa |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          To that Devi Who in All Beings is Abiding in the Form of Delusion,
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Indri yaannaam-Adhishttaathrii Bhutaanaam Cha-Akhilessu |<br />
+          Yaa Bhuutessu Satatam Tasyai Vyaapti-Devyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          (Salutations) To that Devi Who Governs the Faculty of Senses of Beings
+          in All the Worlds,<br />
+          Salutations to Her Who is the Devi Who Always Pervades all Beings.
+        </p>
+
+        <br />
+        <b class="left-align"
+          >Citi-Ruupenna Yaa Krtsnam-Etad-Vyaapya Sthitaa Jagat |<br />
+          Namas-Tasyai Namas-Tasyai Namas-Tasyai Namo Namah || </b
+        ><br />
+        <p class="left-align">
+          (Salutations to Her) Who in the Form of Consciousness Pervades This
+          Universe and Abides in It,<br />
+          Salutations to Her, Salutations to Her, Salutations to Her,
+          Salutations again and again.
+        </p>
+
+        <br />
+        <br />
+
+        <b class="left-align">Recordings:</b><br />
+        <br />
+        <b class="left-align">Full slokam recording 1-23</b><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source
+              src="yaa-devi-sarva-bhuteshu/yaa-devi-sarva-bhuteshuFull.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="yaa-devi-sarva-bhuteshu/yaa-devi-sarva-bhuteshuFull.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <b class="left-align">Only 22 & 23</b><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source
+              src="yaa-devi-sarva-bhuteshu/yaa-devi-sarva-bhuteshu22-23.m4a"
+            />
+          </audio>
+          <a
+            class="download-audio"
+            href="yaa-devi-sarva-bhuteshu/yaa-devi-sarva-bhuteshu22-23.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <br />
+  </body>
+</html>
