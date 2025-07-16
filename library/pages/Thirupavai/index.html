@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+              searchSlokas(this.value);
+            }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br />
+    <h2 class="big-h2">Thirupavai</h2>
+
+    <div id="thirupavai-pasuram1-5">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 1</h2>
+          <button class="printPDFbutton" onclick="print('Thirupavai 1-5.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Margazhi thingal madhi niraindha nannalal<br />
+          Nirada podhuvir, podhu mino neridaiyeer<br />
+          Seermalgum aayppadi ch chelva chirumeergal<br />
+          Koorvel kodunthozhilan nandagopan kumaran<br />
+          Erarndha kannni yasodhai ilan singam<br />
+          Karmeni chengann kadir madiyam pol mugathan<br />
+          Narayanane namakke parai tharuvan<br />
+          Paror pugazha p padinthelor empavai. </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram1.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram1.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 2</h2>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >vaiyattu vāzvīrgāḻ ! nāmum nam pāvaikku <br />
+          śeyyum kiriśaigaḻ kēḻīrō <br />
+          pāṟkaḍaluḻ paiya ttuyinṟa paraman aḍi pāḍi <br />
+          ney uṇṇōm pāl uṇṇōm nāṭkālē nīr āḍi <br />
+          maiyiṭṭezudōm malariṭṭu nām muḍiyōm <br />
+          śeyyādana śeyyōm tīkkuṟaḻai śenṟōdōm <br />
+          aiyamum piccaiyum āndanaiyum kai kāṭṭi <br />
+          uyyumāṟeṇṇi ugandēlōr em pāvāy. </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram2.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram2.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 3</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >ōṅgi ulagaḻanda uttaman pēr pāḍi <br />
+          nāṅgaḻ nam pāvaikku ccāṭri nīr āḍināl <br />
+          tīṅginṟi nāḍellām tiṅgaḻ mummāri peydu <br />
+          ōṅgu peṟuñjennel ūḍu kayal ugaḻa <br />
+          pūṅguvaḻai ppōdil poṟivaṇḍu kaṇ paḍuppa <br />
+          tēṅgādē pukkirundu śīrtta mulai paṭri vāṅga <br />
+          kuḍam niṟaikkum vaḻḻal perum paśukkaḻ <br />
+          nīṅgāda śelvam niṟaindēlōr em pāvāy </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram3.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram3.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 4</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >āzi mazaikkaṇṇā ! onṟu nī kai karavēl <br />
+          āzi uḻ pukku mugandu koḍārttēṟi <br />
+          ūzi mudalvan uruvam pōl mey kaṟuttu <br />
+          pāziyan tōḻuḍai ppaṟpanāban kaiyil <br />
+          āzi pōl minni valamburi pōl ninṟadirndu <br />
+          tāzādē śārṅgam udaitta śaramazai pōl vāza ulaginil peydiḍāy
+          <br />
+          Nāṅgaḻum mārgazi nīrāḍa magizndēlōr em pāvāy. </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram4.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram4.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 5</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >māyanai mannu vaḍamadurai maindanai <br />
+          tūya perunīr yamunai ttuṟaivanai <br />
+          āyar kulattinil tōnṟum aṇi viḻakkai <br />
+          tāyai kkuḍal viḻakkam śeyda tāmōdaranai <br />
+          tūyōmāy vandu nām tūmalar tūvi ttozudu <br />
+          vāyināl pāḍi manattināl śindikka <br />
+          pōya pizaiyum pugudaruvān ninṟanavum <br />
+          tīyinil tūśāgum śeppēlōr em pāvāy. </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram5.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram5.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+      </div>
+    </div>
+    <br />
+
+    <div id="thirupavai-pasuram6-10">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 6</h2>
+          <button class="printPDFbutton" onclick="print('Thirupavai 6-10.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >puLLum silambina kAN puL araiyan kOyil<br />
+          veLLai viLi sanggin pEraravam kETTilaiyO?<br />
+          piLLAy! ezhundhirAy pEy mulai nanjchuNDu<br />
+          kaLLach sagaDam kalakkazhiyak kAl Ochchi<br />
+          veLLaththu aravil thuyil amarndha viththinai<br />
+          uLLaththuk koNDu munivargaLum yOgigaLum<br />
+          meLLa ezhundhu ari enRa pEraravam<br />
+          uLLam pugundhu kuLirndhElOr empAvAy </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            s
+            <source src="thirupavai/thirupavaiPasuram6.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram6.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 7</h2>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >kIsu kIsu enRu enggum AnaichchAththan<br />kalandhu pEsina
+          pEchcharavam kETTilaiyO? pEyppeNNE!<br />kAsum piRappum kalakalappak
+          kai pErththu<br />vAsa naRungkuzhal Aychchiyar<br />
+          maththinAl Osai paDuththath thayiraravam kETTilaiyO?<br />nAyagap
+          peNpiLLAy! nArAyaNan mUrththi<br />kEsavanaip pADavum nI kETTE
+          kiDaththiyO?<br />thEsam uDaiyAy! thiRavElOr empAvAy</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram7.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram7.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 8</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >kIzhvAnam veLLenRu erumai siRuvIDu<br />mEyvAn parandhana kAN
+          mikkuLLa piLLaigaLum<br />pOvAn pOginRAraip pOgAmal kAththu<br />
+          unnaik kUvuvAn vandhu ninROm<br />kOdhukalam uDaiya pAvAy! ezhundhirAy
+          pADip paRai koNDu<br />mA vAy piLandhAnai mallarai mATTiya<br />dhEvAdhi
+          dhEvanaich senRu nAm sEviththAl<br />AvA enRu ArAyndhu aruLElOr
+          empAvAy</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram8.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram8.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 9</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >thUmaNi mADaththuch suRRum viLakku eriyath<br />dhUpam kamazhath
+          thuyilaNai mEl kaN vaLarum<br />mAmAn magaLE! maNik kadhavam thAL
+          thiRavAy<br />mAmIr! avaLai ezhuppIrO?<br />un magaL thAn UmaiyO?
+          anRich seviDO? ananthalO?<br />Emap perunthuyil mandhirap paTTALO?
+          <br />mAmAyan mAdhavan vaikunthan enRenRu<br />nAmam palavum
+          navinRElOr empAvAy </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram9.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram9.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 10</h2>
+        </div>
+        <br />
+
+        <b class="left-align"
+          >nORRuch suvarkkam pugukinRa ammanAy!<br />mARRamum thArArO? vAsal
+          thiRavAdhAr<br />nARRath thuzhAy muDi nArAyaNan<br />nammAl pORRap
+          paRai tharum puNNiyanAl<br />paNDoru nAL kURRaththin vAy vIzhndha
+          kumbakaraNanum<br />thORRum unakkE perunthuyil thAn thandhAnO<br />
+          ARRa ananthal uDaiyAy! arungkalamE!<br />thERRamAy vandhu thiRavElOr
+          emp</b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram10.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram10.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+      </div>
+    </div>
+    <br />
+
+    <div id="thirupavai-pasuram27-30">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 27</h2>
+          <button class="printPDFbutton" onclick="print('Thirupavai .pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >koodaarai vellum seer gOvindhaa undhannai<br />
+          paadi(p) paRai kondu yaam peRum sammaanam<br />
+          naadu pugazhum parisinaal nanRaaga<br />
+          choodagamE thOL vaLaiyE thOdE sevip poovE<br />
+          paadagamE enRanaiya palagalanum yaam aNivOm<br />
+          aadai uduppOm adhan pinnE paaR chORu<br />
+          mooda ney peydhu muzhangai vazhi vaara(k)<br />
+          koodi irundhu kuLirndhElOr empavai </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram27part1.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram27part1.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram27part2.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram27part2.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 29</h2>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >cittañ siṛu kālē vandunnai sēvittu <br />
+          un pottrāmaṛai aḍiyē pōttum porul kēḷāy <br />
+          pettram mēit tuṇṇum kulattil pirandu <br />
+          nīkuttrēval engaḷai koḷḷāmal pōgādu <br />
+          ittai paṛai kolvān anru kāṇ govindā! <br />
+          ettraikkum ēzhēzh piṛavikkum undannōḍu <br />
+          uttrōmē yāvōm unakkē nām hatseyvōm <br />
+          mattrai naṅ kāmaṅgaḷ māttrēlōr empāvāi <br /> </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram29part1.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram29part1.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram29part2.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram29part2.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Thirupavai Pasuram 30</h2>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vangak Kadal kadaintha Madhavanai Kesavanai <br />
+          Thingal thirumugathuch cheyizhaiyar sendrirainji <br />
+          Angap parai konda aatrai anipuduvai <br />
+          Painkamalath tantheriyal pattarpiran Kodhai sonna <br />
+          Sangath thamizh maalai muppadum thappame <br />
+          Ingip parisuraippar eerirandu maal varaiththoll <br />
+          Senkann thirumugathu selvath thirumaalal <br />
+          Engum thiruvarul pettru inburuvar empavai <br /> </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram30part1.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram30part1.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="thirupavai/thirupavaiPasuram30part2.m4a" />
+          </audio>
+
+          <a href="thirupavai/thirupavaiPasuram30part2.m4a" download
+            >Download Audio</a
+          >
+        </div>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>

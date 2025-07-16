@@ -1,13 +1,25 @@
 const videoDialog = document.getElementById("video-dialog");
 const videoIframe = document.getElementById("video-iframe");
-const contentContainer = document.querySelector(".every-content-container");
+
+function toggleMobileMenu(menu) {
+  menu.classList.toggle("open");
+}
+
+document.querySelectorAll("img").forEach((img) => {
+  img.oncontextmenu = () => false;
+});
+try {
+  document.querySelector(".back-banner").addEventListener("click", () => {
+    location.replace("/library/pages");
+  });
+} catch {}
 
 function print(file) {
   window.open(file, "_self");
 }
 
 function register() {
-  location.assign("policies.html");
+  location.assign("/policies.html");
 }
 
 function videoPlayer(btn) {
@@ -138,62 +150,76 @@ var keywords = [
   "thirupavai pasuram 27-30 karavaigal pin senru kandru kanbanakal",
 ];
 
-var elements = Array.from(contentContainer.querySelectorAll("*[id]"));
-var contentContainerHtml = contentContainer.innerHTML;
-
 function searchSlokas(searchbarValue) {
-  window.location.hash = "#search";
+  const sidebar = document.querySelector(".side-bar");
+  const allLinks = sidebar.querySelectorAll(".list-item");
 
-  if (searchbarValue == "") {
-    contentContainer.innerHTML = contentContainerHtml;
+  // Remove previous "no result" message if any
+  const noResultId = "no-sloka-result";
+  let noResult = document.getElementById(noResultId);
+  if (noResult) noResult.remove();
+
+  if (!searchbarValue || searchbarValue.trim() === "") {
+    // Show all links and all headings if search is empty
+    allLinks.forEach((link) => {
+      link.parentElement.style.display = "";
+    });
+    // Show all headings
+    sidebar.querySelectorAll("h1, h2").forEach((heading) => {
+      heading.style.display = "block";
+    });
+    sidebar.querySelectorAll("ul.contents").forEach((ul) => {
+      ul.style.display = "block";
+    });
     return;
   }
 
-  const result = keywords.filter((word) => {
-    return word.includes(searchbarValue.toLowerCase()) == true;
+  const search = searchbarValue.trim().toLowerCase();
+
+  let found = false;
+  allLinks.forEach((link) => {
+    const text = link.textContent.toLowerCase();
+    if (text.includes(search)) {
+      link.parentElement.style.display = "";
+      found = true;
+    } else {
+      link.parentElement.style.display = "none";
+    }
   });
 
-  // const result = ids.filter((word) => {
-  //   return word.includes(searchbarValue.toLowerCase()) == true;
-  // });
+  // Hide headings if their list is empty (all <p> hidden)
+  sidebar.querySelectorAll("ul.contents").forEach((ul) => {
+    const visibleItems = Array.from(ul.children).filter(
+      (p) => p.style.display !== "none"
+    );
+    if (visibleItems.length === 0) {
+      ul.style.display = "none";
+      // Hide the heading just before this ul
+      let prev = ul.previousElementSibling;
+      while (prev && !(prev.tagName && prev.tagName.match(/^H[2]$/))) {
+        prev = prev.previousElementSibling;
+      }
+      if (prev) prev.style.display = "none";
+    } else {
+      ul.style.display = "";
+      // Show the heading just before this ul
+      let prev = ul.previousElementSibling;
+      while (prev && !(prev.tagName && prev.tagName.match(/^H[2]$/))) {
+        prev = prev.previousElementSibling;
+      }
+      if (prev) prev.style.display = "";
+    }
+  });
 
-  console.log(result);
-
-  let text = "";
-  contentContainer.innerHTML = contentContainerHtml;
-
-  for (let i = 0; i < result.length; i++) {
-    console.log(i);
-    var resultI = result[i];
-    var indexOfResultIinKeywords = keywords.indexOf(resultI.toLowerCase());
-    var idOfResultI = ids[indexOfResultIinKeywords];
-    var elementOfResultI = document.getElementById(idOfResultI);
-    var codeOfResultI = elementOfResultI.innerHTML;
-    console.log(idOfResultI);
-    console.log(ids[keywords.indexOf(result[i].toLowerCase())]);
-    text += codeOfResultI;
-    // text += document.getElementById(ids[keywords.indexOf(result[i].toLowerCase())]).innerHTML;
-    // text += document.getElementById(result[i].toLowerCase()).innerHTML;
+  // Show a message if nothing found
+  if (!found) {
+    noResult = document.createElement("p");
+    noResult.id = noResultId;
+    noResult.style.color = "red";
+    noResult.style.textAlign = "center";
+    noResult.textContent = `No slokam found for "${searchbarValue}"`;
+    sidebar.appendChild(noResult);
   }
-
-  if (text == "") {
-    text = `<center>There are no results for "${searchbarValue}"</center>`;
-  }
-
-  contentContainer.innerHTML =
-    `<center title="Go back" id='search-results-banner' style="font-weight: bold; display: flex; gap: 10px" onclick='goBack()'><svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z" fill="#6e2126"/></svg>Search Results</center>` +
-    text;
-  console.log(text);
-  const searchResultsBanner = document.getElementById(
-    "search-results-banner"
-  ).style;
-  searchResultsBanner.width = "100px";
-  searchResultsBanner.textAlign = "center";
-  searchResultsBanner.width = "100%";
-  searchResultsBanner.padding = "10px";
-  searchResultsBanner.marginBottom = "5px";
-
-  window.scrollTo(0, 0);
 }
 
 document.getElementById("search-bar").addEventListener("keydown", (e) => {
@@ -204,10 +230,3 @@ document.getElementById("search-bar").addEventListener("input", (e) => {
     searchSlokas(e.target.value);
   }
 });
-
-function goBack() {
-  contentContainer.innerHTML = contentContainerHtml;
-  document.getElementById("search-bar").value = ``;
-  window.scrollTo(0, 0);
-  history.back();
-}

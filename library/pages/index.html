@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <br />
+
+    <center>
+      "HARI OM"<br /><br />
+      <div class="gray list-of-slokams">
+        <br />
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            onkeypress="if (event.key === 'Enter') {
+              searchSlokas(this.value);
+            }"
+            oninput="searchSlokas(this.value)"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+
+        <div class="side-bar">
+          <br />
+          <h1>List of Slokams</h1>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Main/#beginning-ending"
+                >Beginning and Ending Slokams</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Main/#nitya-parayana"
+                >Nitya Parayana Slokams</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Main/#small-slokas">Small Slokas</a>
+            </p>
+          </ul>
+          <h2>Ashtakams</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Ashtakams/#krishna-ashtakam"
+                >Krishna Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#mahalakshmi-ashtakam"
+                >Mahalakshmi Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#lingashtakam"
+                >Lingashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#dhukka-nivarana-ashtakam"
+                >Dhukka Nivarana Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#ranganatha-ashtakam"
+                >Ranganatha Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#achutha-ashtakam"
+                >Achutha Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#madhurashtakam"
+                >Madhurashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#totakashtakam"
+                >Totakashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#balamukundaashtakam"
+                >Bala Mukunda Ashtakam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#vaidyanatha-ashtakam"
+                >Vaidyanatha Ashtakam</a
+              >
+            </p>
+          </ul>
+
+          <h2>Pancharatnams</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Pancharatnams/#ganesha-pancharatnam"
+                >Ganesha Pancharatnam</a
+              >
+            </p>
+            <p>
+              <a
+                class="list-item"
+                href="Pancharatnams/#subrahmanya-pancharathnam"
+                >Sri Subrahmanya Pancharathnam</a
+              >
+            </p>
+          </ul>
+
+          <h2>Stotrams</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Stotrams/#shiva-panchakshara-stotram"
+                >Shiva Panchakshara Stotram</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Stotrams/#ashtalakshmi-stotram"
+                >Ashtalakshmi Stotram</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Stotrams/#navagraha-stotram"
+                >Sri Navagraha Stotram</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Stotrams/#mahisasura-mardini-stotram"
+                >Śri Mahiśāsura Mardini Stōtraṃ</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Stotrams/#sri-venkateswara-stotram"
+                >Sri Venkateswara Stotram</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Stotrams/#hanuman-chalisa"
+                >Hanuman Chalisa</a
+              >
+            </p>
+          </ul>
+
+          <h2>Devi Slokams</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Devi Slokams/#abirami-ammai-pathigam"
+                >Abirami Ammai Pathigam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Devi Slokams/#yaa-devi-sarva-bhuteshu"
+                >Yaa Devi Sarva Bhuteshu</a
+              >
+            </p>
+          </ul>
+
+          <h2>Ramar Slokams</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Ramar Slokams/#sri-ramar-slokams"
+                >Sri Ramar Slokams</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ramar Slokams/#nama-ramayanam"
+                >Nama Ramayanam</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Ramar Slokams/#ramachandra-mangalam"
+                >Ramachandra Mangalam</a
+              >
+            </p>
+          </ul>
+
+          <h2>Thirupavai</h2>
+          <ul class="contents">
+            <p>
+              <a class="list-item" href="Thirupavai/#thirupavai-pasuram1-5"
+                >Thirupavai Pasuram 1-5</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Thirupavai/#thirupavai-pasuram6-10"
+                >Thirupavai Pasuram 6-10</a
+              >
+            </p>
+            <p>
+              <a class="list-item" href="Thirupavai/#thirupavai-pasuram27-30"
+                >Thirupavai Pasuram 27-30</a
+              >
+            </p>
+          </ul>
+          <br />
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

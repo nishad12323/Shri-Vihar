@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                      searchSlokas(this.value);
+                    }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+    <div id="beginning-ending">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+        <div class="heading-container">
+          <h2 class="big-h2">Beginning & Ending slokams</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('beginning-ending.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+        <br />
+
+        <!--<button onclick="share()">Share</button>-->
+
+        <b class="left-align">Pranava Mantra or Beja aksharam:<br /></b>
+        <p class="left-align">Om (3 times)</p>
+        <br />
+
+        <b class="left-align">Vinayagar Slokams:<br /></b><br />
+        <p class="left-align">
+          1. Paalum Theli Thenum Pagum Paruppum<br />ivai Nalum Kalaund Unakku
+          Naan tharuven - kolanchei<br />Thungak karimugathu thoomaniye<br />Nee
+          Enakku Sanga thamizh moondrum tha.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/palumTheliThenum.m4a" />
+          </audio>
+
+          <a href="beginning-ending/palumTheliThenum.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <p class="left-align">
+          2. Mooshika-Vahana Modaka-Hasta<br />Chamara-Karna Vilambita-Sutra<br />Vamana-Rupa
+          Maheswara-Putra<br />Vighna-Vinayaka Paada Namaste.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Mooshika-Vahana.m4a" />
+            Could not play audio
+          </audio>
+
+          <a href="beginning-ending/Mooshika-Vahana.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <p class="left-align">
+          3. Vakratunda Mahakaya Surya Koti Sama Prabha<br />Nirvighnam Kuru Me
+          Deva Sarva Karyesu Sarvada.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Vakratunda.m4a" />
+          </audio>
+
+          <a href="beginning-ending/Vakratunda.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <p class="left-align">
+          4. Agajanana Padmaarkam, Gajaananam Aharnisham<br />Anekadantham
+          Bhaktaanaam, Ekadantam Upaasmahey
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Agajanana.m4a" />
+          </audio>
+
+          <a href="beginning-ending/Agajanana.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <p class="left-align">
+          5. Gajananam Bhuta Ganadhi Sevitam<br />
+          Kapittha Jambu Palasara Bhaksitam |<br />
+          Uma Sutam Shoka Vinasha Karanam<br />
+          Namami Vignesvara Pada Pankajam ||
+        </p>
+        <br />
+        <b class="left-align">Meaning:</b>
+        <p class="left-align">
+          1: (I Salute) Sri Gajananam ( Who is having an Elephant Face ), Who is
+          Served by the Bhuta Ganas (Celestial Attendants or Followers) and
+          Others<br />
+          2: Who Eats the Core of Kapittha (Wood Apple) and Jambu (Rose Apple)
+          Fruits<br />
+          3: Who is the Son of Devi Uma (Devi Parvati) and the Cause of
+          Destruction of Sorrows<br />
+          4: I Prostrate at the Lotus-Feet of Vigneshwara ( the God Who Removes
+          Obstacles ).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/gajananam.m4a" />
+          </audio>
+
+          <a href="beginning-ending/gajananam.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Saraswati Devi Slokam:<br /></b><br />
+        <p class="left-align">
+          Saraswati Namastubhyam Varade Kaama-Roopini<br />Vidyarambham
+          Karishyami Siddhir-Bhavatu Me Sada
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Saraswati-Namastubium.m4a" />
+          </audio>
+
+          <a href="beginning-ending/Saraswati-Namastubium.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Maanikka Veena Sloka<br /></b><br />
+        <p class="left-align">
+          Manika veena mupanalayanthim<br />
+          madalasam manjula vaag vilasaam||<br />
+          mahendra neela dyuti komalaangi||<br />
+          matanga kanyaam manasasmaraami||
+        </p>
+        <br />
+        <b class="left-align">Meaning:</b>
+        <p class="left-align">
+          Salutations to Goddess Saraswati<br />
+          Who plays the veena of precious gems,<br />
+          Who is blessed with very sweet words<br />
+          Who is adored with pretty blue gems<br />
+          To whom we show our heartfelt pranams.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/maanikkaVeena.m4a" />
+          </audio>
+
+          <a href="beginning-ending/maanikkaVeena.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Guru Mantram:<br /></b><br />
+        <p class="left-align">
+          GururBrahma GururVishnu GururDevo Maheshwara Ha<br />Guru Saakshaat
+          ParaBrahma Tasmai Shri Gurave Namah.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Guru-Brahma.m4a" />
+          </audio>
+
+          <a href="beginning-ending/Guru-Brahma.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Shanthi Mantram: (Class ending Slokas)<br /></b
+        ><br />
+        <p class="left-align">Lokah Samastah Sukhino Bhavantu (3 times)</p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Loka-Samastaa.m4a" />
+          </audio>
+
+          <a href="beginning-ending/Loka-Samastaa.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Pavamana Mantram:<br /></b><br />
+        <p class="left-align">
+          Asatoma Sad-Gamaya Tamaso Maa Jyotir-Gamaya<br />Mrityor-Ma Amritam
+          Gamaya Om Shaanti Shaanti Shaantih
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Asatoma.m4a" />
+          </audio>
+
+          <a class="download-audio" href="beginning-ending/Asatoma.m4a" download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <p class="left-align">
+          ”Om Sahanavavatu Saha nau bhunaktu<br />
+          Saha viryam karavavahaiTejasvi navadhitamastu<br />
+          Ma vidvisavahai Om Shantih, Shantih, Shantih.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="beginning-ending/Sahana-Vavatu.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="beginning-ending/Sahana-Vavatu.m4a"
+            download
+            >Download Audio</a
+          >
+          <br />
+          <br />
+        </div>
+        <br />
+      </div>
+    </div>
+
+    <div id="nitya-parayana">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Nitya Parayanam Slokams</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('Nithya Parayanam slokam with meaning.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Karadarshana: </b>
+        <p class="left-align">Chant this when you wake up in the morning</p>
+        <br />
+        <p class="left-align">
+          Karagre vasate lakshmi<br />kara madhye saraswati<br />kara mule tu
+          govindah<br />prabhaate kara darshanam
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Bhooma Devi Slokam: </b>
+        <p class="left-align">
+          Chant this when you first step out of bed in the morning
+        </p>
+        <br />
+        <p class="left-align">
+          Samudravasane devi<br />parvata sthanmandale<br />Vishnupatni
+          namastubhyam<br />padsparsham kshamaswa me
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana2.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Sun God Slokam: </b>
+        <p class="left-align">Chant this when you see sun in the morning</p>
+        <br />
+        <p class="left-align">
+          Bhano bhaskara Marthanda<br />Chanda rasmai divakara<br />Ayur arogyam
+          aishwaryam<br />Vidhyamscha dehi mae sada
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana3.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Snanam(bath) slokam: </b>
+        <p class="left-align">Chant this when you take a bath</p>
+        <br />
+        <p class="left-align">
+          Gange cha yamune chaiva<br />godavari saraswathi<br />narmade sindhu
+          kaveri<br />jalesmin sannidhim kuru
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana4.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Hayagreevar Slokam: </b>
+        <p class="left-align">Chant this after you take bath</p>
+        <br />
+        <p class="left-align">
+          Gyaananandamayam devam<br />Nirmala spadikakruthim<br />adaram sarva
+          vidyanaam<br />Hyagreevam upasmahe
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana5.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Annapurne Slokam: </b>
+        <p class="left-align">Chant this before you eat food.</p>
+        <br />
+        <p class="left-align">
+          Annapoorne Sada poorne<br />Shankara Pranavallabhe<br />Gyana Vairagya
+          Sidyartham<br />Bhikshaam Dehi cha Parvati
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana6.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Deepam Slokam: </b>
+        <p class="left-align">
+          Chant this when lighting the lamp to the deity of your choice
+        </p>
+        <br />
+        <p class="left-align">
+          Shubham karoti kalyaanam<br />aarogyam dhana sampadaa<br />shatru
+          buddhir vinaashaaya<br />dipa jyotir namostute
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana7.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana7.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align">Night Slokam: </b>
+        <p class="left-align">Chant this before going to sleep</p>
+        <br />
+        <p class="left-align">
+          Raamaskandham hanumantam<br />vainateyam vrkodaram<br />shayane yah
+          smarennityam<br />duh swapnam tasya nashyati
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="nitya-parayana/nitya-parayana8.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="nitya-parayana/nitya-parayana8.m4a"
+            download
+            >Download Audio</a
+          >
+          <br />
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="small-slokas">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Small Slokas</h2>
+          <button
+            class="printPDFbutton"
+            onclick="print('SmallSlokasCombined.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Vinayakar Slokam: </b><br />
+        <b class="left-align"
+          >Ayindhu Karathanai Aanai Mugathanai<br />
+          Inthin Illam Pirai Polum Eyitranai<br />
+          Nandhi Magan Thanai Gnanak Kozhunthinai<br />
+          Pundhiyil Vaithadi Potrukindraeney!! </b
+        ><br />
+        <p class="left-align">
+          Meaning: The Lord Ganesha who has five hands (four hands and one trunk
+          which is also considered as a hand here) and an elephant face just
+          like a growing young moon, He is Lord Shiva's son, the tender budding
+          person who is full of wisdom The Lord Ganesha is placed eternally
+          within our hearts and we worship him for ever!!
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/Ayindhu.m4a" />
+          </audio>
+
+          <a href="small-slokas/Ayindhu.m4a" download>Download Audio </a>
+        </div>
+
+        <br /><br />
+
+        <b class="left-align">Saraswathi Devi Slokam: </b><br />
+        <b class="left-align"
+          >Saraswati Mahabhage Vidye Kamalalochane<br />
+          Vishwaroope Vishaalaakshi Vidyam dehi namosthute </b
+        ><br />
+        <p class="left-align">
+          Meaning : Salutation to the Goddess for bestowing upon me the best of
+          knowledge and the ease of learning.
+        </p>
+        <br />
+        <p class="left-align">
+          Benefit : Chanting this mantra with devotion on a regular basis can
+          help get the desired knowledge to the fullest. Those who have
+          difficulties with their learning can resort to this mantra as the
+          ultimate solace.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/SaraswatiMahabhage.m4a" />
+          </audio>
+
+          <a href="small-slokas/SaraswatiMahabhage.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br /><br />
+
+        <b class="left-align">Krishnar Slokam: </b><br />
+        <b class="left-align"
+          >Krishnaya Vasudevaya<br />
+          Devaki Nanda Nayacha|<br />
+          Nandagopa Kumaraya<br />
+          Govindaya Namo Namaha|| </b
+        ><br />
+        <p class="left-align">
+          Meaning: Salutations to Sri Krishna Who is the Son and the Joy of
+          Father Vasudeva and Mother Devaki, Who is the Boy of Cowherd Nanda and
+          Who is Himself the Lord Govinda.
+        </p>
+        <br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/krishnarslokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/krishnarslokam.m4a" download>Download Audio </a>
+        </div>
+
+        <br /><br />
+
+        <b class="left-align">Sri Ranganathar Sloka: </b><br />
+        <b class="left-align"
+          >Saptha prakara madhye sarasija mukloth bhasamane vimane,<br />
+          Kaveri Madhya dese phanipathi sayane, sesha paryanga bhage,<br />
+          Nidhra mudhrabhi ramam katinikatasira parswa vinyastha hastham,<br />
+          Padmadhathree karabhyam parichithacharanam rangarajam Bhajeham.<br /> </b
+        ><br />
+        <p class="left-align">
+          This Mangala sloka is written by Sri Parashara Bhatta , a great
+          Saint.<br /><br />
+          I salute that Lord of Ranga, Who sleeps in the yogic pose, On the bed
+          of Adhisesha, Below the tall dome**, Which resembles a lotus bud , And
+          is surrounded by seven ramparts, And which is in between two Kaveri
+          rivers, With his right hand near his crown, And his lotus like
+          merciful left hand, Pointing towards his feet which takes care of us
+          all.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/RanganatharSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/RanganatharSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Sri Murugan Sloka: </b><br />
+        <b class="left-align"
+          >Shadananam, chandana lepithangam,<br />
+          Mahorasam, divya mayoora vahanam,<br />
+          Rudrasya soonum, sura loka nadam,<br />
+          Brahmanya devam, saranam prapadye</b
+        ><br />
+        <p class="left-align">
+          I seek refuge with the god, who is Brahman, Who has six faces, Who
+          applies sandal paste all over his body. Who is the great essence, Who
+          rides on a peacock, Who is the son of Lord Shiva, and who is the lord
+          of heaven.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/MurugarSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/MurugarSlokam.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Jai Hanuman Sloka: </b><br />
+        <b class="left-align"
+          >Asadhya sadhaka swamin,<br />
+          Asadhyam tava kim vada<br />
+          Rama dhoota daya sindho,<br />
+          Madh karyam sadhaya prabho </b
+        ><br />
+        <p class="left-align">
+          He, who could achieve that which is impossible, who could do even the
+          most difficult thingsSwamin! Hey Swami- Please tell me: Is there
+          anything that you cannot do? You are the ambassador of Lord Rama, you
+          are the ocean of compassion; Prabho (Prabhu in Sanskrit has the
+          meaning - One who can do, undo and do in another way) please help me
+          in discharging my duties and responsibilities.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/HanumanSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/HanumanSlokam.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Devi Sloka: </b><br />
+        <b class="left-align"
+          >‘Sarva Mangala Mangalye Shive! Sarvartha Sadhike<br />
+          Sharanye Tryambake Devi! Narayani! NamostuTe!’ </b
+        ><br />
+        <p class="left-align">
+          Goddess Parvathi is the Goddess of power, divine strength, devotion
+          and love. Being the divine consort of Lord Shiva, she represents
+          virtue, asceticism, skill, fertility, power and marital felicity,
+          according to the Hindu mythology.<br />
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/DeviSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/DeviSlokam.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Sudarshana Slokam: </b><br />
+        <b class="left-align"
+          >Sudarshana Mahajwala<br />
+          Koti Surya Samaprabha<br />
+          Aanandha May Deva<br />
+          Vishnur Margam Pradarshaya </b
+        ><br />
+        <p class="left-align">
+          Sudarshana of great luster who is the lord of the universe, Oh shining
+          one who has luster more than one crore suns,please show me the path to
+          reach vaikuntam.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/SudarshanaSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/SudarshanaSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align">Vinayakar Slokam: </b><br />
+        <b class="left-align"
+          >Agajanana Padmaarkam, Gajaananam Aharnisham<br />
+          Anekadantham Bhaktaanaam, Ekadantam Upaasmahey </b
+        ><br />
+        <p class="left-align">
+          Meaning:Lord Ganesha, the elephant face is like the sun to the lotus.
+          The single tusked Ganesha is the giver of boons. I salute the great
+          lord to grant us a boon
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/Agajanana.m4a" />
+          </audio>
+
+          <a href="small-slokas/Agajanana.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <b class="left-align">Saraswati Devi Slokam: </b><br />
+        <b class="left-align"
+          >Ya Kundendu Tusharahara Dhavala Ya Shubhra Vastravruta<br />
+          Ya Veena Varadanda Manditakara Ya Shweta Padmasana<br />
+          Ya Brahmachyut Shankara Prabhritibihi Devai Sada Vandita<br />
+          Sa Mam Pattu Saraswati Bhagwati Nihshesh Jadyapaha || </b
+        ><br />
+        <p class="left-align">
+          Meaning: Salutations to Mother Saraswati who is so pure and white like
+          that of jasmine, moon and a garland of pearls; she is the one who is
+          adorned with sparkling white garments. Whose hands are adorned with
+          the Veena and boon giving staff; who is seated on a pure white lotus.
+          Who is always worshiped by Brahma (the creator), Achyuta (Vishnu or
+          the protector), Shankara (Shiva or the destroyer) and all the devas
+          (gods). O Mother Saraswati, the divine one, protects me and dispel my
+          ignorance.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/SaraswathiDeviSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/SaraswathiDeviSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Tvameva mātā ca pitā tvameva<br />
+          Tvameva bandhuśca sakhā tvameva<br />
+          Tvameva vidyā draviṇaṃ tvameva<br />
+          Tvameva sarvaṃ mama devadeva. </b
+        ><br />
+        <p class="left-align">
+          Meaning:You are the mother, you are the father, you are the relative,
+          you are the friend, you are education, you are wealth, you are
+          everything for me, O God please bless me.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/Tvameva.m4a" />
+          </audio>
+
+          <a href="small-slokas/Tvameva.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <b class="left-align">Vishnu SLokam: </b><br />
+        <b class="left-align"
+          >Shaanta-Aakaaram Bhujaga-Shayanam Padma-Naabham Sura-Iisham
+          <br />
+          Vishva-Aadhaaram Gagana-Sadrsham Megha-Varna Shubha-Anggam|
+          <br />
+          Lakssmii-Kaantam Kamala-Nayanam Yogibhir-Dhyaana-Gamyam <br />
+          Vande Vissnnum Bhava-Bhaya-Haram Sarva-Loka-Eka-Naatham || </b
+        ><br />
+        <p class="left-align">
+          Meaning: Salutations to Sri Vishnu, Who has a Serene Appearance, Who
+          Rests on a Serpent (Adisesha), Who has a Lotus on His Navel and Who is
+          the Lord of the Devas, Who Sustains the Universe, Who is Boundless and
+          Infinite like the Sky, Whose Color is like the Cloud (Bluish) and Who
+          has a Beautiful and Auspicious Body, Who is the Husband of Devi
+          Lakshmi, Whose Eyes are like Lotus and Who is Attainable to the Yogis
+          by Meditation, Salutations to That Vishnu Who Removes the Fear of
+          Worldly Existence and Who is the Lord of All the Lokas.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/VishnuSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/VishnuSlokam.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <b class="left-align">Shiva Bhagavan Slokam: </b><br />
+        <b class="left-align"
+          >Karacharana kritam Vaa kaya jam Karmajam Vaa,<br />
+          Shravananayanajam Vaa Maanasam Vaaparaadham,<br />
+          Vihitam avihitam Vaa Sarvametatkshamasva,<br />
+          Jaya Jaya Karunaabdhe Sri Mahadeva Shambho </b
+        ><br />
+        <p class="left-align">
+          Meaning: Lord Shiva, please forgive all the crimes committed by my
+          hand, feet, speech, body or any other body-doing body or by ear, eye
+          or mind. O Mahadev, Shambho! Your compassion is the ocean, hail you.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/ShivaBhagavanSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/ShivaBhagavanSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+        <b class="left-align">Lakshmi Devi Slokam: </b><br />
+        <b class="left-align"
+          >Lakshmi Ksheera Samudra Raja Tanaya<br />
+          Sree Ranga Dhameshwari Dasi Bhootha<br />
+          Samasata Deva Vanithaam Lokaika Deepankuram<br />
+          Sreeman Manda Kataaksha Labdha Vibhava<br />
+          Brahmendra Gangadharam Tvaam Trailokya Kudumbineem<br />
+          Sarasijam Vande Mukunda Priyaam </b
+        ><br />
+        <p class="left-align">
+          Goddess Lakshmi, who is the daughter of the king of the ocean of milk,
+          whose abode is Srirangam (with Lord Ranganatha), who is served by all
+          the divine ladies in heaven, who is the guiding light for the world,
+          who has obtained the sustained (continued, everlasting) glance (Grace)
+          from Brahma, Indra and Shiva.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/LakshmiDeviSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/LakshmiDeviSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+        <b class="left-align">Durga Devi SLokam: </b><br />
+        <b class="left-align"
+          >Yaa Devi Sarva Bhuteshu Matri Rupena Samsthita<br />
+          Yaa Devi Sarvabhuuteshhu Shaktirupena Samsthitah<br />
+          Yaa Devi Sarvabhuuteshhu Shaantirupena Samsthitah<br />
+          Namastasyaih Namastasyaih Namastasyaih Namo Namah" </b
+        ><br />
+        <p class="left-align">
+          Meaning: Goddess Durga is omnipresent. She is the personification of
+          Universal Mother. She is a Mother, who is present everywhere and who
+          is the embodiment of power and energy. Great mother, who is present
+          everywhere and who is the embodiment of Peace. I bow to that mother, I
+          bow to Durga, I bow to Shakti.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/DurgaDeviSlokam.m4a" />
+          </audio>
+
+          <a href="small-slokas/DurgaDeviSlokam.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+        <b class="left-align">Shanthi Mantram: </b><br />
+        <b class="left-align"
+          >”Om Sahanavavatu Saha nau bhunaktu<br />
+          Saha viryam karavavahai<br />
+          Tejasvi navadhitamastu Ma vidvisavahai<br />
+          Om Shantih, Shantih, Shantih.” </b
+        ><br />
+        <p class="left-align">
+          ”Om, May we all be protected,May we all be nourished May we work
+          together with great energy,May our intellect be sharpened.Let there be
+          no Animosity amongst us Om, peace, peace, peace."
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="small-slokas/ShanthiMantram.m4a" />
+          </audio>
+
+          <a href="small-slokas/ShanthiMantram.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <br />
+  </body>
+</html>

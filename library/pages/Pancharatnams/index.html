@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                  searchSlokas(this.value);
+                }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br /><br />
+    <h2 class="big-h2">Pancharatnams</h2>
+    <div id="ganesha-pancharatnam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Ganesha Pancharatnam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Ganesha Pancharatnam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Mudaakaraatha modakam Sadaavimukthi saadhakam<br />
+          Kalaadaraava tamsakam Vilaasiloka rakshakam<br />
+          Anaayakaika nayakam Vinaasithebha dhaithyakam<br />
+          Nathaashubhaashu nasakam Namamitham Vinayakam (1)</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          (I salute God Vinayaka/Ganesh) The one who joyfully holds sweet modaka
+          in his hand and who always gives salvation to his devotees. The one
+          who wears the moon as an ornament and the protector of all the worlds.
+          The one who acts as a guide/leader to the destitute or helpless
+          people, the destroyer of the demons. The one who removes the bad and
+          inauspicious things in one’s lives, I bow to you, the God Vinayaka.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam1.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam1.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Nathetharathi bhikaram Navodhitharka bhaaswaram<br />
+          Namatsurari nirjaram Nathadhikapa duddharam<br />
+          Sureshwaram Nidhishwaram Gajeshwaram Ganeshwaram<br />
+          Maheshwaramtha Maasraye Parathparam niramtaram (2)</b
+        ><br />
+        <p class="left-align meaning_font">
+          (I bow to the God Ganesha), The one who induces fear to the people
+          with dishonest and arrogance, the one who shines like a rising sun. I
+          pray to the one who destroys the enemies of the gods and who frees and
+          uplift his devotees from the obstacles. O’ Ganesha, the leader of gods
+          (Suras), the leader of wealth, the elephant-faced god and the Chief of
+          celestial attendants (Ganas). The one who is like God Maheswara and
+          always offers protection to the devotees who approached him.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam2.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam2.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Samasthaloka shankaram Nirastha daithya kunjaram<br />
+          Daretaro-daramvaram Varebha vakthramaksharam<br />
+          Krupakaram kshamakaram mudaakaram yashaskaram<br />
+          Manaskaram Namaskrutham Namaskaromi bhaswaram (3) </b
+        ><br />
+        <p class="left-align meaning_font">
+          I bow to the God Ganesha, who gives auspiciousness to all the worlds,
+          the destroyer of demons who are like the musth elephant. The one who
+          has a big stomach that signifies space and prosperity. Who gives great
+          boons and the elephant-faced god. The one who showers the grace, the
+          forgiver of mistakes, The god of happiness and the who gives glory to
+          his devotees. The one who gives good thoughts to the devotees. I bow
+          to you, the god with shining form.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam3.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam3.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Akimchanarthi maarjanam Chiranthanokthi bhaajanam <br />
+          Puraaripoorva nandanam Suraarigarva charvanam <br />
+          Prapanchanaasha bheeshanam Dhanamjayaadi Bhushanam <br />
+          Kapoladaana vaaranam Bhajepuraana vaaranam (4) </b
+        ><br />
+        <p class="left-align meaning_font">
+          I bow to the God Ganesh, who removes the sufferings of the destitute
+          or helpless, who is praised in the ancient texts and sayings. The
+          elder son of the Shiva (Purari)- the destroyer of Tripura’s, The
+          destroyer of the pride of the demons. The one who uses his powers
+          during the great dissolution (Pralaya), adorned with gods like Agni as
+          his ornaments. The one whose cheeks flows downs the fluid of grace
+          like the elephant, I adore you the primordial or ancient
+          elephant-headed god.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam4.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam4.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Nitaamtakanta dhantakaanti Mamtakaanta kaathmajam<br />
+          Achimthyaroopa mantaheena Mantaraaya krumtanam<br />
+          Hrudamtarae niramtaram Vasanthameva yoginaam<br />
+          Tamekadanta maevatam Vichimtayami samtatam (5) </b
+        ><br />
+        <p class="left-align meaning_font">
+          The one who is bright with glittering tusk, the son of the god (Shiva)
+          who killed Yama. The one who’s true form was unimaginable, The eternal
+          one, the remover of obstacles.The god who lives in the hearts of
+          yogi’s always. I meditate on the deity with a single tusk and the
+          remover of obstacles.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam5.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam5.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <br />
+
+        <h2 class="big-h2">
+          Phalastuti- Benefits of reading Ganesha Pancharatna
+        </h2>
+
+        <br />
+
+        <b class="left-align"
+          >Maha ganesha Pancharatna Maadarena Yoanvaham<br />
+          Prajalpati prabhatake Hrudhismaran ganeshwaram<br />
+          Arogatama dhoshatam Susahitheem suputratham<br />
+          Samahitayu rashtabhuthi Mabhyupaiti soachiraath</b
+        ><br />
+        <p class="left-align meaning_font">
+          One who reads Maha Ganesha pancharatnam with devotion every day and
+          Recites this in the morning keeping God Ganesha in the heart will be
+          granted good Health, blamelessness or life without faults, good
+          skills, and education, good children along with a complete life with
+          all the eight wealth’s (Asthaiwaryas).
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ganesha-pancharatnam/ganesha-pancharatnam6.m4a" />
+          </audio>
+
+          <a href="ganesha-pancharatnam/ganesha-pancharatnam6.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <div id="subrahmanya-pancharathnam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Sri Subrahmanya Pancharathnam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Subramanya Pancharathnam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >1.Shadananam, chandana lepithangam, <br />
+          Mahorasam, divya mayoora vahanam, <br />
+          Rudrasya soonum, sura loka nadam,<br />
+          Brahmanya devam, saranam prapadye.</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          I seek refuge with the god, who is Brahman, Who has six faces, Who
+          applies sandal paste all over his body. Who is the great essence, Who
+          rides on a peacock, Who is the son of Lord Shiva, and who is the lord
+          of the heaven.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam1.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam1.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >2.Jajwalyamanam, sura brunda vandyam,<br />
+          Kumaradhara thada mandirastham,<br />
+          Kandarpa roopam, Kamaneeya gathram,<br />
+          Brahmanya devam, saranam prapadye.</b
+        ><br />
+        <p class="left-align meaning_font">
+          I seek refuge with the god, who is Brahman, Who shines all over, Who
+          is saluted by all devas, Who has a temple on the banks of Kumaradhara,
+          Who has an enticing personality and who has a very attractive body.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam2.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam2.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >3.Dwishadbujam dwadasa divya nethram,<br />
+          Trayee thanum soolamasim dadhanam,<br />
+          Seshavatharam, kamaneeya roopam,<br />
+          Brahmanya devam, saranam prapadye. </b
+        ><br />
+        <p class="left-align meaning_font">
+          I seek refuge with the god, who is Brahman, Who has two sets of six
+          hands, Who has twelve holy eyes, Who is the son of the three eyed one,
+          Who gave him his weapon “Soola” ,Who is the incarnation of Sesha, and
+          who has a very pretty looks.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam3.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam3.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >4. Surari gorahava shobhamanam,<br />
+          Surothamam shakthi daram kumaram,<br />
+          Sudhaara shakthyayudha shobhi hastham,<br />
+          Brahmanya devam, saranam prapadye. </b
+        ><br />
+        <p class="left-align meaning_font">
+          I seek refuge with the god, who is Brahman, Who appears as fearful
+          light to the enemies of devas, Who is the greatest among devas, Whom
+          Shakthi holds as her on and who shines with the Shakthi in his hand.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam4.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam4.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >5.Ishtartha sidhi pradha meesa puthram,<br />
+          Ishtannadham bhoosura kamadhenum,<br />
+          Gangodbhavam sarva jananukoolam,<br />
+          Brahmanya devam, saranam prapadye. </b
+        ><br />
+        <p class="left-align meaning_font">
+          I seek refuge with the god, who is Brahman, Who is the son of Lord
+          Shiva, Who grants all that is asked for, Who grants desired food, Who
+          is the wish giving cow, To all the Brahmins, Who rose out of river
+          Ganga and who helps all people.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam5.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam5.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <br />
+
+        <h2 class="big-h2">
+          Phalastuti- Benefits of reading Subrahmanya Pancharatna
+        </h2>
+
+        <br />
+
+        <b class="left-align"
+          >6.Ya slokamidham padatheeha bhakthya,<br />
+          Brahmanya deva nivesitha manasa san,<br />
+          Prapnothi bhogamakilam bhuvi yadyadishtam,<br />
+          Anthe cha gachathi muda guha samyameva.</b
+        ><br />
+        <p class="left-align meaning_font">
+          Those who read these five stanzas with devotion, With mind full of
+          that God, who is Brahman himself, Would enjoy all the pleasures till
+          they are in this earth and at the end reach the presence of Lord
+          Subrahamanya.
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="subrahmanya-pancharathnam/subrahmanya-pancharathnam6.m4a"
+            />
+          </audio>
+
+          <a
+            href="subrahmanya-pancharathnam/subrahmanya-pancharathnam6.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <br />
+  </body>
+</html>
