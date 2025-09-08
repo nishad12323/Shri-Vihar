@@ -40,81 +40,157 @@
       name="description"
       content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
     />
+    <script>
+      location.replace("/library/pages/");
+    </script>
   </head>
 
   <body>
     <div class="backdrop"></div>
 
     <header>
-      <div id="brand">
-        <a style="color: white" href="/"><img src="" /></a
-        ><a style="color: black" href="/">Shri Vihar Slokam Class</a>
-      </div>
-      <nav>
-        <ul>
-          <li class="menu-only"><a style="color: black" href="/">Home</a></li>
-          <b class="bold-selected-item">
-            <li class="menu-only">
-              <a style="color: black" href="library.html">Sloka Library</a>
-            </li>
-          </b>
-          <li class="menu-only">
-            <a style="color: black" href="/#about">About</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#classes">Classes</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#contact">Contact us</a>
-          </li>
-          <li class="menu-only">
-            <button class="register" onclick="register()">
-              <b>Register</b>
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+            searchSlokas(this.value);
+          }"
+        /></label>
 
-      <div id="menu-icon" onclick="toggleMobileMenu(this)">
-        <div style="background: black" class="bar1"></div>
-        <div style="background: black" class="bar2"></div>
-        <div style="background: black" class="bar3"></div>
-
-        <ul class="mobile-menu">
-          <li class="menu-only"><a style="color: black" href="/">Home</a></li>
-          <b>
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
             <li class="menu-only">
-              <a style="color: black" href="library.html">Sloka Library</a>
+              <a style="color: black" href="/#about">About</a>
             </li>
-          </b>
-          <li class="menu-only">
-            <a style="color: black" href="/#about">About</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#classes">Classes</a>
-          </li>
-          <li class="menu-only">
-            <a style="color: black" href="/#contact">Contact us</a>
-          </li>
-          <li class="menu-only">
-            <button class="register" onclick="register()">
-              <b>Register</b>
-            </button>
-          </li>
-        </ul>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
+
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
 
     <div class="every-content-container">
       <br />
 
-      <p class="center-align meaning_font">"HARI OM"</p>
+      <p class="center-align meaning_font hari-om">"HARI OM"</p>
       <br />
 
       <div class="container">
         <div class="contents-container">
           <center>
-            <div class="gray">
+            <div class="gray list-of-slokams">
               <div class="side-bar">
                 <br />
                 <h1>List of Slokams</h1>
@@ -247,6 +323,11 @@
                       class="list-item"
                       href="library.html#sri-venkateswara-stotram"
                       >Sri Venkateswara Stotram</a
+                    >
+                  </p>
+                  <p>
+                    <a class="list-item" href="library.html#hanuman-chalisa"
+                      >Hanuman Chalisa</a
                     >
                   </p>
                 </ul>
@@ -1220,14 +1301,32 @@
 
               <div class="heading-container">
                 <h2 class="big-h2">Krishna Ashtakam</h2>
-                <button
-                  class="printPDFbutton"
-                  onclick="print('Krishna ashtakam.pdf')"
-                >
-                  Print PDF<br /><span class="material-symbols-outlined"
-                    >print</span
+                <div class="button-container">
+                  <button
+                    class="printPDFbutton"
+                    onclick="print('Krishna ashtakam.pdf')"
                   >
-                </button>
+                    Print PDF<br /><span class="material-symbols-outlined"
+                      >print</span
+                    >
+                  </button>
+                  <button
+                    class="printPDFbutton"
+                    onclick="videoPlayer(this)"
+                    data-video="https://www.youtube.com/embed/BSHLFO-mgGE?si=8MPAcN58ylM5YBlG"
+                  >
+                    Watch Video<br /><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path
+                        d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               <br />
@@ -1461,14 +1560,32 @@
 
               <div class="heading-container">
                 <h2 class="big-h2">Mahalakshmi Ashtakam</h2>
-                <button
-                  class="printPDFbutton"
-                  onclick="print('Mahalakshmi Ashtakam with meaning.pdf')"
-                >
-                  Print PDF<br /><span class="material-symbols-outlined"
-                    >print</span
+                <div class="button-container">
+                  <button
+                    class="printPDFbutton"
+                    onclick="print('Mahalakshmi Ashtakam with meaning.pdf')"
                   >
-                </button>
+                    Print PDF<br /><span class="material-symbols-outlined"
+                      >print</span
+                    >
+                  </button>
+                  <button
+                    class="printPDFbutton"
+                    onclick="videoPlayer(this)"
+                    data-video="https://www.youtube.com/embed/MTHJSA-08-E?si=XuuTv20Ps0RImgL5"
+                  >
+                    Watch Video<br /><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path
+                        d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               <br />
@@ -2378,14 +2495,32 @@
               <div class="heading-container">
                 <h2 class="big-h2">Ranganatha Ashtakam</h2>
 
-                <button
-                  class="printPDFbutton"
-                  onclick="print('Ranganatha Ashtakam.pdf')"
-                >
-                  Print PDF<br /><span class="material-symbols-outlined"
-                    >print</span
+                <div class="button-container">
+                  <button
+                    class="printPDFbutton"
+                    onclick="print('Ranganatha Ashtakam.pdf')"
                   >
-                </button>
+                    Print PDF<br /><span class="material-symbols-outlined"
+                      >print</span
+                    >
+                  </button>
+                  <button
+                    class="printPDFbutton"
+                    onclick="videoPlayer(this)"
+                    data-video="https://www.youtube.com/embed/qvYy7t7IPqA?si=R8YtENooUNrQlJA"
+                  >
+                    Watch Video<br /><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path
+                        d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               <br />
@@ -3301,14 +3436,33 @@
               <div class="heading-container">
                 <h2 class="big-h2">Bala Munkunda Ashtakam</h2>
 
-                <button
-                  class="printPDFbutton"
-                  onclick="print('Balamukundhaashtakam.pdf')"
-                >
-                  Print PDF<br /><span class="material-symbols-outlined"
-                    >print</span
+                <div class="button-container">
+                  <button
+                    class="printPDFbutton"
+                    onclick="print('Balamukundhaashtakam.pdf')"
                   >
-                </button>
+                    Print PDF<br /><span class="material-symbols-outlined"
+                      >print</span
+                    >
+                  </button>
+
+                  <button
+                    class="printPDFbutton"
+                    onclick="videoPlayer(this)"
+                    data-video="https://www.youtube.com/embed/C5KSe-2qgas?si=MZrObLvwjB6t09ki"
+                  >
+                    Watch Video<br /><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 50 50"
+                      width="24px"
+                      height="24px"
+                    >
+                      <path
+                        d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               <br />
@@ -5793,6 +5947,977 @@
                   >Download Audio</a
                 >
               </div>
+
+              <br /><br />
+            </div>
+            <br />
+          </div>
+
+          <div id="hanuman-chalisa">
+            <br />
+            <br />
+            <br />
+            <div class="gray">
+              <br />
+
+              <div class="heading-container">
+                <h2 class="big-h2">Hanuman Chalisa</h2>
+                <button
+                  class="printPDFbutton"
+                  onclick="print('Hanuman Chalisa.pdf')"
+                >
+                  Print PDF<br /><span class="material-symbols-outlined"
+                    >print</span
+                  >
+                </button>
+              </div>
+
+              <br />
+
+              <b><u>Doha</u></b>
+
+              <b class="left-align">
+                śrī guru charaṇa sarōja raja nijamana mukura sudhāri ।<br />
+                varaṇau raghuvara vimalayaśa jō dāyaka phalachāri ॥
+              </b>
+
+              <br />
+              <p class="meaning_font">
+                Having polished the mirror of my heart with the dust of my
+                Guru's lotus feet, I recite the divine fame of the greatest king
+                of Raghukul dynasty, which bestows us with the fruit of all the
+                four efforts.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-doha1.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-doha1.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br />
+
+              <b class="left-align">
+                budhi hīna tanu jānike sumirau pavana-kumāra ।<br />
+                bala budhi vidyā dēhu mōhī harahu kalesa vikāra ॥
+              </b>
+              <br />
+              <p class="meaning_font">
+                Knowing that this mind of mine has less intelligence, I remember
+                the 'Son of Wind' who, granting me strength, wisdom and all
+                kinds of knowledge, removes all my suffering and shortcomings.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-doha2.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-doha2.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <hr />
+              <br />
+
+              <b class="left-align">
+                jaya hanumāna jñāna guṇa sāgara ।<br />
+                jaya kapīśa tihu lōka ujāgara ॥ 1 ॥
+              </b>
+
+              <br />
+
+              <p class="meaning_font">
+                Victory to Lord Hanuman, the ocean of wisdom and virtue. Victory
+                to the Lord who is supreme among the monkeys, illuminator of the
+                three worlds.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-1.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-1.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align">
+                rāmadūta atulita baladhāmā ।<br />
+                añjani putra pavanasuta nāmā ॥ 2 ॥
+              </b>
+
+              <br />
+
+              <p class="meaning_font">
+                You are Lord Rama's emissary, the abode of matchless power,
+                Mother Anjani's son and also popular as the ‘Son of the Wind’.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-2.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-2.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align">
+                mahāvīra vikrama bajaraṅgī ।<br />
+                kumati nivāra sumati kē saṅgī ॥ 3 ॥
+              </b>
+              <br />
+
+              <p class="meaning_font">
+                Great hero, You are as mighty as a thunderbolt. You remove evil
+                intellect and are the companion of those having good ones.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-3.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-3.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align">
+                kañchana varaṇa virāja suvēśā ।<br />
+                kānana kuṇḍala kuñchita kēśā ॥ 4 ॥
+              </b>
+
+              <br />
+
+              <p class="meaning_font">
+                Your skin is golden in color and You are adorned with beautiful
+                clothes. You have adorning earrings in Your ears and Your hair
+                is curly and thick.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-4.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-4.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br />
+
+              <b class="left-align">
+                hāthavajra au dhvajā virājai ।<br />
+                kānthē mūñja janēvū sājai ॥ 5॥
+              </b>
+
+              <br />
+
+              <p class="meaning_font">
+                In Your hands, shine a mace and a flag of righteousness. A
+                sacred thread adorns Your right shoulder.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-5.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-5.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br />
+
+              <b class="left-align"
+                >śaṅkara suvana kēsarī nandana ।<br />tēja pratāpa mahājaga
+                vandana ॥ 6 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You are the embodiment of Lord Shiva and vanar-raj Kesari’s son.
+                There is no limit or end to Your glory, Your magnificence. The
+                whole Universe worships You.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-6.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-6.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >vidyāvāna guṇī ati chātura ।<br />rāma kāja karivē kō ātura ॥ 7
+                ॥ </b
+              ><br />
+
+              <p class="meaning_font">
+                You are the wisest of the wise, virtuous and (morally) clever.
+                You are always eager to do Lord Rama's works.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-7.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-7.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >prabhu charitra sunivē kō rasiyā ।<br />rāmalakhana sītā mana
+                basiyā ॥ 8॥</b
+              ><br />
+              <p class="meaning_font">
+                You feel extremely delighted in listening to Lord Rama's doings
+                and conduct. Lord Rama, Mother Sita, and Lord Lakshmana dwell
+                forever in Your heart.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-8.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-8.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >sūkṣma rūpadhari siyahi dikhāvā ।<br />vikaṭa rūpadhari laṅka
+                jalāvā ॥ 9 ॥</b
+              ><br />
+
+              <p class="meaning_font">
+                Taking the subtle form, You appeared in front of Mother Sita.
+                And, taking the formidable form, You burnt the Lanka (Ravana's
+                kingdom).
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-9.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-9.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >bhīma rūpadhari asura saṃhārē ।<br />rāmachandra kē kāja
+                saṃvārē ॥ 10 ॥ </b
+              ><br />
+
+              <p class="meaning_font">
+                Taking the massive form (like that of Bheema), You slaughtered
+                the demons. This is how, You completed Lord Rama's tasks,
+                successfully.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-10.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-10.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >lāya sañjīvana lakhana jiyāyē । <br />śrī raghuvīra haraṣi
+                uralāyē ॥ 11 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Bringing the magic-herb (sanjivani), You revived Lord Laxmana,
+                bringing joy to Sri Rama.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-11.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-11.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                raghupati kīnhī bahuta baḍāyī । <br />tuma mama priya bharata
+                sama bhāyī ॥ 12 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Raghupati, Lord Rama praised You greatly and overflowing in
+                gratitude, said that You are a dear brother to Him just as
+                Bharat is.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-12.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-12.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                sahasra vadana tumharō yaśagāvai ।<br />
+                asa kahi śrīpati kaṇṭha lagāvai ॥ 13 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Saying this, Lord Rama drew You to Himself and embraced you.
+                Sages like Sanaka, Gods like Brahma and sages like Narada and
+                even the thousand-mouthed serpent sing Your fame!
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-13.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-13.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                sanakādika brahmādi munīśā ।<br />
+                nārada śārada sahita ahīśā ॥ 14 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Sanak, Sanandan and the other Rishis and great saints; Brahma -
+                the god, Narada, Saraswati - the Mother Divine and the King of
+                serpents sing Your glory.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-14.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-14.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                yama kubēra digapāla jahāṃ tē ।<br />
+                kavi kōvida kahi sakē kahāṃ tē ॥ 15 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Yama, Kubera and the guardians of the four quarters; poets and
+                scholars - none can express Your glory.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-15.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-15.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                tuma upakāra sugrīvahi kīnhā ।<br />
+                rāma milāya rājapada dīnhā ॥ 16 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You helped Sugriva by introducing Him to Lord Rama and regaining
+                his crown. Therefore, You gave Him the Kingship (the dignity of
+                being called a king).
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-16.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-16.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br />
+              <b class="left-align"
+                >tumharō mantra vibhīṣaṇa mānā । <br />laṅkēśvara bhayē saba
+                jaga jānā ॥ 17 ॥ </b
+              ><br />
+              <p class="meaning_font">
+                Likewise, complying with Your preachings, even Vibhishana became
+                the King of Lanka.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-17.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-17.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >yuga sahasra yōjana para bhānū ।<br />
+                līlyō tāhi madhura phala jānū ॥ 18 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You swallowed the sun, located thousands of miles away,
+                mistaking it to be a sweet, red fruit!
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-18.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-18.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >prabhu mudrikā mēli mukha māhī ।<br />
+                jaladhi lāṅghi gayē acharaja nāhī ॥ 19 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Keeping the ring in Your mouth, which was given to You by Lord
+                Rama, you crossed over the Ocean, to no astonishment,
+                whatsoever.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-19.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-19.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align">
+                durgama kāja jagata kē jētē । <br />sugama anugraha tumharē tētē
+                ॥ 20 ॥</b
+              ><br />
+              <p class="meaning_font">
+                All difficult tasks of this world become easy, with Your grace.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-20.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-20.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <b class="left-align"
+                >rāma duārē tuma rakhavārē ।rāma duārē tuma rakhavārē ।<br />
+                hōta na ājñā binu paisārē ॥ 21 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You are the guardian at Lord Rama's door. Nobody can move
+                forward without Your permission which means that Lord Rama's
+                darshans (to get the sight of) are possible only with Your
+                blessings.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-21.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-21.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >saba sukha lahai tumhārī śaraṇā ।<br />
+                tuma rakṣaka kāhū kō ḍara nā ॥ 22 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Those who take refuge in You, find all the comforts and
+                happiness. When we have a protector like You, we do not need to
+                get scared of anybody or anything.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-22.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-22.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+
+              <br />
+              <b class="left-align"
+                >āpana tēja samhārō āpai ।<br />
+                tīnōṃ lōka hāṅka tē kāmpai ॥ 23 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You alone can withstand Your magnificence. All the three worlds
+                start trembling at one roar of Yours.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-23.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-23.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >bhūta piśācha nikaṭa nahi āvai ।<br />
+                mahavīra jaba nāma sunāvai ॥ 24 ॥</b
+              ><br />
+              <p class="meaning_font">
+                O Mahaveer! No ghosts or evil spirits come near the ones who
+                remember Your name. Therefore, just remembering Your name does
+                everything!
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-24.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-24.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >nāsai rōga harai saba pīrā ।<br />
+                japata nirantara hanumata vīrā ॥ 25 ॥</b
+              ><br />
+              <p class="meaning_font">
+                O Hanuman! All diseases and all kinds of pain get eradicated
+                when one recites or chants Your name. Therefore, chanting Your
+                name regularly is considered to be very significant.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-25.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-25.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >saṅkaṭa sē hanumāna Chuḍāvai ।<br />
+                mana krama vachana dhyāna jō lāvai ॥ 26 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Whoever meditates upon or worships You with thought, word, and
+                deed, gets freedom from all kinds of crisis and affliction.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-26.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-26.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >saba para rāma tapasvī rājā ।<br />
+                tinakē kāja sakala tuma sājā ॥ 27 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Lord Rama is the greatest Ascetic amongst all the Kings. But,
+                it's only You who carried out all the tasks of Lord Sri Rama.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-27.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-27.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >aura manōradha jō kōyi lāvai ।<br />
+                tāsu amita jīvana phala pāvai ॥ 28 ॥</b
+              ><br />
+              <p class="meaning_font">
+                One who comes to You with any longing or a sincere desire
+                obtains the abundance of the manifested fruit, which remains
+                undying throughout life.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-28.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-28.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >chārō yuga pratāpa tumhārā ।<br />
+                hai prasiddha jagata ujiyārā ॥ 29 ॥</b
+              ><br />
+              <p class="meaning_font">
+                Your splendor fills all the Four Ages. And, Your glory is
+                renowned throughout the world.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-29.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-29.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >sādhu santa kē tuma rakhavārē ।<br />
+                asura nikandana rāma dulārē ॥ 30 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You are the guardian of saints and sages; the destroyer of
+                demons and adored by Lord Rama.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-30.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-30.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >aṣṭhasiddhi nava nidhi kē dātā ।<br />
+                asa vara dīnha jānakī mātā ॥ 31 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You have been blessed by Mother Janaki to give boon further, to
+                the deserving ones, wherein You can grant the siddhis (eight
+                different powers) and the nidhis (nine different kinds of
+                wealth).
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-31.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-31.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >rāma rasāyana tumhārē pāsā ।<br />
+                sadā rahō raghupati kē dāsā ॥ 32 ॥</b
+              ><br />
+              <p class="meaning_font">
+                You have the essence of Ram bhakti, may you always remain the
+                humble and devoted servant of Raghupati.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-32.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-32.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >tumharē bhajana rāmakō pāvai ।<br />
+                janma janma kē dukha bisarāvai ॥ 33 ॥</b
+              ><br />
+              <p class="meaning_font">
+                When one sings Your praise, Your name, He gets to meet Lord Rama
+                and finds relief from the sorrows of many lifetimes.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-33.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-33.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >anta kāla raghupati purajāyī ।<br />
+                jahāṃ janma haribhakta kahāyī ॥ 34 ॥</b
+              ><br />
+              <p class="meaning_font">
+                By your grace, one will go to the immortal abode of Lord Rama
+                after death and remain devoted to Him.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-34.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-34.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >aura dēvatā chitta na dharayī ।<br />
+                hanumata sēyi sarva sukha karayī ॥ 35 ॥</b
+              ><br />
+              <p class="meaning_font">
+                It is not needed to serve any other Deity or God. Service to
+                Lord Hanuman gives all the comforts.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-35.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-35.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >saṅkaṭa ka(ha)ṭai miṭai saba pīrā ।<br />
+                jō sumirai hanumata bala vīrā ॥ 36 ॥</b
+              ><br />
+              <p class="meaning_font">
+                All troubles cease for the one who remembers the powerful lord,
+                Lord Hanuman and all his pains also come to an end.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-36.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-36.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >jai jai jai hanumāna gōsāyī ।<br />
+                kṛpā karahu gurudēva kī nāyī ॥ 37 ॥</b
+              ><br />
+              <p class="meaning_font">
+                O Lord Hanuman! Praises and glory to you O mighty Lord, please
+                bestow your grace as our Supreme Guru.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-37.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-37.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >jō śata vāra pāṭha kara kōyī ।<br />
+                Chūṭahi bandi mahā sukha hōyī ॥ 38 ॥</b
+              ><br />
+              <p class="meaning_font">
+                One who recites this Chalisa a hundred times is released from
+                all bondages and will attain great bliss.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-38.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-38.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >jō yaha paḍai hanumāna chālīsā ।<br />
+                hōya siddhi sākhī gaurīśā ॥ 39 ॥</b
+              ><br />
+              <p class="meaning_font">
+                One who reads and recites this Hanuman Chalisa, all his works
+                get accomplished. Lord Shiva, Himself, is the witness to it.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-39.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-39.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <b class="left-align"
+                >tulasīdāsa sadā hari chērā ।<br />
+                kījai nātha hṛdaya maha ḍērā ॥ 40 ॥</b
+              ><br />
+              <p class="meaning_font">
+                O Lord Hanuman, May I always remain a servant, a devotee to Lord
+                Sri Ram, says Tulsidas. And, May You always reside in my heart.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-40.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-40.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+
+              <hr />
+              <br />
+              <b
+                ><u><i>Doha</i></u></b
+              >
+              <br />
+              <b class="left-align">
+                pavana tanaya saṅkaṭa haraṇa - maṅgaḻa mūrati rūp । rāma lakhana
+                sītā sahita - hṛdaya basahu surabhūp ॥</b
+              ><br />
+              <p class="meaning_font">
+                O the Son of Wind, You are the destroyer of all sorrows. You are
+                the embodiment of fortune and prosperity.
+              </p>
+
+              <br />
+              <b class="left-align"
+                >siyāvara rāmachandrakī jaya I pavanasuta hanumānakī jaya । bōlō
+                bhāyī saba santanakī jaya ।</b
+              ><br />
+              <p class="meaning_font">
+                I With Lord Rama, Laxmana and Mother Sita, dwell in my heart,
+                always.
+              </p>
+              <div class="audio-and-download">
+                <br /><audio controls>
+                  <source src="hanuman-chalisa/hanuman-chalisa-doha2.m4a" />
+                </audio>
+                <a
+                  class="download-audio"
+                  href="hanuman-chalisa/hanuman-chalisa-doha2.m4a"
+                  download
+                  >Download Audio</a
+                >
+              </div>
+              <br />
+              <br />
+
+              <br /><br />
 
               <br /><br />
             </div>

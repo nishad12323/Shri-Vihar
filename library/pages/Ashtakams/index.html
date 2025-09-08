@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sloka Library</title>
+    <link rel="stylesheet" href="/library.css" />
+    <link rel="stylesheet" href="/menu.css" />
+    <script defer src="/library.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Prosper" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <meta
+      name="keywords"
+      content="slokam, sloka, class, Pavithra, Shri Vihar, god, sloka class, slokam class, Shri Vihar slokam class, Pavithra Aravind, online, online sloka class, online slokam class, in-person, in-person slokam class, in person slokam class, in person, in person sloka class, in-person slokam class"
+    />
+    <meta
+      name="description"
+      content="Shri Vihar Sloka Class teaches slokas for kids of all ages."
+    />
+    <meta name="theme-color" content="#9b0303" />
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <div id="brand"></div>
+      <div class="menu-container">
+        <label id="search-label">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search..."
+            list="slokas"
+            onkeypress="if (event.key === 'Enter') {
+                  searchSlokas(this.value);
+                }"
+        /></label>
+
+        <datalist id="slokas">
+          <option value="Beginning and Ending Slokams" />
+          <option value="Nitya Parayana Slokams" />
+          <option value="Small Slokas" />
+          <option value="Krishna Ashtakam" />
+          <option value="Mahalakshmi Ashtakam" />
+          <option value="Lingashtakam" />
+          <option value="Dhukka Nivarana Ashtakam" />
+          <option value="Ranganatha Ashtakam" />
+          <option value="Achutha Ashtakam" />
+          <option value="Madhurashtakam" />
+          <option value="Totakashtakam" />
+          <option value="Bala Mukunda Ashtakam" />
+          <option value="Vaidyanatha Ashtakam" />
+          <option value="Ganesha Pancharatnam" />
+          <option value="Sri Subrahmanya Pancharathnam" />
+          <option value="Shiva Panchakshara Stotram" />
+          <option value="Ashtalakshmi Stotram" />
+          <option value="Sri Navagraha Stotram" />
+          <option value="Mahisasura Mardini Stotram" />
+          <option value="Sri Venkateswara Stotram" />
+          <option value="Hanuman Chalisa" />
+          <option value="Abirami Ammai Pathigam" />
+          <option value="Yaa Devi Sarva Bhuteshu" />
+          <option value="Sri Ramar Slokams" />
+          <option value="Nama Ramayanam" />
+          <option value="Ramachandra Mangalam" />
+          <option value="Thirupavai" />
+        </datalist>
+        <nav>
+          <ul>
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b class="bold-selected-item">
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+          <div style="background: black" class="bar1"></div>
+          <div style="background: black" class="bar2"></div>
+          <div style="background: black" class="bar3"></div>
+
+          <ul class="mobile-menu">
+            <li class="menu-only"><a style="color: black" href="/">Home</a></li>
+            <b>
+              <li class="menu-only">
+                <a style="color: black" href="/library">Sloka Library</a>
+              </li>
+            </b>
+            <li class="menu-only">
+              <a style="color: black" href="/#about">About</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#classes">Classes</a>
+            </li>
+            <li class="menu-only">
+              <a style="color: black" href="/#contact">Contact us</a>
+            </li>
+            <li class="menu-only">
+              <button class="register" onclick="register()">
+                <b>Register</b>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="back-banner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48px"
+        viewBox="0 -960 960 960"
+        width="48px"
+        fill="#6e2126"
+      >
+        <path
+          stroke="#6e2126"
+          stroke-width="60"
+          d="m313-435 232 233-64 63-342-342 341-341 65 64-232 232h509v91H313Z"
+        ></path></svg
+      >Back
+    </div>
+    <dialog id="video-dialog">
+      <div class="title-container">
+        <p class="video-title">Video Player</p>
+        <button class="close-button" onclick="closeVideo()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="video-container">
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+          Loading...
+        </iframe>
+      </div>
+    </dialog>
+
+    <br />
+    <br />
+    <h2 class="big-h2">Ashtakams</h2>
+
+    <div id="krishna-ashtakam">
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Krishna Ashtakam</h2>
+          <div class="button-container">
+            <button
+              class="printPDFbutton"
+              onclick="print('Krishna ashtakam.pdf')"
+            >
+              Print PDF<br /><span class="material-symbols-outlined"
+                >print</span
+              >
+            </button>
+            <button
+              class="printPDFbutton"
+              onclick="videoPlayer(this)"
+              data-video="https://www.youtube.com/embed/BSHLFO-mgGE?si=8MPAcN58ylM5YBlG"
+            >
+              Watch Video<br /><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vasudeva sutham devam,<br />
+          Kamsa Chanoora Mardhanam,<br />
+          Devaki Paramanandam,<br />
+          Krishnam Vande Jagat Gurum. 1 </b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who is the God who is the son of Vasudeva,<br />
+          Who killed Kamsa and Chanoora,<br />
+          And who gave immense joy to Devaki.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam1.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam1.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Athasee pushpa sangasam,<br />
+          Hara noopura Shobitham,<br />
+          Rathna kankana keyuram,<br />
+          Krishnam Vande Jagat Gurum. 2</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who decorates himself with flowers of Athasee.<br />
+          Who shines in garlands and anklets that he wears.<br />
+          And who has a bangle made of jewels in his right hand.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam2.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam2.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kutilalaka samyuktham,<br />
+          Poorna chandra nibhananam,<br />
+          Vilasath kundala dharam,<br />
+          Krishnam Vande Jagat Gurum. 3</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who is blessed with black curly hair,<br />
+          Who is very similar to the full moon,<br />
+          And who shines in his ear drops.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam3.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam3.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Mandhara gandha samyuktham,<br />
+          Charuhasam chathurbhujam,<br />
+          Barhi pinjava choodangam,<br />
+          Krishnam Vande Jagat Gurum. 4</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna.<br />
+          Who has the sweet scent of mandara flowers,<br />
+          Who has pretty smile and four arms,<br />
+          And who decorates is hair with peacock feathers.<br />
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam4.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam4.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Uthfulla padma pathraksham,<br />
+          Neela jeemutha sannibham,<br />
+          Yadavaanaam siro rathnam,<br />
+          Krishnam Vande Jagat Gurum. 5</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who has eyes resembling the fully open lotus flowers,<br />
+          Who has the blue colour of rich clouds,<br />
+          And who is the chief gem of the clan of Yadavas.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam5.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam5.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Rukmani keli samyuktham,<br />
+          Peethambara shobitham,<br />
+          Avaptha thulasi gandham,<br />
+          Krishnam Vande Jagat Gurum. 6</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who is engaged in playing with Rukmani,<br />
+          Who shines in yellow silks,<br />
+          And who is attracted by scent of ocimum.<br />
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam6.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam6.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Gopikaanaam kucha dwandwam,<br />
+          Kunkumankitha vakshasam,<br />
+          Sriniketham maheshwasam,<br />
+          Krishnam Vande Jagat Gurum. 7</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna.<br />
+          Who is embraced by the two busts of Gopis,<br />
+          Whose chest has the marks of saffron,<br />
+          Who lives with Lakshmi and has a big bow.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam7.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sree vathsam mahoraskam,<br />
+          Vanamala virajitham,<br />
+          Sanka chakra dharam devam,<br />
+          Krishnam Vande Jagat Gurum. 8</b
+        ><br />
+        <p class="left-align">
+          Salutations to the teacher of the world, Krishna,<br />
+          Who has the mole Sri Vathsa on his chest and greatly enjoys,<br />
+          Who is decorated by garlands of forest flowers,<br />
+          And who holds the conch and the holy wheel.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam8.m4a" />
+          </audio>
+
+          <a href="krishna-ashtakam/krishna-ashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Krishnashtakamidham punyam,<br />
+          Prathar uthaya ya padeth,</b
+        ><br />
+
+        <br />
+
+        <b class="left-align"
+          >Koti Janma krutham papam,<br />
+          Smaranath thasya nasyathi.</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="krishna-ashtakam/krishna-ashtakam9.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="krishna-ashtakam/krishna-ashtakam9.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+      </div>
+    </div>
+    <div id="mahalakshmi-ashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Mahalakshmi Ashtakam</h2>
+          <div class="button-container">
+            <button
+              class="printPDFbutton"
+              onclick="print('Mahalakshmi Ashtakam with meaning.pdf')"
+            >
+              Print PDF<br /><span class="material-symbols-outlined"
+                >print</span
+              >
+            </button>
+            <button
+              class="printPDFbutton"
+              onclick="videoPlayer(this)"
+              data-video="https://www.youtube.com/embed/MTHJSA-08-E?si=XuuTv20Ps0RImgL5"
+            >
+              Watch Video<br /><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Namasthesthu Mahamaye Sripethe Surapoojithe<br />Sankhachakra
+          Gadahasthe Mahalakshmi Namosthuthe (1)</b
+        ><br />
+        <p class="left-align">
+          I bow to you O Mahamaya, the one who resides in Sripetha and is
+          worshipped by Suras(devas). The one who holds Shanka (conch),
+          Chakra(disc) and Gadha (mace) in her hands, I bow to her the Goddess
+          Mahalakshmi.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam1.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam1.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Namasthe Garudarudhe Kolasura bhayamkari <br />
+          Sarvapapahare-devi Mahalakshmi Namosthuthe(2)</b
+        ><br />
+        <p class="left-align">
+          I bow to you, who mounts on Garuda, who created great fear and
+          annihilated the demon Kolasura.The Goddess who removes all the sins, O
+          Mahalakshmi I bow to you.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam2.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam2.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sarvagne Sarva-varade Sarva dushta bhayamkari Sarvadhukha-hare devi
+          Mahalakshmi Namosthuthe(3)</b
+        ><br />
+        <p class="left-align">
+          (Salutations to Devi) The one who knows everything (sarvagna),
+          bestower of all the boons, whose name frightens the wicked. The Devi
+          who removes all the miseries and sorrows, O Mahalakshmi I bow to you.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam3.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam3.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Siddhi Buddhi prade devi Bukthi Mukti pradhayini <br />
+          Mantra-murthe Sadadevi Mahalakshmi Namosthuthe(4)</b
+        ><br />
+        <p class="left-align">
+          The giver of siddhi (success or accomplishment), buddhi (intelligence)
+          and who grants the worldly pleasures (bukthi) as well as the
+          Liberation (Mukti). The one who is always an embodied form of mantra,
+          Goddess Mahalakshmi I bow to you.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam4.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam4.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Aadyanta rahite devi Aadi-Sakthi Maheshwari <br />Yogagye
+          Yoga-Sambhuthe Mahalakshmi Namosthuthe (5)</b
+        ><br />
+        <p class="left-align">
+          O Devi who is infinite without beginning or the end, Who represents
+          the primordial Energy, Maheshwari. One Who is associated with the
+          yogic knowledge, who is born from the yoga, I bow to you Goddess
+          Mahalakshmi.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam5.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam5.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sthula Sukshma Maharoudre Mahashakthi Mahodare <br />
+          Mahapapa-hare devi MahaLakshmi Namosthuthe (6)</b
+        ><br />
+        <p class="left-align">
+          The one who is present in gross, subtle as well as fearsome forms, the
+          maha shakti, who saves the universe by keeping in her great womb. O
+          Devi the remover of the great sins, I bow to you Goddess Mahalakshmi.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam6.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam6.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Padmasana-sthithe devi prabrahma-swaroopini <br />
+          Paramesi jaganmatah Mahalakshmi Namosthuthe (7)</b
+        ><br />
+        <p class="left-align">
+          The Devi who is seated on a lotus in the Padmasana position, Whose
+          form represents the supreme beingO Paramesi(who is supreme), Jaganmata
+          (the mother of the Universe), Mahalakshmi, I bow to you.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam7.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Swethambara-dhare devi Nanalankara bhushitae Jagatsthithe jaganmatah
+          Mahalakshmi Namosthuthe (8)</b
+        ><br />
+        <p class="left-align">
+          The one who wears white clothing, Who is adorned with jewels and
+          various ornaments Who preserves and protects the worlds, the mother of
+          the universe, Goddess Mahalakshmi, I bow to you
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam8.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">
+          Phalastuti or the Lines of Benefits of this Stotram:
+        </h2>
+
+        <br />
+
+        <b class="left-align"
+          >Mahalakshmashtakam stotram yahpated bakthimaan-narah<br />
+          Sarva siddhi mavapnothi rajyam prapnothi sarvada</b
+        ><br />
+        <p class="left-align">
+          The one who recites this Mahalakshmi Ashtakam stotram with devotion
+          Will attain all the siddhi’s(accomplishments) and high status always
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam9.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam9.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ekakale pathenitthyam mahapapa vinasanam <br />
+          Dwikalam yah pathenitthyam dhana dhaanya samanvitaha</b
+        ><br />
+        <p class="left-align">
+          By reciting this stotra once daily (usually mornings) will destroys
+          all the great sins Reciting it twice daily (usually morning and
+          evening) will grant you wealth and grains
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam10.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam10.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Trikalam yah pathenithyam mahasathru vinasanam <br />
+          Mahalakshmirbhaven Nithyam Prasanna varada subha</b
+        ><br />
+        <p class="left-align">
+          Reciting this stotram thrice daily (morning, afternoon, and evening)
+          in three kalas will get benefitted by destroying all the enmity and
+          hatred. Also, the Goddess Mahalakshmi will be pleased and gives them
+          all the boons and good luck.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmi-ashtakam11.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmi-ashtakam11.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">Mahalakshmi Gayatri Mantram:</h2>
+
+        <br />
+
+        <b class="left-align"
+          >“Om MahaDevyaicha Vidhmahe<br />
+          Vishnu Patnyaicha Dheemahi<br />
+          Thanno Lakshmi Prachotayaath“</b
+        ><br />
+        <br />
+
+        <h3 class="left-align">Meaning:</h3>
+        <br />
+        <p class="left-align">
+          Om, Let me meditate on the greatest goddess, <br />Oh, wife of Lord
+          Vishnu, give me higher intellect, <br />And let Goddess Lakshmi
+          illuminate my mind.
+        </p>
+        <br />
+        <h3 class="left-align">Purpose:</h3>
+        <br />
+        <p class="left-align">
+          By reciting Lakshmi(Laxmi) Gayatri Mantra one can get prosperity and
+          success. Also give us the intelligence to enlighten our minds with
+          understanding. Bestows with wealth, riches, beauty, youth and health.
+          Brings abundance in health, finances and relationships. Brings peace
+          of mind and wards away the negative influences in your lives. Produces
+          an energy field which attracts abundance and fortune
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="mahalakshmi-ashtakam/mahalakshmiGayatriMantram.m4a" />
+          </audio>
+
+          <a href="mahalakshmi-ashtakam/mahalakshmiGayatriMantram.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="lingashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Lingashtakam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Lingashtakam with meaning.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align">Lingashtakam - A Prayer To Sivalingam</b><br />
+        <br />
+
+        <p class="left-align meaning_font">
+          The Sivalingam is a sacred symbol of the Hindus whom they revere as
+          the manifestation of the Universal Self in His awakened aspect in
+          union with His dynamic energy Shakthi. This prayer is a declaration of
+          faith, obedience, love and devotion to Lord Siva in His aspect as
+          Shivalingam.
+        </p>
+
+        <br />
+
+        <b class="left-align"
+          >Brahma Muraari Suraarchita Lingam<br />
+          Nirmala Bhashita Shobhita Lingam<br />
+          Janmaja Dukha Vinaashaka Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 1</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, which is adored by
+          Brahma, Vishnu and other Gods, which is praised by pure and holy
+          speeches and which destroys the cycle of births and deaths.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam1.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam1.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Devamuni Pravaraarchita Lingam<br />
+          Kaamadaham Karunaakara Lingam<br />
+          Raavana Darpa Vinaashaka Lingam<br />
+          Tat Pranamaami Sada Shiva Lingam 2</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, which is the destroyer of
+          desires, which the Devas and the sages worship, which is infinitely
+          compassionate and which subdued the pride of Raavana.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam2.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam2.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sarva Sugandha Sulepitha Lingam<br />
+          Buddhi Vivardhana Kaarana Lingam<br />
+          Siddha Suraasura Vanditha Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 3</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, which is lavishly smeared
+          with variegated perfumes and scents, which elevates the power of
+          thought and enkindles the light of discrimination, and before which
+          the Siddhas and Suras and Asuras prostrate.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam3.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam3.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kanaka Mahaamani Bhushitha Lingam<br />
+          Phanipathi Veshtitha Shobhitha Lingam<br />
+          Daksha Suyajna Vinaashaka Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 4 </b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, the destroyer of Dakshas
+          sacrifice, which is decorated with various ornaments, studded with
+          different gems and rubies and which glows with the garland of the
+          serpent Lord coiled around it.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam4.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam4.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kumkuma Chandana Lepitha Lingam<br />
+          Pankaja Haara Sushobhitha Lingam<br />
+          Sanchitha Paapa Vinaashaka Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 5</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, which is smeared with
+          saffron and sandal paste, which is decorated with lotus garlands and
+          which wipes out all accumulated sins.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam5.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam5.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Devaganaarchitha Sevitha Lingam<br />
+          Bhaavair Bhakti Bhirevacha Lingam<br />
+          Dinakara Koti Prabhakara Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 6</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga which is worshipped by the
+          multitude of Gods with genuine thoughts full of faith and devotion and
+          whose splendor is like that of a million suns.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam6.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam6.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ashta Dalopari Veshtitha Lingam<br />
+          Sarva Samudbhava Kaarana Lingam<br />
+          Ashta Daridra Vinaashaka Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 7</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before that Sada Shiva Linga, destroyer of all poverty
+          and misery in its eight aspects, which is the cause of all creation
+          and which stands on the eight petalled Lotus.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam7.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam7.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Suraguru Suravara Pujitha Lingam<br />
+          Suravana Pushpa Sadaarchitha Lingam<br />
+          Paraatparam Paramatmaka Lingam<br />
+          Tat Pranamaami Sadaa Shiva Lingam 8</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: I bow before SadaShiva Linga which is the Transcendent Being
+          and the Supreme Self, worshipped by Suras and their preceptor
+          (Brhaspathi), with innumerable flowers from the celestial garden.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam8.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam8.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">Phalastuti/ benefits of Lingashtakam</h2>
+
+        <br />
+
+        <b class="left-align"
+          >Lingashtakam, Idam Punyam padeth Shiva Sannidhow,<br />
+          Shivalokam avapnothi shive na sahamodathe.</b
+        ><br />
+        <p class="left-align meaning_font">
+          Meaning: Any one who chants the holy octet of the Lingam, In the holy
+          presence of Lord Shiva, Would in the end reach the world of Shiva, And
+          keep him company.
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="lingashtakam/lingashtakam9.m4a" />
+          </audio>
+
+          <a href="lingashtakam/lingashtakam9.m4a" download>Download Audio </a>
+        </div>
+
+        <br />
+        <p class="center-align meaning_font">
+          OM NAMAH SHIVAYA<br />
+          OM NAMAH SHIVAYA<br />
+          OM NAMAH SHIVAYA
+        </p>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="dhukka-nivarana-ashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Dhukka Nivarana Ashtakam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Dhukka Nivarana Ashtakam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >1.Mangala Roopini, mathiani soolini, Manmatha paniyale,<br />
+          Sangadam neekida saduthiyil vandhidum, sankarri soundhariye,<br />
+          Kankana paniyan kani mukham kanda nal karpaga kaminiye,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2
+          times)</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Who is in her auspicious form, who wears moon,<br />
+          Who holds the trident, who holds the weapons of love god,<br />
+          Who is the pretty Sankari who comes speedily to remove sorrow,<br />
+          And who is the desire fulfilling passion.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam1.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam1.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >2.Kan uru malar yena kadir oli katti, kathida vanthiduval,<br />
+          Thaan uru thava oli thaar oil mathi oli thangiye veesiduval,<br />
+          Maan uru vizhiyal madhavar mozhiyal, malaigal choodiduval,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2
+          times)</b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Like the sun showing its rays to the scented flower she will come to
+          save you,<br />
+          With abundant light of penance she would spread the moon light which
+          she carries,<br />
+          With her eyes prettier than deer and with divine language she will
+          garland him.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam2.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam2.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >3.Sankari Soundhari Chathrmukhan pothida sabhayil vandavale,<br />
+          Pongu arimavinil ponnadi vaithu porundhida vandhavale,<br />
+          Em kulam thazhaithida ezhil vadivudane ezhunda nal durgayala,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2
+          times)</b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Who is the pretty consort of Shiva who ame due to the praise of Brahma
+          in the assembly,<br />
+          Who kept her golden feet on the rising lion and came to fight,<br />
+          And is the good Durga Devi who came with a pretty form to protect my
+          clan.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam3.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam3.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >4.Dhana dhana dhandhana thavil oli muzhangida thanmani nee varuvay,
+          <br />
+          Kana kana Kankana kadir oli vesida kanmani nee varuvay,<br />
+          Pana pana panpana parai oli koovida panmamani nee varuvay,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2 times) </b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          With the dhan Dhan sound of the drum you who is cool, will come,<br />
+          With the Kan Kan sound of the bangles you our darling, will come,<br />
+          With Pan pan sound of the mega drum you who is poetic would come.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam4.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam4.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >5.Panchami, Bhairavi Parvatha puthiri, Pancha nal paniyale,<br />
+          Konjidum kumaranai, gunan migu vezhanai, kodutha nal kumariyale,<br />
+          Sangadam theerthida samara athu cheytha nal Shakthi enum maye,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2 times) </b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Who is as pretty as the fifth crescent, who is fearful, Who is the
+          daughter of mountain and who has the five good approaches,<br />
+          Who is the lady who gave us the lisping Subrahmanya and the very good
+          Ganapathi, <br />And who is Maya Devi who is the power who fought the
+          war to remove the sorrows.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam5.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam5.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >6.Yenniya padi nee arulida varuvay, em kula deviyale,<br />
+          Panniya cheyalin palan athu nalamay palgida aruliduvay,<br />
+          Kannoli athanal karunaye katti kavalaigal theerpavale,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2
+          times)</b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Oh God of our clan please come to bless us as per our thought,<br />
+          Oh goddess bless us so that we get proper results for work done,<br />
+          Oh Goddess who removes our worries just by showing the light of your
+          eye.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam6.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam6.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >7.Idar tharu thollai ini mel illai, endru nee cholliduvay,<br />
+          Sudar tharu amudhe, sruthigal kori sukhamathu thanthiduvay,<br />
+          Padar tharu irulil parithiyay vandhu pasha vinai ottiduvay,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.(2
+          times)</b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          When you are telling that things that create problems will not be
+          there from now,<br />
+          Oh nectar who gives light, give us pleasures by saying the Vedas,<br />
+          And you would drive away my bondage of fate by coming as a Garuda
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam7.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam7.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >8.Jayajaya Bala Chamundeswari Jayajaya Sri Devi,<br />
+          Jayajaya Durga Sri Parmeshwari Jayajaya Sridevi,<br />
+          Jayajaya Jayanthi Mangala Kali Jayajaya Sridevi,<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi.<br />
+          Jaya jaya Sankari gouri krupakari, dukha nivarini Kamakshi Kamakshi
+          Kamakshi.</b
+        ><br />
+        <p class="left-align meaning_font">
+          Victory, victory to wife of Shiva, the white Goddess,<br />
+          The merciful one, she who removes sorrows and the Goddess Kamakshi,<br />
+          Victory, victory to Bala Chamunda, victory, victory to Lakshmi,<br />
+          Victory, victory to consort of Lord Shiva, victory, victory to
+          Lakshmi,<br />
+          Victory, victory to the victorious Kali who does good, Victory,
+          Victory to Lakshmi
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source
+              src="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam8.m4a"
+            />
+          </audio>
+
+          <a
+            href="dhukka-nivarana-ashtakam/dhukka-nivarana-ashtakam8.m4a"
+            download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="ranganatha-ashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Ranganatha Ashtakam</h2>
+
+          <div class="button-container">
+            <button
+              class="printPDFbutton"
+              onclick="print('Ranganatha Ashtakam.pdf')"
+            >
+              Print PDF<br /><span class="material-symbols-outlined"
+                >print</span
+              >
+            </button>
+            <button
+              class="printPDFbutton"
+              onclick="videoPlayer(this)"
+              data-video="https://www.youtube.com/embed/qvYy7t7IPqA?si=R8YtENooUNrQlJA"
+            >
+              Watch Video<br /><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Aanandha roopae nija-boaDha roopae<br />
+          brahma-svaroopae shruti-moorthi roopae<br />
+          shashaanGgka roopae ramaNeeya roopae<br />
+          shreeranGga roopae ramathaam manoa mae 1</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          1.(My mind delights in the divine form of Sri Ranganatha) that form
+          (resting on the Adisesha) absorbed in bliss (Ananda Rupe), and
+          immersed in his own self (Nija Bodha Rupe); that form embodying the
+          essence of brahman (Brahma Svarupe) and the essence of all the shrutis
+          (Vedas) (Shruti Murti Rupe), that form cool like the moon (Shashanka
+          Rupe) and having exquisite beauty (Ramaniya Rupe); My mind delights in
+          the divine form of Sri Ranga (Sri Ranganatha) (that form fills my
+          being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam1.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam1.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >kaavaeri-theerae karuNaa-viloalae<br />
+          mandhaara-moolae Dhrtha-chaaru-kaelae<br />
+          daithya-antha-kaale-akhila-loaka-leelae<br />
+          shreeranGga-leelae ramathaam manoa mae 2</b
+        ><br />
+        <p class="left-align meaning_font">
+          2.(My mind delights in the divine plays of Sri Ranganatha) those plays
+          of him, showering compassion at the bank of river Kaveri (just like
+          its gentle waves); those plays of him assuming beautiful sportive
+          forms at the root of the Mandara tree, those plays of his incarnations
+          slaying the demons in all the lokas (Worlds); My mind delights in the
+          divine plays of Sri Ranga (Sri Ranganatha) (those plays fill my being
+          with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam2.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam2.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >lakShmee nivaasae jagathaaM nivaasae<br />
+          hruth-padhma-vaasae ravi bimba-vaasae<br />
+          krupaa-nivaase guNa-brundha-vaasae<br />
+          shreeranGga-vaasae ramathaam manoa mae 3 </b
+        ><br />
+        <p class="left-align meaning_font">
+          3.(My mind delights in the various abodes of Sri Ranganatha) that
+          abode of him dwelling with devi Lakshmi (in Vaikuntha), those abodes
+          of him dwelling amidst all the beings in this world (in temples), that
+          abode of him within the lotus of the hearts of the devotees (as divine
+          consciousness), and that abode of him within the orb of the sun (the
+          sun representing the image of the divine), that abode of him in the
+          acts of compassion, and that abode of him within the excellent
+          virtues; My mind delights in the various abodes of Sri Ranga (Sri
+          Ranganatha) (those abodes fill my being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam3.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam3.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >brahmaadhi vandhyae jagadh-aeka vandhyae<br />
+          mukundha vandhyae sura-naaTha vandhyae<br />
+          vyaasaadhi vandhyae sanakaadhi vandhyae<br />
+          shreeranGga vandhyae ramathaam manoa mae 4 </b
+        ><br />
+        <p class="left-align meaning_font">
+          4.(My mind delights in the worship of Sri Ranganatha) The worship
+          performed by lord Brahma and other (gods); The worship performed by
+          the devotees (considering him) as the one lord of the universe; The
+          worship performed by Sri Mukunda, and the worship performed by the
+          chief of the Suras (i.e. Indra deva), The worship performed by Sage
+          Vyasa and other (Sages); The worship performed by Sage Sanaka and
+          other (Kumaras); My mind delights in the worship of Sri Ranga (Sri
+          Ranganatha) (His worship fills my being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam4.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam4.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >brahma-adhiraajae garuda-adhiraajae<br />
+          vaikuNTa-raajae sura-raaja-raajae<br />
+          thrailokya-raajae-akhila-loaka-raajae<br />
+          shreeranGga-raajae ramathaam manoa mae 5 </b
+        ><br />
+        <p class="left-align meaning_font">
+          5.(My mind delights in the lordship of Sri Ranganatha) Who is the lord
+          of Brahma, who is the lord of Garuda, who is the lord of Vaikuntha and
+          who is the lord of the king of Suras (i.e. Indra Deva), who is the
+          lord of the three worlds, who is the lord of all the worlds; My mind
+          delights in the lordship of Sri Ranga (Sri Ranganatha) (His lordship
+          fills my being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam5.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam5.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >amogha mudhrae paripoorNa nidhrae<br />
+          shree-yoga nidhrae sa-samudhra nidhrae<br />
+          shrithaika bhadhrae jagadh-aeka nidhrae<br />
+          shreeranGga bhadhrae ramathaam manoa mae 6 </b
+        ><br />
+        <p class="left-align meaning_font">
+          6.(My mind delights in the auspicious divine sleep of Sri Ranganatha)
+          that posture of unfailing rest (which nothing can disturb), that
+          complete sleep (which is full with fullness), that auspicious Yoga
+          Nidra (which is absorbed in itself in fullness), (and) that posture of
+          sleeping over the milky ocean (and controlling everything), that
+          posture of rest is the one source of auspiciousness (in the universe)
+          and one great sleep which (gives rest amidst all the activities and)
+          finally absorbs the universe, my mind delights in the auspicious
+          divine sleep of Sri Ranga (Sri Ranganatha) (that auspicious divine
+          sleep fills my being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam6.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam6.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >sachithra shaayee bhujaga-endhra shaayee <br />
+          nandha-anGgka shaayee kamala-anGgka shaayee<br />
+          kSheera-abdhi shaayee vata-pathra shaayee<br />
+          shreeranGga-shaayee ramathaam manoa mae 7 </b
+        ><br />
+        <p class="left-align meaning_font">
+          7.(My mind delights in the auspicious resting poses of Sri Ranganatha)
+          that resting pose adorned with variegated (garments and ornaments);
+          that resting pose over the king of serpents (i.e. Adisesha); that
+          resting pose on the lap of Nanda Gopa (and Yashoda); that resting pose
+          on the lap of devi Lakshmi, that resting pose over the Milky Ocean;
+          (and) that resting pose over the banyan leaf; My mind delights in the
+          auspicious resting poses of Sri Ranga (Sri Ranganatha) (those
+          auspicious resting poses fill my being with bliss).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam7.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >idhaM hi ranGgaM thyajathaamiha-anGgaM<br />
+          punar-na cha-anGgaM yadhi cha-anGgamaethi<br />
+          paaNau raThaanGgaM charaNae-ambu gaanGgaM<br />
+          yaanae vihanGgaM shayanae bhujanGgam 8 </b
+        ><br />
+        <p class="left-align meaning_font">
+          8.This indeed is Ranga (Srirangam), where if anyone sheds his body,
+          will not come back again with body (i.e. will not be born again), if
+          that body had approached the lord (i.e. taken refuge in the lord),
+          (Glory to Sri Ranganatha) whose hand holds the discus, from whose
+          lotus feet river Ganga originates, who rides on his bird vehicle
+          (Garuda); (and) who sleeps on the bed of serpent (glory to Sri
+          Ranganatha).
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam8.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">Phala Stuti</h2>
+
+        <br />
+
+        <b class="left-align"
+          >ranGganaaTha-aShtakam-puNyaM<br />
+          praathar-uthThaaya yah paTeth<br />
+          sarvaan kaamaan-avaapnoathi<br />
+          ranGgi-saayujyam-aapnuyaath.</b
+        ><br />
+        <p class="left-align meaning_font">
+          This Ranganathashtakam, which is auspicious, he who recites after
+          getting up early in the morning, all his desires are fulfilled; (and
+          finally) he attains the sayujya of Sri Ranganatha (absorption in the
+          essence of Sri Ranganatha) (and gets liberated).
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="ranganatha-ashtakam/ranganatha-ashtakam9.m4a" />
+          </audio>
+
+          <a href="ranganatha-ashtakam/ranganatha-ashtakam9.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="achutha-ashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Achutha Ashtakam</h2>
+
+          <button class="printPDFbutton" onclick="print('Achuthashtakam.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Acyutam Keshavam Raama-Naaraayannam<br />
+          Krssnna-Daamodaram Vaasudevam Harim |<br />
+          Shrii-Dharam Maadhavam Gopikaa-Vallabham<br />
+          Jaanakii-Naayakam Raamacamdram Bhaje ॥ 1 ॥</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          I worship Acyuta, the infallible one, Who is Rāmacandra, Keśava, Rāma,
+          Nārāya a, K a, Dāmodara, Vāsudeva, Hari, Śrīdhara,Mādhava, Who is ṇ
+          ṛṣṇ dear to Gopikā, and Who is the consort of Jānakī.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam1.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam1.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Acyutam Keshavam Satyabhaamaa-Dhavam<br />
+          Maadhavam Shrii-Dharam Raadhika-[A]araadhitam |<br />
+          Indiraa-Mandiram Cetasaa Sundaram<br />
+          Devakii-Nandanam Nanda-Jam San-Dadhe ॥ 2 ॥</b
+        ><br />
+        <p class="left-align meaning_font">
+          I offer my obeisances to Lord Keśava, Who is infallible (Acyuta), Who
+          is the consort of Satyabhāmā, Mādhava, Śrīdhara, Who is longed-for by
+          Rādhikā, Who is the temple of Lak mī (Indirā), Who is beautiful by
+          thought, Who is ṣ dear to Devakī, and Who is dear to all.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam2.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam2.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vissnnave Jissnnave Shaangkhine Cakrinne<br />
+          Rukminni-Raaginne Jaanakii-Jaanaye |<br />
+          Ballavii-Vallabhaay-Aarcitaay-Aatmane<br />
+          Kamsa-Vidhvamsine Vamshine Te Namah ॥ 3 ॥ </b
+        ><br />
+        <p class="left-align meaning_font">
+          Salutations for Vi u, Who conquers everyone, Who holds a conch-shell
+          ṣṇ and a discus, Who is dear to Rukmi ī, Who is the consort ofJānakī,
+          Who is ṇ dear to gopi girls, Who is offered [in sacrifices], the
+          Supersoul Who destroyed Ka sa, and Who plays the flute.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam3.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam3.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Krssnna Govinda He Raama Naaraayanna<br />
+          Shrii-Pate Vaasudeva-Ajita Shrii-Nidhe |<br />
+          Acyuta-Ananta He Maadhava-Adhokssaja<br />
+          Dvaarakaa-Naayaka Draupadii-Rakssaka ॥ 4 ॥ </b
+        ><br />
+        <p class="left-align meaning_font">
+          O K a! O Govinda! O Rāma! O Nārāya a, Who is the consort of Lak mī!
+          ṛṣṇ ṇ ṣ O Vāsudeva, Who attained the treasure of Lak mī! O Acyuta, Who
+          is ṣ immeasurable! O Mādhava, O Adhok aja, Who is the leader of
+          Dvārakā, ṣ and Who is the protector of Draupadī!
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam4.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam4.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Raakssasa-Kssobhitah Siitayaa Shobhito<br />
+          Dannddakaarannya-Bhuu-Punnyataa-Kaarannah |<br />
+          Lakssmannen-Aanvito Vaanarauh Sevito-<br />
+          Agasta-Sampuujito Raaghava Paatu Maam ॥ 5 ॥<br /> </b
+        ><br />
+        <p class="left-align meaning_font">
+          May Rāghava — Who disturbed the atheistic practices of the demons, Who
+          adorned Sītā, Who is Dan aka-forest purification cause, Who is ḍ
+          accompanied by Lak ma a, Who was served by monkeys, and Who is ṣ ṇ
+          revered by Sage Agastya — O Lord, please protect me.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam5.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam5.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Dhenuka-Arissttaka-Anisstta-Krd-Dvessihaa<br />
+          Keshihaa Kamsa-Hrd-Vamshikaa-Vaadakah |<br />
+          Puutanaa-Kopakah-Suura-Jaa-Khelano<br />
+          Baala-Gopaalakah Paatu Maam Sarvadaa ॥ 6 ॥ </b
+        ><br />
+        <p class="left-align meaning_font">
+          May Baby Gopāla (K a) — Who was unfavorable to Dhenukāsura and ṛṣṇ Ari
+          āsura, Who destroyed Keśī, Who killed Ka sa, Who plays the flute, ṣṭ ṁ
+          and Who got angry on Pūtanā — always protect me.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam6.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam6.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vidyud-Udyota-Vat-Prasphurad-Vaasasam<br />
+          Praavrdd-Ambhoda-Vat-Prollasad-Vigraham |<br />
+          Vanyayaa Maalayaa Shobhito[a-U]rahsthalam<br />
+          Lohita-Angghri-Dvayam Vaarija-Akssam Bhaje ॥ 7 ॥ </b
+        ><br />
+        <p class="left-align meaning_font">
+          I sing praise of Acyuta, Who is adorned by a lightening like shining
+          yellow robe, Whose body is resplendent like a cloud of the
+          rainy-season, Who is adorned by a wild-flower garland at His chest,
+          Whose twin-feet are of copper-red color, and Who has lotus-like eyes.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam7.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kun.citaih Kuntalair-Bhraajamaana-Ananam<br />
+          Ratna-Maulim Lasat-Kunnddalam Gannddayoh |<br />
+          Haara-Keyuurakam Kangkanna-Projjvalam<br />
+          Kingkinnii-Man.julam Shyaamalam Tam Bhaje ॥ 8 ॥ </b
+        ><br />
+        <p class="left-align meaning_font">
+          I sing praise of that Śyāma, Whose face is adorned by falling locks of
+          curly tresses, Who has jewels at forehead, Who has shining ear-rings
+          on the cheeks, Who is adorned with a Keyūra (flower) garland, Who has
+          a resplendent bracelet, and Who has a melodious anklet
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam8.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <h2 class="big-h2">Phala Stuti</h2>
+
+        <br />
+
+        <b class="left-align"
+          >Acyutasyaassttakam Yah Patthed-Isstta-Dam<br />
+          Prematah Pratyaham Puurussah Sasprham |<br />
+          Vrttatah Sundaram Kartr-Vvishvambharas-Tasya<br />
+          Vashyo Harirjaayate Satvaram ॥ 9 ॥ </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="achutha-ashtakam/achutha-ashtakam9.m4a" />
+          </audio>
+
+          <a href="achutha-ashtakam/achutha-ashtakam9.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="madhurashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Madhurashtakam</h2>
+
+          <button class="printPDFbutton" onclick="print('Madhurashtakam.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Adharam Madhuram Vadanam Madhuram<br />
+          Nayanam Madhuram Hasitam Madhuram |<br />
+          Hrudayam Madhuram Gamanam Madhuram<br />
+          Madhura-Adhipate-rAkhilam Madhuram ||1||</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vachnam Madhuram Charitam Madhuram<br />
+          Vasanam Madhuram Valitam Madhuram |<br />
+          Chalitam Madhuram Bhramitam Madhuram<br />
+          Madhura-Adhipate-rAkhilam Madhuram ||2||</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam2.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vennur-Madhuro Rennur-Madhuraha<br />
+          Pannir-Madhuraha Padou Madhurau |<br />
+          Nrityam Madhuram Sakhyam Madhuram<br />
+          Madhura-Adhipate-rAkhilam Madhuram ||3|| </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam3.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Geetam Madhuram Peetam Madhuram<br />
+          Bhuktam Madhuram Suptam Madhuram |<br />
+          Roopam Madhuram Tilakam Madhuram<br />
+          Madhura-Adhipate-rAkhilam Madhuram ||4||
+        </b>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam4.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Karanam Madhuram Tarannam Madhuram<br />
+          Haranam Madhuram Ramanam Madhuram |<br />
+          Vamitam Madhuram Shamitam Madhuram<br />
+          Madhura-Adhipate-rAkhilam Madhuram ||5|| </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam5.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Gun.ja Madhuraa Mala Madhuraa<br />
+          Yamuna Madhuraa Veechee Madhuraa |<br />
+          Salilam Madhuram Kamalam Madhuram<br />
+          Madhura-Adhipate-rakhilam Madhuram ||6||</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="madhurashtakam/madhurashtakam6.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="madhurashtakam/madhurashtakam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Gopii Madhuraa Liilaa Madhuraa<br />
+          Yuktam Madhuram Muktam Madhuram |<br />
+          Drssttam Madhuram Shissttam Madhuram<br />
+          Madhura-Adhipaterakhilam Madhuram ||7||
+        </b>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="madhurashtakam/madhurashtakam7.m4a" />
+          </audio>
+
+          <a href="madhurashtakam/madhurashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Gopa Madhura Gavo Madhuraa<br />
+          Yasttir-Madhuraa Srushtri-Madhuraa |<br />
+          Dalitam Madhuram Phalitam Madhuram<br />
+          Madhura-Adhipaterakhilam Madhuram ||8||</b
+        >
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="madhurashtakam/madhurashtakam8.m4a" />
+          </audio>
+
+          <a href="madhurashtakam/madhurashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="center-align meaning_font">Sarvam Sri Krishnarpanam</b>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="totakashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Totakashtakam</h2>
+
+          <button class="printPDFbutton" onclick="print('Totakashtakam.pdf')">
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align meaning_font"
+          >Totakashtakam is a divine hymn composed by Totakacharya to praise the
+          greatness of Guru Adi Shankara.
+        </b>
+
+        <br />
+
+        <b class="left-align"
+          >Vidhi thakhila sastra Sudha jaladhe<br />
+          Mahithopanishad kadhitardha nidhe<br />
+          Hrudaya kalaye vimalam charanam<br />
+          Bhava Shankara deshika me sharanam (1)</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Karuna varunalaya palayamam<br />
+          Bhava sagara dhukha viduna hrudam<br />
+          Rachayakhila dharshana tatva vidham<br />
+          Bhava Shankara deshika me sharanam (2)</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam2.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Bhavatha janatha suhitha bhavitha<br />
+          Nija bhodha vicharana charumathe<br />
+          Kalayeshwara jiva viveka vidam<br />
+          Bhava Shankara deshika me sharanam (3) </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam3.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Bhava eva bhavaniti me nitaraam<br />
+          Sama-jayatha chetasi kautukitha<br />
+          Mama varaya moha maha jaladhim<br />
+          Bhava Shankara deshika me sharanam (4) </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam4.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sukruthe dikruthe bahudha bhavatho<br />
+          Bhavitha samadarshana lalasatha<br />
+          Atideenamimam paripalaya mam<br />
+          Bhava Shankara deshika me sharanam (5) </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam5.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Jagati mavitum kalitha kruthayo<br />
+          Vicharanthi maha-mahaschalatha<br />
+          Ahimanshuri vatra vibhasi puro<br />
+          Bhava Shankara deshika me sharanam (6)</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="totakashtakam/totakashtakam6.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="totakashtakam/totakashtakam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Guru pungava pungava-kethanate<br />
+          Samata mayatham nahi kopi sudhi<br />
+          Sharanagata vatshala tatva nidhe<br />
+          Bhava Shankara deshika me sharanam (7)
+        </b>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="totakashtakam/totakashtakam7.m4a" />
+          </audio>
+
+          <a href="totakashtakam/totakashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vidithana maya visadaika kala<br />
+          Na cha kimchana kanchana masti guro<br />
+          Dhruthameva vidhehi krupam sahajam<br />
+          Bhava Shankara deshika me sharanam (8)</b
+        >
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="totakashtakam/totakashtakam8.m4a" />
+          </audio>
+
+          <a href="totakashtakam/totakashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+    <div id="balamukundaashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Bala Munkunda Ashtakam</h2>
+
+          <div class="button-container">
+            <button
+              class="printPDFbutton"
+              onclick="print('Balamukundhaashtakam.pdf')"
+            >
+              Print PDF<br /><span class="material-symbols-outlined"
+                >print</span
+              >
+            </button>
+
+            <button
+              class="printPDFbutton"
+              onclick="videoPlayer(this)"
+              data-video="https://www.youtube.com/embed/C5KSe-2qgas?si=MZrObLvwjB6t09ki"
+            >
+              Watch Video<br /><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50"
+                width="24px"
+                height="24px"
+              >
+                <path
+                  d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kararavindena padaravindham,<br />
+          Mukharavinde vinivesayantham,<br />
+          Vatasya pathrasya pute sayanam,<br />
+          Balam mukundam mansa smarami. 1</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda*, Who with his lotus like
+          hand catches his lotus like feet, And brings it near his lotus like
+          face and steals our heart, And sleeps peacefully on a banyan leaf.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Samhruthya lokaan vatapathra madhye,<br />
+          Sayana madhyantha viheena roopam,<br />
+          Sarveshwaram sarva hithavatharam,<br />
+          Balam mukundam manasa smarami. 2</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who after dissolution of
+          the earth, Sleeps on the middle of leaf of a banyan tree, Whose form
+          has neither end nor beginning, Who is the god of all, And who is the
+          incarnation of good for all.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam2.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Indeevara shyamala komalangam,<br />
+          Indrathi devarchitha pada padmam,<br />
+          Santhana kalpa druma masrithanaam,<br />
+          Balam mukundam manasa smarami. 3 </b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who has a pretty dark mien
+          , With the colour of a blue lotus, Whose lotus like feet is
+          worshipped, By all devas and Indra their king, And who is the wish
+          giving tree, Blessing progeny to those who pray for it.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam3.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Lambhalakam lambhitha harayashtim,<br />
+          Srungara leelangitha dantha panktheem,<br />
+          Bimbadaram charu visala nethram,<br />
+          Balam mukundam manasa smarami. 4 </b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who has locks of his hair
+          falling all over his face, Who wears long pretty hanging chains, Who
+          has rows of nectar like teeth that shine with love, Who has reddish
+          lips like the Bimba fruit, And who has very pretty captivating eyes.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam4.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sikhye nithayadhya payothatheeni,<br />
+          Bahirgadayam vraja naykayam,<br />
+          Bukthwa yadeshtam kapatena suptham,<br />
+          Balam mukundam manasa smarami. 5 </b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who acts as if he is
+          sleeping, after eating, Butter Sufficient to meet his desire, When
+          Yasoda had gone out, After keeping milk, curd in a pot.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam5.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Kalindajantha sthitha Kaliyasya,<br />
+          Phanagrange natana priyantham,<br />
+          Thath pucha hastham saradindu vakthram,<br />
+          Balam mukundam manasa smarami. 6</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who has got a face like
+          the autumn moon, And who while he was on the stone in river Kalindhi,
+          Desires to dance on the hood of the snake Kaalinga, Holding his tail
+          by one of his hands.
+        </p>
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam6.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="balamukundaashtakam/balamukundaashtakam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ulookhale badha mudhara souryam,<br />
+          Uthunga padmarjuna bhanga leelam,<br />
+          Uthphulla padmayatha charu nethram,<br />
+          Balam mukundam manasa smarami. 7</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who is tied to a mortar,
+          Who is charitable and heroic, Who broke the twin Arjuna trees
+          playfully, And whose eyes are like fully open red lotus.
+        </p>
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam7.m4a" />
+          </audio>
+
+          <a href="balamukundaashtakam/balamukundaashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Alokhya maadur mukha madarena,<br />
+          Sthanyam pibhantham sasareehuaksham,<br />
+          Sachinmayam, devamanantharoopam,<br />
+          Balam mukundam manasa smarami. 8</b
+        ><br />
+
+        <p class="left-align meaning_font">
+          With my mind I think of that child Mukunda, Who lovingly looks at his
+          mother’s face, When he drinks milk from her, Who is having eyes like
+          the lotus flower, Who is the unalloyed form of truth, And who is the
+          God with limitless form.
+        </p>
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="balamukundaashtakam/balamukundaashtakam8.m4a" />
+          </audio>
+
+          <a href="balamukundaashtakam/balamukundaashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <div id="vaidyanatha-ashtakam">
+      <br />
+      <br />
+      <br />
+      <div class="gray">
+        <br />
+
+        <div class="heading-container">
+          <h2 class="big-h2">Vaidyanatha Ashtakam</h2>
+
+          <button
+            class="printPDFbutton"
+            onclick="print('Vaidyanatha Ashtakam.pdf')"
+          >
+            Print PDF<br /><span class="material-symbols-outlined">print</span>
+          </button>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sree Rama Soumithri Jatayu Veda, <br />
+          Shadana Adithya Kujara Chithaya, <br />
+          Sree Neelakantaya Daya Mayaya, <br />
+          Sree Vaidyanathaya Namah Shivaya. - 1</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam1.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam1.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Ganga Pravaahendu Jada Dharaya, <br />
+          Trilochanaya Smara Kala Hanthre, <br />
+          Samastha Devai Rapi Poojithaya, <br />
+          Sree VaidyanathataNamah Shivaya. - 2</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam2.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam2.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Bhaktha Priyaya, Tripuranthakaaya, <br />
+          Pinakine Dushta Haraya Nithyam, <br />
+          Prathyaksha Leelaya-Manushya Loke, <br />
+          Sree Vaidyanathaya Namah Sivaya. - 3 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam3.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam3.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Prabhootha Vaadadhi Samastha Roga, <br />
+          Pranasha Karthre Muni Vandhithaya, <br />
+          Prabhakarennd Wagni Vilochanaya, <br />
+          Sri Vaidyanathaya Namah Sivaya. - 4 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam4.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam4.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vakshchrothra Nethrangiri Viheena Jantho, <br />
+          Vaakshchrothra Nethrangiri Sukha Pradaya, <br />
+          Kushtadhi Sarvonnatha Roga Hanthre, <br />
+          Sri Vaidyanathaya Namah Sivaya. - 5 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam5.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam5.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Vedantha Vedhyaya Jagan Mayaya, <br />
+          Yogiswaradh Yeya Padambujaya, <br />
+          Trimurthy Roopaya Sahasra Naamne, <br />
+          Sri Vaidyanathaya Namah Sivaya. - 6</b
+        ><br />
+
+        <div class="audio-and-download">
+          <audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam6.m4a" />
+          </audio>
+
+          <a
+            class="download-audio"
+            href="vaidyanatha-ashtakam/vaidyanatha-ashtakam6.m4a"
+            download
+            >Download Audio</a
+          >
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Swatheertha Mrudbasma Brudanga Baajaam, <br />
+          Pisacha Dukkha Arthi Bhayapahaya, <br />
+          Athma Swaroopaya-Sareera Baajaam, <br />
+          Sri Vaidyanaathaya Namah Sivaya. - 7 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam7.m4a" />
+          </audio>
+
+          <a href="vaidyanatha-ashtakam/vaidyanatha-ashtakam7.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Sree Neelakandaya Vrushabad Dwajaya, <br />
+          Sarkkanda Basmadh Yaabhi Shobithaya, <br />
+          Suputhra Daaraathi Subagyathaya, <br />
+          Sri Vaidyanathaya Namah Sivaya. - 8 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam8.m4a" />
+          </audio>
+
+          <a href="vaidyanatha-ashtakam/vaidyanatha-ashtakam8.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+
+        <b class="left-align"
+          >Balambikesa vaidyesa Bava roga haredi cha <br />
+          Japen nama thrayam nithyam maha roga nivaranam. -9 </b
+        ><br />
+
+        <div class="audio-and-download">
+          <br /><audio controls>
+            <source src="vaidyanatha-ashtakam/vaidyanatha-ashtakam9.m4a" />
+          </audio>
+
+          <a href="vaidyanatha-ashtakam/vaidyanatha-ashtakam9.m4a" download
+            >Download Audio
+          </a>
+        </div>
+
+        <br />
+      </div>
+      <br />
+    </div>
+
+    <br />
+  </body>
+</html>

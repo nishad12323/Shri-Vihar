@@ -148,7 +148,9 @@ ul.no-bullet {
   color: #000;
 }
 
-p, a, li {
+p,
+a,
+li {
   font-size: 1.3rem;
 }
 
@@ -192,6 +194,7 @@ p, a, li {
   font-size: 1.5rem;
   padding: 0px 20px 0px;
   border-radius: 15px;
+  height: auto;
 }
 
 .access-code-gray {
@@ -207,7 +210,9 @@ p, a, li {
   align-items: start;
 }
 
-.left-align, audio, .heading-container {
+.left-align,
+audio,
+.heading-container {
   font-size: 16pt;
   margin: 0;
 }
@@ -226,13 +231,33 @@ audio {
   text-align: center;
 }
 
+dialog {
+  z-index: 10;
+  margin-top: 10px;
+  border: none;
+  border-radius: 1rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
 
 
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  padding: 10px;
+  font-weight: bold;
+  padding: 20px 20px 20px;
+}
 
 .heading-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-right: 20px;
   gap: 10px;
 }
@@ -253,9 +278,91 @@ audio {
 }
 
 .footer {
-  background-image: linear-gradient(to right, #ffc800 , #ff6600ff);
+  background-image: linear-gradient(to right, #ffc800, #ff6600ff);
   padding: 10px;
   align-items: baseline;
+}
+
+#search-bar {
+  padding: 10px 10px 10px 10px;
+  font-size: 1rem;
+  border-radius: 500px;
+  border: none;
+  max-width: 50vw;
+}
+
+.list-of-slokams #search-bar {
+  max-width: 100%;
+  width: 100%;
+  box-shadow: #000a 0 0 10px 1px;
+}
+
+.list-of-slokams #search-label {
+  top: calc(50px + 1lh);
+  position: sticky;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+}
+
+.list-of-slokams ul {
+  margin-bottom: 1lh;
+}
+
+.list-of-slokams ul p {
+  margin: 10px;
+}
+
+[list]::-webkit-calendar-picker-indicator,
+[list]::-webkit-list-button {
+  opacity: 0 !important;
+  display: none !important;
+  width: 0 !important;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-results-banner,
+.back-banner {
+  color: #6e2126;
+  background-color: #ffc800;
+  transition: .1s;
+  text-align: center;
+  width: max-content;
+  padding: 10px;
+  border-radius: 1000px;
+  cursor: pointer;
+  position: sticky;
+  top: 70px;
+  z-index: 3;
+  margin: 0 auto;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#search-results-banner svg,
+.back-banner svg {
+  zoom: .5;
+}
+
+#search-results-banner:hover,
+.back-banner:hover {
+  background-color: #DDBB8B;
+}
+
+.back-banner:active {
+  scale: .9;
+}
+
+#search-label {
+  position: relative;
 }
 
 @media only screen and (max-width: 650px) {
