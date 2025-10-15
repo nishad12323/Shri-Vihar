@@ -289,12 +289,14 @@ dialog {
   border-radius: 500px;
   border: none;
   max-width: 50vw;
+  display: none;
 }
 
 .list-of-slokams #search-bar {
   max-width: 100%;
   width: 100%;
   box-shadow: #000a 0 0 10px 1px;
+  display: block;
 }
 
 .list-of-slokams #search-label {
