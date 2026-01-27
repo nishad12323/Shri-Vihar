@@ -55,6 +55,7 @@ document.querySelectorAll("audio").forEach((audio) => {
 });
 
 var ids = [
+  "ganesha-slokams",
   "beginning-ending",
   "nitya-parayana",
   "small-slokas",
@@ -90,6 +91,8 @@ var ids = [
 
 // Each entry contains keywords and the first few words of each sloka/stotram/ashtakam from library.html
 var keywords = [
+  // ganesha-slokams
+  "Ganesha slokams ganesha slokams vinayagar slokams",
   // beginning-ending
   "beginning and ending slokas beginning and ending slokams beginning ending slokas beginning ending slokams pranava mantra beja aksharam om vinayagar slokams palum theli thenum mooshika vahana vakratunda mahakaya surya koti samaprabha agajanana padmarkam gajananam bhutaganadi sevitam saraswati devi maanikka veena guru mantram guru brahma guru vishnu guru devo maheshwara shanthi mantram asatoma sadgamaya sahanavavatu pavamana mantram om shantih shantih shantih",
   // nitya-parayana
