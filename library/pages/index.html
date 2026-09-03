@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -78,9 +78,11 @@
             type="text"
             id="search-bar"
             placeholder="Search..."
-            onkeypress="if (event.key === 'Enter') {
-              searchSlokas(this.value);
-            }"
+            onkeypress="
+              if (event.key === 'Enter') {
+                searchSlokas(this.value);
+              }
+            "
             oninput="searchSlokas(this.value)"
         /></label>
 
@@ -191,6 +193,11 @@
                 >Vaidyanatha Ashtakam</a
               >
             </p>
+            <p>
+              <a class="list-item" href="Ashtakams/#guru-ashtakam"
+                >Guru Ashtakam</a
+              >
+            </p>
           </ul>
 
           <h2>Pancharatnams</h2>
@@ -250,9 +257,7 @@
             </p>
 
             <p>
-              <a
-                class="list-item"
-                href="Stotrams/#adithyahrdayam"
+              <a class="list-item" href="Stotrams/#adithyahrdayam"
                 >Adithyahrdayam</a
               >
             </p>

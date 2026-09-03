@@ -292,6 +292,36 @@ dialog {
   display: none;
 }
 
+#search-bar.slokas-search {
+  max-width: 100%;
+  width: 100%;
+  box-shadow: #000a 0 0 5px 1px;
+  display: block;
+  margin-bottom: 50px;
+  position: sticky;
+  top: 0;
+}
+
+.slokas {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  background-color: #fff9;
+  padding: 20px;
+
+}
+
+.slokas p {
+  margin-bottom: 20px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.slokas a.list-item {
+  text-decoration: none;
+}
+
 .list-of-slokams #search-bar {
   max-width: 100%;
   width: 100%;
